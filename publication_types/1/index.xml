@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1 on Chuan-Xia Zheng</title>
+    <link>https://lyndonzheng.github.io/publication_types/1/</link>
+    <description>Recent content in 1 on Chuan-Xia Zheng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Dec 2018 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://lyndonzheng.github.io/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pluralistic Image Completion</title>
+      <link>https://lyndonzheng.github.io/publication/pluralistic/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://lyndonzheng.github.io/publication/pluralistic/</guid>
+      <description>Abstract Most image completion methods produce only one result for each masked input, although there may be many reasonable possibilities. In this paper, we present an approach for pluralistic image completion the task of generating multiple diverse and plausible solutions for image completion. A major challenge faced by learning-based approaches is that here the conditional label itself is a partial image, and there is usually only one ground truth training instance per label.</description>
+    </item>
+    
+    <item>
+      <title>T2Net: Synthetic-to-Realistic Translation for Depth Estimation Tasks</title>
+      <link>https://lyndonzheng.github.io/publication/synthetic2real/</link>
+      <pubDate>Sat, 08 Sep 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://lyndonzheng.github.io/publication/synthetic2real/</guid>
+      <description>Abstract Current methods for single-image depth estimation use training datasets with real image-depth pairs or stereo pairs, which are not easy to acquire. We propose a framework, trained on synthetic imagedepth pairs and unpaired real images, that comprises an image translation network for enhancing realism of input images, followed by a depth prediction network. A key idea is having the first network act as a widespectrum input translator, taking in either synthetic or real images, and ideally producing minimally modified realistic images.</description>
+    </item>
+    
+  </channel>
+</rss>

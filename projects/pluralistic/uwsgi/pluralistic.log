@@ -1,0 +1,254 @@
+*** Starting uWSGI 2.0.17.1 (64bit) on [Fri Jan 25 16:48:03 2019] ***
+compiled with version: 7.3.0 on 17 December 2018 12:05:02
+os: Linux-4.4.0-140-generic #166-Ubuntu SMP Wed Nov 14 20:09:47 UTC 2018
+nodename: CAG-1209-02
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+writing pidfile to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic/uwsgi/pluralistic.pid
+detected binary path: /home/lyndonzheng/anaconda3/bin/uwsgi
+chdir() to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+your processes number limit is 128132
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:9000 fd 3
+Python version: 3.6.7 | packaged by conda-forge | (default, Nov 21 2018, 03:09:43)  [GCC 7.3.0]
+Python main interpreter initialized at 0x55cc1aa01cd0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 403077 bytes (393 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55cc1aa01cd0 pid: 4196 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 4196)
+spawned uWSGI worker 1 (pid: 4198, cores: 1)
+spawned uWSGI worker 2 (pid: 4199, cores: 1)
+Python auto-reloader enabled
+[uwsgi-python-reloader] module/file ./pluralistic_demo.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 4198)...
+Gracefully killing worker 2 (pid: 4199)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (127.0.0.1:9000)
+running /home/lyndonzheng/anaconda3/bin/uwsgi
+[uWSGI] getting INI configuration from pluralistic.ini
+*** Starting uWSGI 2.0.17.1 (64bit) on [Fri Jan 25 17:26:31 2019] ***
+compiled with version: 7.3.0 on 17 December 2018 12:05:02
+os: Linux-4.4.0-140-generic #166-Ubuntu SMP Wed Nov 14 20:09:47 UTC 2018
+nodename: CAG-1209-02
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+detected binary path: /home/lyndonzheng/anaconda3/bin/uwsgi
+chdir() to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+your processes number limit is 128132
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:9000 fd 3
+Python version: 3.6.7 | packaged by conda-forge | (default, Nov 21 2018, 03:09:43)  [GCC 7.3.0]
+Python main interpreter initialized at 0x560d9153a740
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 403077 bytes (393 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x560d9153a740 pid: 4196 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 4196)
+spawned uWSGI worker 1 (pid: 7478, cores: 1)
+spawned uWSGI worker 2 (pid: 7479, cores: 1)
+Python auto-reloader enabled
+[uwsgi-python-reloader] module/file ./pluralistic_demo.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 7479)...
+Gracefully killing worker 1 (pid: 7478)...
+[uwsgi-python-reloader] module/file ./pluralistic_demo.py has been modified
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (127.0.0.1:9000)
+running /home/lyndonzheng/anaconda3/bin/uwsgi
+[uWSGI] getting INI configuration from pluralistic.ini
+*** Starting uWSGI 2.0.17.1 (64bit) on [Fri Jan 25 17:26:41 2019] ***
+compiled with version: 7.3.0 on 17 December 2018 12:05:02
+os: Linux-4.4.0-140-generic #166-Ubuntu SMP Wed Nov 14 20:09:47 UTC 2018
+nodename: CAG-1209-02
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+detected binary path: /home/lyndonzheng/anaconda3/bin/uwsgi
+chdir() to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+your processes number limit is 128132
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:9000 fd 3
+Python version: 3.6.7 | packaged by conda-forge | (default, Nov 21 2018, 03:09:43)  [GCC 7.3.0]
+Python main interpreter initialized at 0x555a14b94740
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 403077 bytes (393 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x555a14b94740 pid: 4196 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 4196)
+spawned uWSGI worker 1 (pid: 7487, cores: 1)
+spawned uWSGI worker 2 (pid: 7488, cores: 1)
+Python auto-reloader enabled
+[uwsgi-python-reloader] module/file ./pluralistic_demo.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 7488)...
+Gracefully killing worker 1 (pid: 7487)...
+[uwsgi-python-reloader] module/file ./pluralistic_demo.py has been modified
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (127.0.0.1:9000)
+running /home/lyndonzheng/anaconda3/bin/uwsgi
+[uWSGI] getting INI configuration from pluralistic.ini
+*** Starting uWSGI 2.0.17.1 (64bit) on [Fri Jan 25 17:28:05 2019] ***
+compiled with version: 7.3.0 on 17 December 2018 12:05:02
+os: Linux-4.4.0-140-generic #166-Ubuntu SMP Wed Nov 14 20:09:47 UTC 2018
+nodename: CAG-1209-02
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+detected binary path: /home/lyndonzheng/anaconda3/bin/uwsgi
+chdir() to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+your processes number limit is 128132
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:9000 fd 3
+Python version: 3.6.7 | packaged by conda-forge | (default, Nov 21 2018, 03:09:43)  [GCC 7.3.0]
+Python main interpreter initialized at 0x55e7b2236740
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 403077 bytes (393 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55e7b2236740 pid: 4196 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 4196)
+spawned uWSGI worker 1 (pid: 7658, cores: 1)
+spawned uWSGI worker 2 (pid: 7659, cores: 1)
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.17.1 (64bit) on [Fri Jan 25 17:28:44 2019] ***
+compiled with version: 7.3.0 on 17 December 2018 12:05:02
+os: Linux-4.4.0-140-generic #166-Ubuntu SMP Wed Nov 14 20:09:47 UTC 2018
+nodename: CAG-1209-02
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+writing pidfile to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic/uwsgi/pluralistic.pid
+detected binary path: /home/lyndonzheng/anaconda3/bin/uwsgi
+chdir() to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+your processes number limit is 128132
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:9000 fd 3
+Python version: 3.6.7 | packaged by conda-forge | (default, Nov 21 2018, 03:09:43)  [GCC 7.3.0]
+Python main interpreter initialized at 0x5602b85bbcd0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 403077 bytes (393 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5602b85bbcd0 pid: 7730 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7730)
+spawned uWSGI worker 1 (pid: 7732, cores: 1)
+spawned uWSGI worker 2 (pid: 7733, cores: 1)
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.17.1 (64bit) on [Fri Jan 25 17:40:49 2019] ***
+compiled with version: 7.3.0 on 17 December 2018 12:05:02
+os: Linux-4.4.0-140-generic #166-Ubuntu SMP Wed Nov 14 20:09:47 UTC 2018
+nodename: CAG-1209-02
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+writing pidfile to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic/uwsgi/pluralistic.pid
+detected binary path: /home/lyndonzheng/anaconda3/bin/uwsgi
+chdir() to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+your processes number limit is 128132
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:9098 fd 3
+uwsgi socket 0 bound to TCP address 127.0.0.1:9000 fd 6
+Python version: 3.6.7 | packaged by conda-forge | (default, Nov 21 2018, 03:09:43)  [GCC 7.3.0]
+Python main interpreter initialized at 0x563cdcf36d80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 403077 bytes (393 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x563cdcf36d80 pid: 8527 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 8527)
+spawned uWSGI worker 1 (pid: 8529, cores: 1)
+spawned uWSGI worker 2 (pid: 8530, cores: 1)
+spawned uWSGI http 1 (pid: 8531)
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.17.1 (64bit) on [Fri Jan 25 17:41:09 2019] ***
+compiled with version: 7.3.0 on 17 December 2018 12:05:02
+os: Linux-4.4.0-140-generic #166-Ubuntu SMP Wed Nov 14 20:09:47 UTC 2018
+nodename: CAG-1209-02
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+writing pidfile to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic/uwsgi/pluralistic.pid
+detected binary path: /home/lyndonzheng/anaconda3/bin/uwsgi
+chdir() to /media/lyndonzheng/2e91762c-97d9-40c9-9af1-6f318aca4771/code/www/cag-1209-02.ntu.edu.sg/projects/pluralistic
+your processes number limit is 128132
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:9000 fd 3
+Python version: 3.6.7 | packaged by conda-forge | (default, Nov 21 2018, 03:09:43)  [GCC 7.3.0]
+Python main interpreter initialized at 0x55e51675ccd0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 403077 bytes (393 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55e51675ccd0 pid: 8603 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 8603)
+spawned uWSGI worker 1 (pid: 8605, cores: 1)
+spawned uWSGI worker 2 (pid: 8606, cores: 1)
+Python auto-reloader enabled
