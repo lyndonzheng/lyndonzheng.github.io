@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on Chuan-Xia Zheng</title>
+    <title>Publications on ChuanXia Zheng</title>
     <link>https://lyndonzheng.github.io/publication/</link>
-    <description>Recent content in Publications on Chuan-Xia Zheng</description>
+    <description>Recent content in Publications on ChuanXia Zheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://lyndonzheng.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Pluralistic Image Completion</title>
-      <link>https://lyndonzheng.github.io/publication/pluralistic/</link>
-      <pubDate>Sat, 01 Dec 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://lyndonzheng.github.io/publication/pluralistic/</guid>
-      <description>Abstract Most image completion methods produce only one result for each masked input, although there may be many reasonable possibilities. In this paper, we present an approach for pluralistic image completion the task of generating multiple diverse and plausible solutions for image completion. A major challenge faced by learning-based approaches is that here the conditional label itself is a partial image, and there is usually only one ground truth training instance per label.</description>
-    </item>
     
     <item>
       <title>T2Net: Synthetic-to-Realistic Translation for Depth Estimation Tasks</title>

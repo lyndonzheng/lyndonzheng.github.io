@@ -1,48 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Chuan-Xia Zheng on Chuan-Xia Zheng</title>
+    <title>ChuanXia Zheng on ChuanXia Zheng</title>
     <link>https://lyndonzheng.github.io/</link>
-    <description>Recent content in Chuan-Xia Zheng on Chuan-Xia Zheng</description>
+    <description>Recent content in ChuanXia Zheng on ChuanXia Zheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Pluralistic Image Completion</title>
-      <link>https://lyndonzheng.github.io/publication/pluralistic/</link>
-      <pubDate>Sat, 01 Dec 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://lyndonzheng.github.io/publication/pluralistic/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#39;featured.png&#39; align=&#34;center&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;abstract&#34;&gt;Abstract&lt;/h4&gt;
-
-&lt;p&gt;Most image completion methods produce only one result for each masked input, although there may be many reasonable possibilities. In this paper, we present an approach for pluralistic image completion  the task of generating multiple diverse and plausible solutions for image completion. A major challenge faced by learning-based approaches is that here the conditional label itself is a partial image, and there is usually only one ground truth training instance per label. As such, sampling from conditional VAEs still leads to minimal diversity. To overcome this, we propose a novel and probabilistically principled framework with two parallel paths. One is a reconstructive path that extends the VAE through a latent space that covers all partial images with different mask sizes, and imposes priors that adapt to the number of pixels. The other is a generative path for which the conditional prior is coupled to distributions obtained in the reconstructive path. Both are supported by GANs. We also introduce a new short+long term attention layer that exploits distant relations among decoder and encoder features, improving appearance consistency. When tested on datasets with buildings (Paris), faces (CelebAHQ), and natural images (ImageNet), our method not only generated higher-quality completion results, but also with multiple and diverse plausible outputs.&lt;/p&gt;
-
-&lt;h4 id=&#34;framework&#34;&gt;Framework&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;Images/inpainting_framework.png&#34; &gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;video&#34;&gt;Video&lt;/h4&gt;
-
-&lt;h4 id=&#34;more-results&#34;&gt;More Results&lt;/h4&gt;
-
-&lt;p&gt;&lt;h3 style=&#34;text-align:center&#34;&gt;Face Center Mask&lt;/h3&gt;
-&lt;img src=&#34;Images/inpainting_appendix_face_center.png&#34;&gt;
-&lt;h3 style=&#34;text-align:center&#34;&gt;Build Center Mask&lt;/h3&gt;
-&lt;img src=&#34;Images/inpainting_appendix_building_center.png&#34;&gt;
-&lt;h3 style=&#34;text-align:center&#34;&gt;Scene Center Mask&lt;/h3&gt;
-&lt;img src=&#34;Images/inpainting_appendix_place_center.png&#34;&gt;
-&lt;h3 style=&#34;text-align:center&#34;&gt;Object Center Mask&lt;/h3&gt;
-&lt;img src=&#34;Images/inpainting_appendix_imagenet_center.png&#34;&gt;
-&lt;h3 style=&#34;text-align:center&#34;&gt;Face Random Mask&lt;/h3&gt;
-&lt;img src=&#34;Images/inpainting_appendix_face_random.png&#34;&gt;&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>Example Page</title>
