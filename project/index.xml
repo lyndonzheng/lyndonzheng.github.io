@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on ChuanXia Zheng</title>
-    <link>https://lyndonzheng.github.io/project/</link>
+    <link>https://www.chuanxiaz.com/project/</link>
     <description>Recent content in Projects on ChuanXia Zheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://lyndonzheng.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.chuanxiaz.com/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>External Project</title>
-      <link>https://lyndonzheng.github.io/project/external-project/</link>
+      <link>https://www.chuanxiaz.com/project/external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://lyndonzheng.github.io/project/external-project/</guid>
+      <guid>https://www.chuanxiaz.com/project/external-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Internal Project</title>
-      <link>https://lyndonzheng.github.io/project/internal-project/</link>
+      <link>https://www.chuanxiaz.com/project/internal-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://lyndonzheng.github.io/project/internal-project/</guid>
+      <guid>https://www.chuanxiaz.com/project/internal-project/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.</description>
     </item>
     

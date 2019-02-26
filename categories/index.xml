@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ChuanXia Zheng</title>
-    <link>https://lyndonzheng.github.io/categories/</link>
+    <link>https://www.chuanxiaz.com/categories/</link>
     <description>Recent content in Categories on ChuanXia Zheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://lyndonzheng.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.chuanxiaz.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

@@ -2,121 +2,121 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on ChuanXia Zheng</title>
-    <link>https://lyndonzheng.github.io/home/</link>
+    <link>https://www.chuanxiaz.com/home/</link>
     <description>Recent content in Homes on ChuanXia Zheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://lyndonzheng.github.io/home/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.chuanxiaz.com/home/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://lyndonzheng.github.io/home/about/</link>
+      <link>https://www.chuanxiaz.com/home/about/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://lyndonzheng.github.io/home/about/</guid>
+      <guid>https://www.chuanxiaz.com/home/about/</guid>
       <description>Chuanxia Zheng I am a Ph.D. student in the School of Computer Science and Engineering at Nanyang Technological University, advised by Tat-Jen Cham and Jianfei Cai. Before that, I recieved the Master degree from Beihang University (Beijing, China) in 2017 and the Bachelor degree from Beijing Jiaotong University (Beijing, China) in 2014.
 My research interests are broadly in artificial intelligence, with emphasis on computer vision and machine learning. My current work focuses on scene understanding, especially for image generation and translation, 3D scene understanding and completion with the goal of building intelligent machines, capable of rebuilding a realistic virtual world.</description>
     </item>
     
     <item>
       <title>Selected Publications</title>
-      <link>https://lyndonzheng.github.io/home/publications_selected/</link>
+      <link>https://www.chuanxiaz.com/home/publications_selected/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://lyndonzheng.github.io/home/publications_selected/</guid>
+      <guid>https://www.chuanxiaz.com/home/publications_selected/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Research</title>
-      <link>https://lyndonzheng.github.io/home/publications/</link>
+      <link>https://www.chuanxiaz.com/home/publications/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://lyndonzheng.github.io/home/publications/</guid>
+      <guid>https://www.chuanxiaz.com/home/publications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Experience</title>
-      <link>https://lyndonzheng.github.io/home/experience/</link>
+      <link>https://www.chuanxiaz.com/home/experience/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lyndonzheng.github.io/home/experience/</guid>
+      <guid>https://www.chuanxiaz.com/home/experience/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>https://lyndonzheng.github.io/home/contact/</link>
+      <link>https://www.chuanxiaz.com/home/contact/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://lyndonzheng.github.io/home/contact/</guid>
+      <guid>https://www.chuanxiaz.com/home/contact/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Skills</title>
-      <link>https://lyndonzheng.github.io/home/skills/</link>
+      <link>https://www.chuanxiaz.com/home/skills/</link>
       <pubDate>Wed, 20 Sep 2017 00:00:00 +0800</pubDate>
       
-      <guid>https://lyndonzheng.github.io/home/skills/</guid>
+      <guid>https://www.chuanxiaz.com/home/skills/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tags</title>
-      <link>https://lyndonzheng.github.io/home/tags/</link>
+      <link>https://www.chuanxiaz.com/home/tags/</link>
       <pubDate>Wed, 20 Sep 2017 00:00:00 +0800</pubDate>
       
-      <guid>https://lyndonzheng.github.io/home/tags/</guid>
+      <guid>https://www.chuanxiaz.com/home/tags/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>https://lyndonzheng.github.io/home/projects/</link>
+      <link>https://www.chuanxiaz.com/home/projects/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://lyndonzheng.github.io/home/projects/</guid>
+      <guid>https://www.chuanxiaz.com/home/projects/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Recent &amp; Upcoming Talks</title>
-      <link>https://lyndonzheng.github.io/home/talks/</link>
+      <link>https://www.chuanxiaz.com/home/talks/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://lyndonzheng.github.io/home/talks/</guid>
+      <guid>https://www.chuanxiaz.com/home/talks/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Recent Posts</title>
-      <link>https://lyndonzheng.github.io/home/posts/</link>
+      <link>https://www.chuanxiaz.com/home/posts/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://lyndonzheng.github.io/home/posts/</guid>
+      <guid>https://www.chuanxiaz.com/home/posts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Selected Talks</title>
-      <link>https://lyndonzheng.github.io/home/talks_selected/</link>
+      <link>https://www.chuanxiaz.com/home/talks_selected/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://lyndonzheng.github.io/home/talks_selected/</guid>
+      <guid>https://www.chuanxiaz.com/home/talks_selected/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Teaching</title>
-      <link>https://lyndonzheng.github.io/home/teaching/</link>
+      <link>https://www.chuanxiaz.com/home/teaching/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://lyndonzheng.github.io/home/teaching/</guid>
+      <guid>https://www.chuanxiaz.com/home/teaching/</guid>
       <description>This is an example of using the custom widget to create your own homepage section.
 I am a teaching instructor for the following courses at University X:
  CS101: An intro to computer science CS102: An intro to computer science CS103: An intro to computer science CS104: An intro to computer science CS105: An intro to computer science CS106: An intro to computer science CS107: An intro to computer science  </description>
