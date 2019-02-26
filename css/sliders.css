@@ -22,7 +22,7 @@
   width:0;
   height: 0;
   border:5px solid transparent;
-  border-right:256px solid #00CCCC;
+  border-right:256px solid #4682D4;
   border-left-width:0;
   position: absolute;
   left: 0;
@@ -38,7 +38,7 @@
   margin-top: -1px;
   background: #ffffff;
   border-radius: 50%;
-  box-shadow: 0 0 8px #00CCCC;
+  box-shadow: 0 0 8px #004682D4;
   position: relative;
   z-index: 1;}
 

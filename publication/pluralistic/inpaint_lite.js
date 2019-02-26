@@ -232,8 +232,8 @@ Editor.prototype={
               }
             })
           });
-                 var d=60;
-                 c.frame("mask_button", d, 10, 100, 40, function(){
+                 var d=20;
+                 c.frame("mask_button", d, 10, 120, 40, function(){
                     if (do_button(c, "Mask Type:")){
                         MASK_TYPE = !MASK_TYPE;
                         console.log(MASK_TYPE);
@@ -241,15 +241,19 @@ Editor.prototype={
                  });
                  c.frame("mask_type",d+100,10,120,40,function(){
                    c.ctx.font="bold 14pt Arial";
-                   c.ctx.strokeRect(d-50,0,120,40)
+                   c.ctx.strokeRect(d+10,0,120,40)
                    if (MASK_TYPE == !0){
-                     c.ctx.fillText("Free-Form",20,20)
+                     c.ctx.fillText("Free-Form",40,20)
                     }
                     else {
-                      c.ctx.fillText("Rectangle",20,20)
+                      c.ctx.fillText("Rectangle",40,20)
                     }
                  });
-                 d+=180;
+                 d+=220;
+                 c.frame("undo_button",d+60,10,120,40,function(){
+                   do_button(c,"Erasure")&&(b.pop_buffer(),update())
+                 });
+                 d+=140;
                  c.frame("random_button",d+60,10,120,40,function(){
                    if(do_button(c,"Random")){
                      b.push_buffer();
@@ -281,34 +285,6 @@ Editor.prototype={
                       };
                       update()
                     }
-                  });
-                  d+=140;
-                  c.frame("undo_button",d+60,10,120,40,function(){
-                    do_button(c,"Erasure")&&(b.pop_buffer(),update())
-                  });
-                  d+=140;
-                  c.frame("save_button",d+60,10,120,40,function(){
-                    if(do_button(c,"Save")){
-                      var b=createContext(VIEW_WIDTH,VIEW_HEIGHT,1);
-                      b.drawImage(c.ctx.canvas,0,0,VIEW_WIDTH,VIEW_HEIGHT,0,0,b.canvas.width,b.canvas.height);
-                      b.font="18px Arial";
-                      b.fillText("Fill with Pluralistic",620,40);
-                      b.beginPath();
-                      b.moveTo(680,45);
-                      b.lineTo(800,45);
-                      b.stroke();
-                      data_b64=b.canvas.toDataURL("image/png").replace(/^data:image\/png;base64,/,"");
-                      data=b64_to_bin(data_b64);
-                      blob=new Blob([data],{type:"application/octet-stream"});
-                      url=window.URL.createObjectURL(blob);
-                      a=document.createElement("a");
-                      a.href=url;
-                      a.download="inpainting_results.png";
-                      b=document.createEvent("MouseEvents");
-                      b.initEvent("click",!0,!0);
-                      a.dispatchEvent(b)
-                    }
-                    update()
                   });
                   d+=140
                   c.frame("process_button",d+60,10,120,40,function(){
@@ -356,6 +332,30 @@ Editor.prototype={
                      update();
                      h.send(b64_to_bin(e))
                    }
+                 });
+                 d+=140;
+                 c.frame("save_button",d+60,10,120,40,function(){
+                   if(do_button(c,"Save")){
+                     var b=createContext(VIEW_WIDTH,VIEW_HEIGHT,1);
+                     b.drawImage(c.ctx.canvas,0,0,VIEW_WIDTH,VIEW_HEIGHT,0,0,b.canvas.width,b.canvas.height);
+                     b.font="18px Arial";
+                     b.fillText("Fill with Pluralistic",620,40);
+                     b.beginPath();
+                     b.moveTo(680,45);
+                     b.lineTo(800,45);
+                     b.stroke();
+                     data_b64=b.canvas.toDataURL("image/png").replace(/^data:image\/png;base64,/,"");
+                     data=b64_to_bin(data_b64);
+                     blob=new Blob([data],{type:"application/octet-stream"});
+                     url=window.URL.createObjectURL(blob);
+                     a=document.createElement("a");
+                     a.href=url;
+                     a.download="inpainting_results.png";
+                     b=document.createEvent("MouseEvents");
+                     b.initEvent("click",!0,!0);
+                     a.dispatchEvent(b)
+                   }
+                   update()
                  });
                  last_request_failed&&c.frame("server_error",0,250,c.f.width,50,function(){
                    c.ctx.font="20px Arial";
@@ -457,7 +457,7 @@ View.prototype={
 function do_button(b,c){
   name=b.frame_path();
   b.contains(mouse_pos)&&(cursor_style="pointer");
-  request_in_progress?animate(name,parse_color("#aaaaaaFF"),100):mouse_down&&b.contains(mouse_pos)?"save"!=c&&animate(name,parse_color("#FF0000FF"),50):"Fill"==c?no_touching&&b.contains(mouse_pos)?animate(name,parse_color("#ffccccFF"),100):animate(name,parse_color("#ff0000FF"),100):no_touching&&b.contains(mouse_pos)?animate(name,parse_color("#99EEEEFF"),100):animate(name,parse_color("#00AAAAFF"),100);
+  request_in_progress?animate(name,parse_color("#aaaaaaFF"),100):mouse_down&&b.contains(mouse_pos)?"save"!=c&&animate(name,parse_color("#787878FF"),50):"Fill"==c?no_touching&&b.contains(mouse_pos)?animate(name,parse_color("#ffccccFF"),100):animate(name,parse_color("#DD3333FF"),100):no_touching&&b.contains(mouse_pos)?animate(name,parse_color("#76B2E4FF"),100):animate(name,parse_color("#4682D4FF"),100);
   b.ctx.save();
   b.ctx.beginPath();
   b.ctx.moveTo(5,0);
