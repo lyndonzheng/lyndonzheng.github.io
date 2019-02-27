@@ -1,5 +1,5 @@
 var NUM_MODELS=1,SIZE=256,LINE_WIDTH=20,MASK_TYPE=!0,PIXEL_ROUND=4,VIEW_WIDTH=286*(NUM_MODELS+2),VIEW_HEIGHT=400,
-editors=[],request_in_progress=!1,last_request_failed=!1,connected=!0,base_url="http://abc.chuanxiaz.com:9090";
+editors=[],request_in_progress=!1,last_request_failed=!1,connected=!0,base_url="http://cag-1209-02.dynip.ntu.edu.sg:9090";
 
 function main(){
   // define the basic information of this application
