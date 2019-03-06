@@ -6,27 +6,18 @@
     <description>Recent content in Projects on ChuanXia Zheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.chuanxiaz.com/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>External Project</title>
-      <link>https://www.chuanxiaz.com/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0800</pubDate>
+      <title>Pluralistic Image Completion</title>
+      <link>https://www.chuanxiaz.com/project/pluralistic/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0800</pubDate>
       
-      <guid>https://www.chuanxiaz.com/project/external-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Internal Project</title>
-      <link>https://www.chuanxiaz.com/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0800</pubDate>
-      
-      <guid>https://www.chuanxiaz.com/project/internal-project/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.</description>
+      <guid>https://www.chuanxiaz.com/project/pluralistic/</guid>
+      <description>Pluralistic Online Demo   Demo is not available on mobile devices. Apologize.   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) { console.log(&#34;detect mobile device.&#34;); document.getElementById(&#39;celebahq&#39;).style.display = &#34;none&#34;; document.getElementById(&#39;mobile&#39;).style.display = &#34;block&#34;; }    Notes:  The Pluralistic model provides multiple and diverse plausible results by clicking the Fill button. For large holes, we can click the Mask Type to select the Rectangle holes. For free-form line, the left slider can be used to set the line width [1,50].</description>
     </item>
     
   </channel>

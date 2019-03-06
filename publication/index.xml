@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Pluralistic Image Completion</title>
+      <link>https://www.chuanxiaz.com/publication/pluralistic/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.chuanxiaz.com/publication/pluralistic/</guid>
+      <description>Video  Abstract Most image completion methods produce only one result for each masked input, although there may be many reasonable possibilities. In this paper, we present an approach for pluralistic image completion the task of generating multiple diverse and plausible solutions for image completion. A major challenge faced by learning-based approaches is that here the conditional label itself is a partial image, and there is usually only one ground truth training instance per label.</description>
+    </item>
+    
+    <item>
       <title>T2Net: Synthetic-to-Realistic Translation for Depth Estimation Tasks</title>
       <link>https://www.chuanxiaz.com/publication/synthetic2real/</link>
       <pubDate>Sat, 08 Sep 2018 00:00:00 +0800</pubDate>

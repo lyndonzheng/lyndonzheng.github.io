@@ -10,6 +10,283 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Pluralistic Image Completion</title>
+      <link>https://www.chuanxiaz.com/project/pluralistic/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.chuanxiaz.com/project/pluralistic/</guid>
+      <description>&lt;hr&gt;
+
+&lt;h2 style=&#34;text-align:center&#34;&gt;Pluralistic Online Demo&lt;/h2&gt;
+
+&lt;div id=&#34;pluralistic&#34; style=&#34;display: block;&#34;&gt;
+  &lt;div id=&#34;celebahq&#34; style=&#34;display: block;&#34; align=&#34;center&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;mobile&#34; style=&#34;display: none;&#34; align=&#34;center&#34;&gt;
+&lt;font color=&#39;red&#39;&gt;Demo is not available on mobile devices. Apologize.&lt;/font&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+  console.log(&#34;detect mobile device.&#34;);
+  document.getElementById(&#39;celebahq&#39;).style.display = &#34;none&#34;;
+  document.getElementById(&#39;mobile&#39;).style.display = &#34;block&#34;;
+}
+&lt;/script&gt;
+
+&lt;div id=&#34;range-wrap&#34; title=&#34;Line Width&#34;&gt; &lt;input type=&#34;range&#34; id=&#34;lwidth&#34; min=&#34;1&#34; max=&#34;50&#34; value=&#34;20&#34; title=&#34;Line Width&#34;&gt;&lt;/div&gt;
+
+&lt;script src=&#34;inpaint_lite.js&#34;&gt;&lt;/script&gt;
+
+&lt;h4&gt;Notes:&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The &lt;strong&gt;&lt;em&gt;Pluralistic&lt;/em&gt;&lt;/strong&gt; model provides &lt;em&gt;multiple&lt;/em&gt; and &lt;em&gt;diverse&lt;/em&gt; plausible results by clicking the &lt;strong&gt;Fill&lt;/strong&gt; button.&lt;/li&gt;
+&lt;li&gt;For large holes, we can click the &lt;strong&gt;Mask Type&lt;/strong&gt; to select the &lt;em&gt;Rectangle&lt;/em&gt; holes.&lt;/li&gt;
+&lt;li&gt;For free-form line, the left slider can be used to set the line width [1,50].&lt;/li&gt;
+&lt;li&gt;If we just mask half (left/right) of the face, the diversity will be small for our &lt;strong&gt;short+long term attention layer&lt;/strong&gt; will copy the information from the other slides.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pluralistic Image Completion</title>
+      <link>https://www.chuanxiaz.com/publication/pluralistic/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.chuanxiaz.com/publication/pluralistic/</guid>
+      <description>
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&#39;featured.png&#39; align=&#34;center&#34;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=&#34;video&#34;&gt;Video&lt;/h4&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=&#34;abstract&#34;&gt;Abstract&lt;/h4&gt;
+
+&lt;p&gt;Most image completion methods produce only one result for each masked input, although there may be many reasonable possibilities. In this paper, we present an approach for pluralistic image completion  the task of generating multiple diverse and plausible solutions for image completion. A major challenge faced by learning-based approaches is that here the conditional label itself is a partial image, and there is usually only one ground truth training instance per label. As such, sampling from conditional VAEs still leads to minimal diversity. To overcome this, we propose a novel and probabilistically principled framework with two parallel paths. One is a reconstructive path that extends the VAE through a latent space that covers all partial images with different mask sizes, and imposes priors that adapt to the number of pixels. The other is a generative path for which the conditional prior is coupled to distributions obtained in the reconstructive path. Both are supported by GANs. We also introduce a new short+long term attention layer that exploits distant relations among decoder and encoder features, improving appearance consistency. When tested on datasets with buildings (Paris), faces (CelebAHQ), and natural images (ImageNet), our method not only generated higher-quality completion results, but also with multiple and diverse plausible outputs.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=&#34;framework&#34;&gt;Framework&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pluralistic Image Completion Network (&lt;strong&gt;PICNet&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;Images/inpainting_framework.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;Given a masked images, the &lt;b&gt;generative&lt;/b&gt; pipeline (blue line) infers the conditional distribution of missing regions, that can be sampled during the testing to generate &lt;i&gt;multiple&lt;/i&gt; and &lt;i&gt;diverse&lt;/i&gt; results. During the training, the missing regions are encodered to a distribution, that can be sampled to rebuild the original input by combing with the features of visible part (yellow line). This structure is designed on a probabilistically principled freamework. The details can be found in the paper.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Short+Long Term Attention Layer (&lt;strong&gt;SLTAtten&lt;/strong&gt;)
+&lt;p style=&#34;text-align:justify;&#34;&gt;
+&lt;img align=&#34;left&#34; src=&#34;Images/inpainting_attention.png&#34; width=&#34;50%&#34;&gt;
+The proposed &lt;b&gt;Short+Long Term Attention Layer&lt;/b&gt; is extended beyond the Self-Attention GAN. This &lt;b&gt;SLTAtten&lt;/b&gt; layer not only use the self-attention map within a decoder layer to harness distant spatial context, but further capture feature-feature context between encoder and decoder layers. In this way, the similarity is calculated in the decoder features rather than between the encoder features and decoder features. Our &lt;i&gt;ke novel is&lt;/i&gt;: doing so would allow the network a choice of copying information from encoder or the more semantically generative features from the decoder.
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=&#34;more-results&#34;&gt;More Results&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results for center mask&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place03295.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place03295.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place33889.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place33889.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place26087.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place26087.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place09264.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place09264.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place34979.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place34979.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place12704.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place12704.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba185143.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba185143.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba183602.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba183602.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba185430.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba185430.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba199010.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba199010.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba197612.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba197612.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba202572.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba202572.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris049.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris049.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris098.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris098.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris001.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris001.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris019.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris019.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris032.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris032.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris046.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris046.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results (original, input, output) for object removing&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba189756.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba189756.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba189756.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba199782.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba199782.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba199782.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba183567.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba183567.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba183567.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba186054.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba186054.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba186054.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba200954.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba200954.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba200954.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba194090.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba194090.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba194090.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_paris032.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_paris032.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_paris032.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_paris085.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_paris085.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_paris085.png&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00000321.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00000321.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00000321.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00009818.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00009818.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00009818.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00011330.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00011330.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00011330.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00013547.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00013547.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00013547.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00015967.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00015967.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00015967.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00034986.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00034986.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00034986.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results (original, input, output) for face playing.&lt;/strong&gt; When mask half or right face, the diversity will be small for the short+long term attention layer will copy information from other side. When mask top or down face, the diversity will be large.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba184054.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba184054.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba182927.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba182927.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba185235.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba185235.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba197462.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba197462.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba192793.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba192793.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba196162.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba196162.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba190638.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba190638.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba190952.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba190952.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba198496.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba198496.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba184852.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba184852.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Example Page</title>
       <link>https://www.chuanxiaz.com/tutorial/example/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0800</pubDate>
@@ -116,33 +393,6 @@ allowfullscreen&gt;
       
       <guid>https://www.chuanxiaz.com/publication/multi-class-c/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>External Project</title>
-      <link>https://www.chuanxiaz.com/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0800</pubDate>
-      
-      <guid>https://www.chuanxiaz.com/project/external-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Internal Project</title>
-      <link>https://www.chuanxiaz.com/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0800</pubDate>
-      
-      <guid>https://www.chuanxiaz.com/project/internal-project/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
-</description>
     </item>
     
     <item>
