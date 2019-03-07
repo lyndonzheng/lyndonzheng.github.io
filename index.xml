@@ -46,9 +46,9 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;li&gt;For large holes, we can click the &lt;strong&gt;Mask Type&lt;/strong&gt; to select the &lt;em&gt;Rectangle&lt;/em&gt; holes.&lt;/li&gt;
 &lt;li&gt;For free-form line, the left slider can be used to set the line width [1,50].&lt;/li&gt;
 &lt;li&gt;If we just mask half (left/right) of the face, the diversity will be small for our &lt;strong&gt;short+long term attention layer&lt;/strong&gt; will copy the information from the other slides.&lt;/li&gt;
+&lt;li&gt;Since the data is relayed through the Amazon server to our inner net, the result needs to wait a few seconds.
+&lt;hr&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;hr&gt;
 </description>
     </item>
     
