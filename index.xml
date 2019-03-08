@@ -42,6 +42,230 @@
     </item>
     
     <item>
+      <title>Pluralistic Image Completion</title>
+      <link>https://www.chuanxiaz.com/publication/pluralistic/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.chuanxiaz.com/publication/pluralistic/</guid>
+      <description>
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&#39;featured.png&#39; align=&#34;center&#34;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=&#34;video&#34;&gt;Video&lt;/h4&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;495&#34; width=&#34;880&#34; src=&#34;https://youtube.com/embed/9V7rNoLVmSs?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34;
+allowfullscreen&gt;
+&lt;/iframe&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=&#34;abstract&#34;&gt;Abstract&lt;/h4&gt;
+
+&lt;p&gt;Most image completion methods produce only one result for each masked input, although there may be many reasonable possibilities. In this paper, we present an approach for pluralistic image completion  the task of generating multiple diverse and plausible solutions for image completion. A major challenge faced by learning-based approaches is that here the conditional label itself is a partial image, and there is usually only one ground truth training instance per label. As such, sampling from conditional VAEs still leads to minimal diversity. To overcome this, we propose a novel and probabilistically principled framework with two parallel paths. One is a reconstructive path that extends the VAE through a latent space that covers all partial images with different mask sizes, and imposes priors that adapt to the number of pixels. The other is a generative path for which the conditional prior is coupled to distributions obtained in the reconstructive path. Both are supported by GANs. We also introduce a new short+long term attention layer that exploits distant relations among decoder and encoder features, improving appearance consistency. When tested on datasets with buildings (Paris), faces (CelebAHQ), and natural images (ImageNet), our method not only generated higher-quality completion results, but also with multiple and diverse plausible outputs.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=&#34;framework&#34;&gt;Framework&lt;/h4&gt;
+
+&lt;p&gt;The details will be available soon.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=&#34;more-results&#34;&gt;More Results&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results for center mask&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place03295.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place03295.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place33889.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place33889.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place26087.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place26087.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place09264.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place09264.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place34979.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place34979.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place12704.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place12704.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba185143.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba185143.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba183602.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba183602.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba185430.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba185430.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba199010.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba199010.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba197612.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba197612.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba202572.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba202572.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris049.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris049.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris098.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris098.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris001.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris001.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris019.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris019.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris032.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris032.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris046.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris046.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results (original, input, output) for object removing&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba189756.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba189756.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba189756.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba199782.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba199782.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba199782.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba183567.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba183567.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba183567.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba186054.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba186054.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba186054.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba200954.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba200954.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba200954.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba194090.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba194090.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba194090.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_paris032.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_paris032.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_paris032.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_paris085.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_paris085.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_paris085.png&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00000321.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00000321.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00000321.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00009818.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00009818.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00009818.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00011330.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00011330.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00011330.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00013547.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00013547.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00013547.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00015967.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00015967.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00015967.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00034986.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00034986.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00034986.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results (original, input, output) for face playing.&lt;/strong&gt; When mask half or right face, the diversity will be small for the short+long term attention layer will copy information from other side. When mask top or down face, the diversity will be large.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba184054.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba184054.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba182927.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba182927.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba185235.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba185235.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba197462.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba197462.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba192793.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba192793.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba196162.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba196162.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba190638.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba190638.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba190952.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba190952.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba198496.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba198496.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba184852.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba184852.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Example Page</title>
       <link>https://www.chuanxiaz.com/tutorial/example/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0800</pubDate>
