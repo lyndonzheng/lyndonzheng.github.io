@@ -1,5 +1,5 @@
 // The JS file is based on jiahuiyu.com/deepfill/ online demo.
-var NUM_MODELS=1,SIZE=256,LINE_WIDTH=20,MASK_TYPE=!0,PIXEL_ROUND=4,VIEW_WIDTH=286*(NUM_MODELS+2),VIEW_HEIGHT=400,
+var NUM_MODELS=1,SIZE=256,LINE_WIDTH=20,MASK_TYPE=!0,PIXEL_ROUND=4,VIEW_WIDTH=286*(NUM_MODELS+2),VIEW_HEIGHT=400,IMG_INDEX=0,
 editors=[],request_in_progress=!1,last_request_failed=!1,connected=!0,base_url="http://lyndonzheng.net:8080";
 
 function main(){
@@ -46,7 +46,7 @@ function Editor(b){
         c.fileContentLines=d.responseText.split("\n");
         var img=new Image;
         img.crossOrigin="Anonymous";
-        img.src=base_url+c.fileContentLines[0];
+        img.src=base_url+c.fileContentLines[IMG_INDEX];
         img.onload=function(){
           // change image size to fixed 256*256*3
           if (img.width > SIZE || img.height > SIZE){
@@ -252,15 +252,47 @@ Editor.prototype={
                  });
                  d+=220;
                  c.frame("undo_button",d+60,10,120,40,function(){
-                   do_button(c,"Erasure")&&(b.pop_buffer(),update())
+                   if(do_button(c,"Clear")){
+                     // clear the mask regions by reload the image
+                     b.push_buffer();
+                     var img=new Image;
+                     img.crossOrigin="Anonymous";
+                     img.src=base_url+b.fileContentLines[IMG_INDEX];
+                     img.onload=function(){
+                       // change image size to fixed 256*256*3
+                       if (img.width > SIZE || img.height > SIZE){
+                         img.width = SIZE;
+                         img.height = SIZE;
+                       }
+                       b.buffer.clearRect(0,0,b.buffer.canvas.width,b.buffer.canvas.height);
+                       b.buffer.canvas.width=img.width-img.width%PIXEL_ROUND;
+                       b.buffer.canvas.height=img.height-img.height%PIXEL_ROUND;
+                       b.buffer.drawImage(img,0,0,SIZE,SIZE);
+                       b.buffer_raw.clearRect(0,0,b.buffer.canvas.width,b.buffer.canvas.height);
+                       b.buffer_raw.canvas.width=img.width-img.width%PIXEL_ROUND;
+                       b.buffer_raw.canvas.height=img.height-img.height%PIXEL_ROUND;
+                       b.buffer_raw.drawImage(img,0,0,SIZE,SIZE);
+                       b.img_mask.canvas.width=b.buffer.canvas.width;
+                       b.img_mask.canvas.height=b.buffer.canvas.height;
+                       b.img_mask.clearRect(0,0,b.buffer.canvas.width,b.buffer.canvas.height);
+                       for(i=0;i<NUM_MODELS;i++)
+                          b.outputs[i].clearRect(0,0,b.buffer.canvas.width,b.buffer.canvas.height),
+                          b.outputs[i].canvas.width=img.width-img.width%PIXEL_ROUND,
+                          b.outputs[i].canvas.height=img.height-img.height%PIXEL_ROUND;
+                          update()
+                      };
+                      update()
+                    }
                  });
                  d+=140;
                  c.frame("random_button",d+60,10,120,40,function(){
                    if(do_button(c,"Random")){
+                     // random load the image
                      b.push_buffer();
                      var img=new Image;
                      img.crossOrigin="Anonymous";
-                     img.src=base_url+b.fileContentLines[Math.floor(Math.random()*b.fileContentLines.length)];
+                     IMG_INDEX = Math.floor(Math.random()*b.fileContentLines.length)
+                     img.src=base_url+b.fileContentLines[IMG_INDEX];
                      img.onload=function(){
                        // change image size to fixed 256*256*3
                        if (img.width > SIZE || img.height > SIZE){

@@ -617,7 +617,18 @@ allowfullscreen>
 
 <h4 id="framework">Framework</h4>
 
-<p>The details will be available soon.</p>
+<ul>
+<li>Pluralistic Image Completion Network (PICNet)
+<img src="Images/inpainting_framework.png" ></li>
+</ul>
+
+<p>Given a masked images, the <b>generative</b> pipeline (blue line) infers the conditional distribution of missing regions, that can be sampled during the testing to generate <i>multiple</i> and <i>diverse</i> results. During the training, the missing regions are encodered to a distribution, that can be sampled to rebuild the original input by combing with the features of visible part (yellow line). This structure is designed on a probabilistically principled freamework. The details can be found in the paper.</p>
+
+<ul>
+<li>Short+Long Term Attention Layer (SLTAtten)</li>
+</ul>
+
+<p style="text-align:justify;"> <img align="left" src="Images/inpainting_attention.png" width="50%"> The proposed <b>Short+Long Term Attention Layer</b> is extended beyond the Self-Attention GAN. This <b>SLTAtten</b> layer not only use the self-attention map within a decoder layer to harness distant spatial context, but further capture feature-feature context between encoder and decoder layers. In this way, the similarity is calculated in the decoder features rather than between the encoder features and decoder features. Our <i>ke novel is</i>: doing so would allow the network a choice of copying information from encoder or the more semantically generative features from the decoder. </p>
 
 <hr>
 

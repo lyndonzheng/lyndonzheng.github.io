@@ -71,7 +71,18 @@ allowfullscreen&gt;
 
 &lt;h4 id=&#34;framework&#34;&gt;Framework&lt;/h4&gt;
 
-&lt;p&gt;The details will be available soon.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pluralistic Image Completion Network (PICNet)
+&lt;img src=&#34;Images/inpainting_framework.png&#34; &gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Given a masked images, the &lt;b&gt;generative&lt;/b&gt; pipeline (blue line) infers the conditional distribution of missing regions, that can be sampled during the testing to generate &lt;i&gt;multiple&lt;/i&gt; and &lt;i&gt;diverse&lt;/i&gt; results. During the training, the missing regions are encodered to a distribution, that can be sampled to rebuild the original input by combing with the features of visible part (yellow line). This structure is designed on a probabilistically principled freamework. The details can be found in the paper.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Short+Long Term Attention Layer (SLTAtten)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p style=&#34;text-align:justify;&#34;&gt; &lt;img align=&#34;left&#34; src=&#34;Images/inpainting_attention.png&#34; width=&#34;50%&#34;&gt; The proposed &lt;b&gt;Short+Long Term Attention Layer&lt;/b&gt; is extended beyond the Self-Attention GAN. This &lt;b&gt;SLTAtten&lt;/b&gt; layer not only use the self-attention map within a decoder layer to harness distant spatial context, but further capture feature-feature context between encoder and decoder layers. In this way, the similarity is calculated in the decoder features rather than between the encoder features and decoder features. Our &lt;i&gt;ke novel is&lt;/i&gt;: doing so would allow the network a choice of copying information from encoder or the more semantically generative features from the decoder. &lt;/p&gt;
 
 &lt;hr&gt;
 
