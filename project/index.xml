@@ -6,7 +6,7 @@
     <description>Recent content in Projects on ChuanXia Zheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Mar 2019 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.chuanxiaz.com/project/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Pluralistic Image Completion</title>
       <link>https://www.chuanxiaz.com/project/pluralistic/</link>
-      <pubDate>Tue, 05 Mar 2019 00:00:00 +0800</pubDate>
+      <pubDate>Tue, 12 Mar 2019 00:00:00 +0800</pubDate>
       
       <guid>https://www.chuanxiaz.com/project/pluralistic/</guid>
       <description>Pluralistic Online Demo     Notes:  The Pluralistic model provides multiple and diverse plausible results by clicking the Fill button. For large holes, we can click the Mask Type to select the Rectangle holes. For free-form line, the left slider can be used to set the line width [1,50]. If we just mask half (left/right) of the face, the diversity will be small for our short+long term attention layer will copy the information from the other slides.</description>
