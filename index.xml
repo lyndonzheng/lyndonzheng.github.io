@@ -37,6 +37,7 @@
 &lt;li&gt;For free-form line, the left slider can be used to set the line width [1,50].&lt;/li&gt;
 &lt;li&gt;If we just mask half (left/right) of the face, the diversity will be small for our &lt;strong&gt;short+long term attention layer&lt;/strong&gt; will copy the information from the other slides.&lt;/li&gt;
 &lt;li&gt;Since the data is relayed through the Amazon server to our inner net, the result needs to be waited for a few seconds.&lt;/li&gt;
+&lt;li&gt;Acknowledgments: Online JS code borrows from &lt;a href=&#34;http://jiahuiyu.com/deepfill/&#34; target=&#34;_blank&#34;&gt;DeepFill(v1)&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr&gt;
