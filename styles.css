@@ -41,13 +41,13 @@ body {
   line-height: inherit;
   color: inherit;
   background-color: #fff;
-  margin-top: 50px; /* Offset body content by navbar height. */
+  margin-top: 30px; /* Offset body content by navbar height. */
   padding-top: 0;
   counter-reset: captions;
 }
 @media screen and (max-width: 1200px) { /* Match max-width of .nav-bar query. */
   body {
-    margin-top: 50px; /* Offset body content by navbar height. */
+    margin-top: 30px; /* Offset body content by navbar height. */
   }
 }
 
@@ -616,8 +616,8 @@ a[data-fancybox] img {
 }
 
 #profile .portrait {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   margin: 0 auto;
   border-radius: 50%;
   object-fit: cover;

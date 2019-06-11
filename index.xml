@@ -25,6 +25,18 @@
   &lt;div id=&#34;celebahq&#34; style=&#34;display: block;&#34; align=&#34;center&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
+&lt;div id=&#34;mobile&#34; style=&#34;display: none;&#34; align=&#34;center&#34;&gt;
+&lt;font color=&#39;red&#39;&gt;Demo is not available on mobile devices. Apologize.&lt;/font&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+  console.log(&#34;detect mobile device.&#34;);
+  document.getElementById(&#39;celebahq&#39;).style.display = &#34;none&#34;;
+  document.getElementById(&#39;mobile&#39;).style.display = &#34;block&#34;;
+}
+&lt;/script&gt;
+
 &lt;div id=&#34;range-wrap&#34; title=&#34;Line Width&#34;&gt; &lt;input type=&#34;range&#34; id=&#34;lwidth&#34; min=&#34;1&#34; max=&#34;50&#34; value=&#34;20&#34; title=&#34;Line Width&#34;&gt;&lt;/div&gt;
 
 &lt;script src=&#34;inpaint_lite.js&#34;&gt;&lt;/script&gt;
@@ -88,8 +100,7 @@
 
 &lt;h4 id=&#34;video&#34;&gt;Video&lt;/h4&gt;
 
-&lt;iframe frameborder=&#34;0&#34; height=&#34;495&#34; width=&#34;880&#34; src=&#34;https://youtube.com/embed/9V7rNoLVmSs?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34;
-allowfullscreen&gt;
+&lt;iframe frameborder=&#34;0&#34; src=&#34;https://youtube.com/embed/9V7rNoLVmSs?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34; allowfullscreen height=&#34;495&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;
 
 &lt;hr&gt;
@@ -350,8 +361,7 @@ allowfullscreen&gt;
 
 &lt;h4 id=&#34;video&#34;&gt;Video&lt;/h4&gt;
 
-&lt;iframe frameborder=&#34;0&#34; height=&#34;495&#34; width=&#34;880&#34; src=&#34;https://youtube.com/embed/B6lOToIk0xY?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34;
-allowfullscreen&gt;
+&lt;iframe frameborder=&#34;0&#34; src=&#34;https://youtube.com/embed/B6lOToIk0xY?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34; allowfullscreen height=&#34;495&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;
 </description>
     </item>
