@@ -47,7 +47,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;ol&gt;
 &lt;li&gt;The &lt;strong&gt;&lt;em&gt;Pluralistic&lt;/em&gt;&lt;/strong&gt; model provides &lt;em&gt;multiple&lt;/em&gt; and &lt;em&gt;diverse&lt;/em&gt; plausible results by clicking the &lt;strong&gt;Fill&lt;/strong&gt; button.&lt;/li&gt;
 &lt;li&gt;For large holes, we can click the &lt;strong&gt;Mask Type&lt;/strong&gt; to select the &lt;em&gt;Rectangle&lt;/em&gt; holes.&lt;/li&gt;
-&lt;li&gt;For free-form line, the left slider can be used to set the line width [1,50].&lt;/li&gt;
+&lt;li&gt;For free-form holes, the left slider can be used to set the line width [1,50].&lt;/li&gt;
 &lt;li&gt;If we just mask half (left/right) of the face, the diversity will be small for our &lt;strong&gt;short+long term attention layer&lt;/strong&gt; will copy the information from the other slides.&lt;/li&gt;
 &lt;li&gt;Since the data is relayed through the Amazon server to our inner net, the result needs to be waited for a few seconds.&lt;/li&gt;
 &lt;li&gt;Acknowledgments: Online JS code borrows from &lt;a href=&#34;http://jiahuiyu.com/deepfill/&#34; target=&#34;_blank&#34;&gt;DeepFill(v1)&lt;/a&gt;&lt;/li&gt;
@@ -76,7 +76,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_young2.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Oject removal
+&lt;li&gt;&lt;p&gt;Object removal
 &lt;table&gt;
 &lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_move1.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_move2.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
