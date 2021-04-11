@@ -1,36 +1,216 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ChuanXia Zheng on ChuanXia Zheng</title>
+    <title>ChuanXia Zheng</title>
     <link>https://www.chuanxiaz.com/</link>
-    <description>Recent content in ChuanXia Zheng on ChuanXia Zheng</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0800</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+      <atom:link href="https://www.chuanxiaz.com/index.xml" rel="self" type="application/rss+xml" />
+    <description>ChuanXia Zheng</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.chuanxiaz.com/media/icon_hu31e06666eb535ef94200208b3edb96bb_10558_512x512_fill_lanczos_center_2.png</url>
+      <title>ChuanXia Zheng</title>
+      <link>https://www.chuanxiaz.com/</link>
+    </image>
+    
+    <item>
+      <title>Example Talk</title>
+      <link>https://www.chuanxiaz.com/talk/example-talk/</link>
+      <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/talk/example-talk/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Wowchemy&amp;rsquo;s &lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Further event details, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;page elements&lt;/a&gt; such as image galleries, can be added to the body of this page.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>TFill: Image Completion via a Transformer-Based Architecture</title>
+      <link>https://www.chuanxiaz.com/publication/tfill/</link>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/tfill/</guid>
+      <description>&lt;hr&gt;
+&lt;img src=&#39;featured.png&#39; align=&#34;center&#34;&gt;
+&lt;!--
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Video&lt;/b&gt;&lt;/font&gt;
+
+&lt;iframe frameborder=&#34;0&#34; src=&#34;https://youtube.com/embed/9V7rNoLVmSs?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34; allowfullscreen height=&#34;495&#34; width=&#34;100%&#34;&gt;
+&lt;/iframe&gt;
+--&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Abstract&lt;/b&gt;&lt;/font&gt;
+&lt;p&gt;Bridging distant context interactions is important for high quality image completion with large masks. Previous methods attempting this via deep or large receptive field (RF) convolutions cannot escape from the dominance of nearby interactions, which may be inferior. In this paper, we propose treating image completion as a directionless sequence-to-sequence prediction task, and deploy a transformer to directly capture long-range dependence in the encoder in a first phase. Crucially, we employ a restrictive CNN with small and non-overlapping RF for token representation, which allows the transformer to explicitly model the long-range context relations with equal importance in all layers, without implicitly confounding neighboring tokens when larger RFs are used. In a second phase, to improve appearance consistency between visible and generated regions, a novel attention-aware layer (AAL) is introduced to better exploit distantly related features and also avoid the insular effect of standard attention. Overall, extensive experiments demonstrate superior performance compared to state-of-the-art methods on several datasets.&lt;/p&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Framework&lt;/b&gt;&lt;/font&gt;
+&lt;ul&gt;
+&lt;li&gt;Transformer-based Image Completion Network&lt;/li&gt;
+&lt;/ul&gt;
+&lt;td&gt;&lt;img src=&#39;imgs/framework.png&#39;&gt;&lt;/td&gt;
+&lt;p&gt; The masked image is first resized to a fixed low resolution (256*256) and fed into the transformer to generate semantically correct content. We then merge this inferred content with the original high resolution image and pass it to a refinement network with an &lt;b&gt;A&lt;/b&gt;ttention-&lt;b&gt;A&lt;/b&gt;ware &lt;b&gt;L&lt;/b&gt;ayer (&lt;b&gt;AAL&lt;/b&gt;) to transfer high-quality information from both visible and masked regions. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Token Representation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td style=&#34;width:40%&#34;&gt;&lt;img src=&#39;imgs/token.png&#39;&gt;&lt;/td&gt;
+&lt;td style=&#34;width:60%&#34; vertical-align:middle&gt;
+&lt;p&gt;(a) &lt;b&gt;iGPT&lt;/b&gt; downsamples the image to a fixed scale, and embeds &lt;i&gt;each pixel to a token&lt;/i&gt;. (b) &lt;b&gt;VIT&lt;/b&gt; divides an image to a set of fixed patches and embeds &lt;i&gt;each patch to a token&lt;/i&gt;. (c) &lt;b&gt;VQGAN&lt;/b&gt; employs a traditional CNN to encode an image to the feature domains and then &lt;i&gt;quantizes each feature as a token&lt;/i&gt; through a learned codebook. (d) Ours &lt;b&gt;TFill&lt;/b&gt; also encodes an image to the feature domains, yet with a &lt;i&gt;restrictive CNN&lt;/i&gt;. To do this, we ensure each token represents only the visible information in a small RF, &lt;i&gt;leaving the long-range dependencies to be explicitly modeled by the transformer encoder in every layer&lt;/i&gt;, without cross-contamination from implicit correlation due to larger CNN RF&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;More Results&lt;/b&gt;&lt;/font&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results for Center Mask&lt;/strong&gt;. All images are degraded by center mask. Our model is able to complete both object shape and background scene.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;td&gt;&lt;img src=&#39;imgs/center_imagenet.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;imgs/center_places2.jpg&#39;&gt;&lt;/td&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results for Face Editing&lt;/strong&gt;. All results are reported at 512*512 resolution. For each pair, the left one is the input image and the right one is the edited output.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;td&gt;&lt;img src=&#39;imgs/free_face.jpg&#39;&gt;&lt;/td&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results for Nature Image Editing&lt;/strong&gt;. Here, we mainly show object removal in traditional image inpainting tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;td&gt;&lt;img src=&#39;imgs/free_nature.jpg&#39;&gt;&lt;/td&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Spatially-Correlative Loss for Various Image Translation Tasks</title>
+      <link>https://www.chuanxiaz.com/publication/flsesim/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/flsesim/</guid>
+      <description>&lt;hr&gt;
+&lt;img src=&#39;images/unpairedI2I-translation.gif&#39; align=&#34;center&#34;&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Abstract&lt;/b&gt;&lt;/font&gt;
+&lt;p&gt;We propose a novel spatially-correlative loss that is simple, efficient and yet effective for preserving scene structure consistency while supporting large appearance changes during unpaired image-to-image (I2I) translation. Previous methods attempt this by using pixel-level cycle-consistency or feature-level matching losses, but the domain-specific nature of these losses hinder translation across large domain gaps. To address this, we exploit the spatial patterns of self-similarity as a means of defining scene structure. Our spatially-correlative loss is geared towards only capturing spatial relationships within an image rather than domain appearance. We also introduce a new self-supervised learning method to explicitly learn spatially-correlative maps for each specific translation task. We show distinct improvement over baseline models in all three modes of unpaired I2I translation: single-modal, multi-modal, and even single-image translation. This new loss can easily be integrated into existing network architectures and thus allows wide applicability.&lt;/p&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Method&lt;/b&gt;&lt;/font&gt;
+&lt;img src=&#39;images/FSeSim-frame.gif&#39; align=&#34;center&#34;&gt;
+&lt;p&gt;&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Error map visualization&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&#34;text-align:justify;&#34;&gt; &lt;img align=&#34;left&#34; src=&#34;images/error_map.jpg&#34; width=&#34;50%&#34;&gt; Given an input image, we consider an ideal result (the paired ground truth) and a totally wrong result (another image), repectively.  Under such a setting, a good structure loss should penalize the wrong result, while supporting the ideal result. &lt;b&gt;pixel-level loss&lt;/b&gt; is naturally unsuitable when there are large domain gaps, and while &lt;b&gt;Perceptual loss&lt;/b&gt; will report significant errors for both aligned and unaligned results. &lt;b&gt;PatchNCE&lt;/b&gt; mitigates the problem by calculating the cosine distance of features, but it can be seen the loss map still retains high errors in many regions within the aligned result. Our &lt;b&gt;LSeSim&lt;/b&gt; has small errors on the left where ground truth paired data is provided, while having large errors on the right for unpaired data.  &lt;/p&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;More Results&lt;/b&gt;&lt;/font&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Result for single-image translation&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;img src=&#39;images/single-translation.gif&#39; align=&#34;center&#34;&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Result for visual comparison&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#39;images/Supplementary_sinmod.png&#39; align=&#34;left&#34;&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Welcome to Wowchemy, the website builder for Hugo</title>
+      <link>https://www.chuanxiaz.com/post/getting-started/</link>
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/post/getting-started/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li&gt;
+&lt;li&gt;The template can be modified and customised to suit your needs. It&amp;rsquo;s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong&gt;no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong&gt; and having &lt;strong&gt;flexibility to later add even deeper personalization with HTML and CSS&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-the-template-is-mobile-first-with-a-responsive-design-to-ensure-that-your-site-looks-stunning-on-every-device&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/wowchemy/wowchemy-hugo-modules/master/academic.png&#34; alt=&#34;The template is mobile first with a responsive design to ensure that your site looks stunning on every device.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      The template is mobile first with a responsive design to ensure that your site looks stunning on every device.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;get-started&#34;&gt;Get Started&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;👉 &lt;a href=&#34;https://wowchemy.com/templates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Create a new site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;📚 &lt;a href=&#34;https://wowchemy.com/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Personalize your site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💬 &lt;a href=&#34;https://discord.gg/z8wNYzb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chat with the &lt;strong&gt;Wowchemy community&lt;/strong&gt;&lt;/a&gt; or &lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Hugo community&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🐦 Twitter: &lt;a href=&#34;https://twitter.com/wowchemy&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@wowchemy&lt;/a&gt; &lt;a href=&#34;https://twitter.com/GeorgeCushen&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@GeorgeCushen&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%28%23MadeWithWowchemy%20OR%20%23MadeWithAcademic%29&amp;amp;src=typed_query&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#MadeWithWowchemy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💡 &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Request a &lt;strong&gt;feature&lt;/strong&gt; or report a &lt;strong&gt;bug&lt;/strong&gt; for &lt;em&gt;Wowchemy&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;⬆️ &lt;strong&gt;Updating Wowchemy?&lt;/strong&gt; View the &lt;a href=&#34;https://wowchemy.com/docs/guide/update/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Update Guide&lt;/a&gt; and &lt;a href=&#34;https://wowchemy.com/updates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;crowd-funded-open-source-software&#34;&gt;Crowd-funded open-source software&lt;/h2&gt;
+&lt;p&gt;To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.&lt;/p&gt;
+&lt;h3 id=&#34;-click-here-to-become-a-sponsor-and-help-support-wowchemys-future-httpswowchemycomplans&#34;&gt;&lt;a href=&#34;https://wowchemy.com/plans/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;❤️ Click here to become a sponsor and help support Wowchemy&amp;rsquo;s future ❤️&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;As a token of appreciation for sponsoring, you can &lt;strong&gt;unlock &lt;a href=&#34;https://wowchemy.com/plans/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;these&lt;/a&gt; awesome rewards and extra features 🦄✨&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/wowchemy/hugo-academic-cli&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo Academic CLI&lt;/a&gt;:&lt;/strong&gt; Automatically import publications from BibTeX&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;inspiration&#34;&gt;Inspiration&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes, or &lt;a href=&#34;https://wowchemy.com/user-stories/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;view the &lt;strong&gt;showcase&lt;/strong&gt;&lt;/a&gt; of personal, project, and business sites.&lt;/p&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Page builder&lt;/strong&gt; - Create &lt;em&gt;anything&lt;/em&gt; with &lt;a href=&#34;https://wowchemy.com/docs/page-builder/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;widgets&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;elements&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Edit any type of content&lt;/strong&gt; - Blog posts, publications, talks, slides, projects, and more!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create content&lt;/strong&gt; in &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://wowchemy.com/docs/import/jupyter/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&lt;/a&gt;, or &lt;a href=&#34;https://wowchemy.com/docs/install-locally/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Plugin System&lt;/strong&gt; - Fully customizable &lt;a href=&#34;https://wowchemy.com/docs/customization/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;color&lt;/strong&gt; and &lt;strong&gt;font themes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Display Code and Math&lt;/strong&gt; - Code highlighting and &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX math&lt;/a&gt; supported&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt; - &lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Analytics&lt;/a&gt;, &lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Disqus commenting&lt;/a&gt;, Maps, Contact Forms, and more!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Beautiful Site&lt;/strong&gt; - Simple and refreshing one page design&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Industry-Leading SEO&lt;/strong&gt; - Help get your website found on search engines and social media&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Media Galleries&lt;/strong&gt; - Display your images and videos with captions in a customizable gallery&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile Friendly&lt;/strong&gt; - Look amazing on every screen with a mobile friendly version of your site&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Multi-language&lt;/strong&gt; - 34+ language packs including English, 中文, and Português&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Multi-user&lt;/strong&gt; - Each author gets their own profile page&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Privacy Pack&lt;/strong&gt; - Assists with GDPR&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stand Out&lt;/strong&gt; - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;One-Click Deployment&lt;/strong&gt; - No servers. No databases. Only files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+&lt;p&gt;Wowchemy and its templates come with &lt;strong&gt;automatic day (light) and night (dark) mode&lt;/strong&gt; built-in. Alternatively, visitors can choose their preferred mode - click the moon icon in the top right of the &lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demo&lt;/a&gt; to see it in action! Day/night mode can also be disabled by the site admin in &lt;code&gt;params.toml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/customization&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Choose a stunning &lt;strong&gt;theme&lt;/strong&gt; and &lt;strong&gt;font&lt;/strong&gt;&lt;/a&gt; for your site. Themes are fully customizable.&lt;/p&gt;
+&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
+&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/blob/master/LICENSE.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Pluralistic Image Completion</title>
       <link>https://www.chuanxiaz.com/project/pluralistic/</link>
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0800</pubDate>
-      
+      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
       <guid>https://www.chuanxiaz.com/project/pluralistic/</guid>
-      <description>
-
-&lt;hr&gt;
-
+      <description>&lt;hr&gt;
 &lt;h2 style=&#34;text-align:center&#34;&gt;Pluralistic Online Demo&lt;/h2&gt;
-
 &lt;div id=&#34;mobile&#34; style=&#34;display: none;&#34; align=&#34;center&#34;&gt;
 &lt;font color=&#39;red&#39;&gt;Currently, demo is not available on mobile devices. Apologize.&lt;/font&gt;
 &lt;/div&gt;
-
 &lt;div id=&#34;pluralistic&#34; style=&#34;display: block;&#34;&gt;
   &lt;div id=&#34;celebahq&#34; style=&#34;display: block;&#34; align=&#34;center&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;
-
 &lt;div id=&#34;range-wrap&#34; title=&#34;Line Width&#34;&gt; &lt;input type=&#34;range&#34; id=&#34;lwidth&#34; min=&#34;1&#34; max=&#34;50&#34; value=&#34;20&#34; title=&#34;Line Width&#34;&gt;&lt;/div&gt;
-
 &lt;script&gt;
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
   console.log(&#34;detect mobile device.&#34;);
@@ -39,102 +219,79 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
   document.getElementById(&#39;range-wrap&#39;).style.display = &#34;none&#34;;
 }
 &lt;/script&gt;
-
 &lt;script src=&#34;inpaint_lite.js&#34;&gt;&lt;/script&gt;
-
 &lt;h4&gt;Notes:&lt;/h4&gt;
-
 &lt;ol&gt;
-&lt;li&gt;The &lt;strong&gt;&lt;em&gt;Pluralistic&lt;/em&gt;&lt;/strong&gt; model provides &lt;em&gt;multiple&lt;/em&gt; and &lt;em&gt;diverse&lt;/em&gt; plausible results by clicking the &lt;strong&gt;Fill&lt;/strong&gt; button.&lt;/li&gt;
+&lt;li&gt;The &lt;em&gt;&lt;strong&gt;Pluralistic&lt;/strong&gt;&lt;/em&gt; model provides &lt;em&gt;multiple&lt;/em&gt; and &lt;em&gt;diverse&lt;/em&gt; plausible results by clicking the &lt;strong&gt;Fill&lt;/strong&gt; button.&lt;/li&gt;
 &lt;li&gt;For large holes, we can click the &lt;strong&gt;Mask Type&lt;/strong&gt; to select the &lt;em&gt;Rectangle&lt;/em&gt; holes.&lt;/li&gt;
 &lt;li&gt;For free-form holes, the left slider can be used to set the line width [1,50].&lt;/li&gt;
 &lt;li&gt;If we just mask half (left/right) of the face, the diversity will be small for our &lt;strong&gt;short+long term attention layer&lt;/strong&gt; will copy the information from the other slides.&lt;/li&gt;
 &lt;li&gt;Since the data is relayed through the Amazon server to our inner net, the result needs to be waited for a few seconds.&lt;/li&gt;
-&lt;li&gt;Acknowledgments: Online JS code borrows from &lt;a href=&#34;http://jiahuiyu.com/deepfill/&#34; target=&#34;_blank&#34;&gt;DeepFill(v1)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Acknowledgments: Online JS code borrows from &lt;a href=&#34;http://jiahuiyu.com/deepfill/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DeepFill(v1)&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;hr&gt;
-
 &lt;h4 id=&#34;example-editing&#34;&gt;Example Editing&lt;/h4&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Face Change
+&lt;li&gt;Face Change&lt;/li&gt;
+&lt;/ul&gt;
 &lt;table&gt;
 &lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_change1.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_change2.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Eyeglass removal
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Eyeglass removal&lt;/li&gt;
+&lt;/ul&gt;
 &lt;table&gt;
 &lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_glass.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_glass1.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Old to Young
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Old to Young&lt;/li&gt;
+&lt;/ul&gt;
 &lt;table&gt;
 &lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_young1.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_young2.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Object removal
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Object removal&lt;/li&gt;
+&lt;/ul&gt;
 &lt;table&gt;
 &lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_move1.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_move2.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/table&gt;
 </description>
     </item>
     
     <item>
       <title>Pluralistic Image Completion</title>
       <link>https://www.chuanxiaz.com/publication/pluralistic/</link>
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0800</pubDate>
-      
+      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
       <guid>https://www.chuanxiaz.com/publication/pluralistic/</guid>
-      <description>
-
+      <description>&lt;hr&gt;
+&lt;img src=&#39;featured.png&#39; align=&#34;center&#34;&gt;
 &lt;hr&gt;
-
-&lt;p&gt;&lt;img src=&#39;featured.png&#39; align=&#34;center&#34;&gt;&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h4 id=&#34;video&#34;&gt;Video&lt;/h4&gt;
-
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Video&lt;/b&gt;&lt;/font&gt;
 &lt;iframe frameborder=&#34;0&#34; src=&#34;https://youtube.com/embed/9V7rNoLVmSs?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34; allowfullscreen height=&#34;495&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;
-
 &lt;hr&gt;
-
-&lt;h4 id=&#34;abstract&#34;&gt;Abstract&lt;/h4&gt;
-
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Abstract&lt;/b&gt;&lt;/font&gt;
 &lt;p&gt;Most image completion methods produce only one result for each masked input, although there may be many reasonable possibilities. In this paper, we present an approach for pluralistic image completion  the task of generating multiple diverse and plausible solutions for image completion. A major challenge faced by learning-based approaches is that here the conditional label itself is a partial image, and there is usually only one ground truth training instance per label. As such, sampling from conditional VAEs still leads to minimal diversity. To overcome this, we propose a novel and probabilistically principled framework with two parallel paths. One is a reconstructive path that extends the VAE through a latent space that covers all partial images with different mask sizes, and imposes priors that adapt to the number of pixels. The other is a generative path for which the conditional prior is coupled to distributions obtained in the reconstructive path. Both are supported by GANs. We also introduce a new short+long term attention layer that exploits distant relations among decoder and encoder features, improving appearance consistency. When tested on datasets with buildings (Paris), faces (CelebAHQ), and natural images (ImageNet), our method not only generated higher-quality completion results, but also with multiple and diverse plausible outputs.&lt;/p&gt;
-
 &lt;hr&gt;
-
-&lt;h4 id=&#34;framework&#34;&gt;Framework&lt;/h4&gt;
-
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Framework&lt;/b&gt;&lt;/font&gt;
 &lt;ul&gt;
 &lt;li&gt;Pluralistic Image Completion Network (PICNet)
 &lt;img src=&#34;Images/inpainting_framework.png&#34; &gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Given a masked images, the &lt;b&gt;generative&lt;/b&gt; pipeline (blue line) infers the conditional distribution of missing regions, that can be sampled during the testing to generate &lt;i&gt;multiple&lt;/i&gt; and &lt;i&gt;diverse&lt;/i&gt; results. During the training, the missing regions are encodered to a distribution, that can be sampled to rebuild the original input by combing with the features of visible part (yellow line). This structure is designed on a probabilistically principled freamework. The details can be found in the paper.&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Short+Long Term Attention Layer (SLTAtten)&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p style=&#34;text-align:justify;&#34;&gt; &lt;img align=&#34;left&#34; src=&#34;Images/inpainting_attention.png&#34; width=&#34;50%&#34;&gt; The proposed &lt;b&gt;Short+Long Term Attention Layer&lt;/b&gt; is extended beyond the Self-Attention GAN. This &lt;b&gt;SLTAtten&lt;/b&gt; layer not only use the self-attention map within a decoder layer to harness distant spatial context, but further capture feature-feature context between encoder and decoder layers. In this way, the similarity is calculated in the decoder features rather than between the encoder features and decoder features. Our &lt;i&gt;ke novel is&lt;/i&gt;: doing so would allow the network a choice of copying information from encoder or the more semantically generative features from the decoder. &lt;/p&gt;
-
 &lt;hr&gt;
-
-&lt;h4 id=&#34;more-results&#34;&gt;More Results&lt;/h4&gt;
-
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;More Results&lt;/b&gt;&lt;/font&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Results for center mask&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;table&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/place03295.jpg&#39;&gt;&lt;/td&gt;
@@ -142,14 +299,12 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;td&gt;&lt;img src=&#39;Images/gif/place33889.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/place33889.gif&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/place26087.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/place26087.gif&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/place09264.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/place09264.gif&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/place34979.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/place34979.gif&#39;&gt;&lt;/td&gt;
@@ -157,7 +312,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;td&gt;&lt;img src=&#39;Images/gif/place12704.gif&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
-
 &lt;table&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/celeba185143.jpg&#39;&gt;&lt;/td&gt;
@@ -165,14 +319,12 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;td&gt;&lt;img src=&#39;Images/gif/celeba183602.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/celeba183602.gif&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/celeba185430.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/celeba185430.gif&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/celeba199010.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/celeba199010.gif&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/celeba197612.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/celeba197612.gif&#39;&gt;&lt;/td&gt;
@@ -180,7 +332,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;td&gt;&lt;img src=&#39;Images/gif/celeba202572.gif&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
-
 &lt;table&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/paris049.png&#39;&gt;&lt;/td&gt;
@@ -188,27 +339,22 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;td&gt;&lt;img src=&#39;Images/gif/paris098.png&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/paris098.gif&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/paris001.png&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/paris001.gif&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/paris019.png&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/paris019.gif&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/paris032.png&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/paris032.gif&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/paris046.png&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/gif/paris046.gif&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;/table&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Results (original, input, output) for object removing&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;table&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba189756.jpg&#39;&gt;&lt;/td&gt;
@@ -218,7 +364,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba199782.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba199782.jpg&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba183567.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba183567.jpg&#39;&gt;&lt;/td&gt;
@@ -227,7 +372,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba186054.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba186054.jpg&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba200954.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba200954.jpg&#39;&gt;&lt;/td&gt;
@@ -236,7 +380,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba194090.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba194090.jpg&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/original_paris032.png&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/mask_paris032.png&#39;&gt;&lt;/td&gt;
@@ -245,7 +388,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;td&gt;&lt;img src=&#39;Images/removing/mask_paris085.png&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/result_paris085.png&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/original_place00000321.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00000321.jpg&#39;&gt;&lt;/td&gt;
@@ -254,7 +396,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00009818.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/result_place00009818.jpg&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/original_place00011330.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00011330.jpg&#39;&gt;&lt;/td&gt;
@@ -263,7 +404,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00013547.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/result_place00013547.jpg&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/original_place00015967.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00015967.jpg&#39;&gt;&lt;/td&gt;
@@ -272,13 +412,10 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00034986.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/removing/result_place00034986.jpg&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;/table&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Results (original, input, output) for face playing.&lt;/strong&gt; When mask left or right face, the diversity will be small for the short+long term attention layer will copy information from other side. When mask top or down face, the diversity will be large.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;table&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba184054.jpg&#39;&gt;&lt;/td&gt;
@@ -286,546 +423,51 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba182927.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba182927.gif&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba185235.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba185235.gif&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba197462.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba197462.gif&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba192793.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba192793.gif&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba196162.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba196162.gif&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba190638.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba190638.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba190952.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba190952.jpg&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba198496.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba198496.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba184852.jpg&#39;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba184852.jpg&#39;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;/table&gt;
 </description>
     </item>
     
     <item>
-      <title>Example Page</title>
-      <link>https://www.chuanxiaz.com/tutorial/example/</link>
-      <pubDate>Sun, 09 Sep 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://www.chuanxiaz.com/tutorial/example/</guid>
-      <description>
-
-&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
-
-&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
-
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
-
-&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
-
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>T2Net: Synthetic-to-Realistic Translation for Depth Estimation Tasks</title>
-      <link>https://www.chuanxiaz.com/publication/synthetic2real/</link>
-      <pubDate>Sat, 08 Sep 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://www.chuanxiaz.com/publication/synthetic2real/</guid>
-      <description>
-
-&lt;p&gt;&lt;img style=&#34;float: left;&#34; src=&#34;Images/image2depth_syn2real_indoor.jpg&#34;&gt;
-&lt;hr&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;abstract&#34;&gt;Abstract&lt;/h4&gt;
-
-&lt;p&gt;Current methods for single-image depth estimation use training datasets with real image-depth pairs or stereo pairs, which are not easy to acquire. We propose a framework, trained on synthetic imagedepth pairs and unpaired real images, that comprises an image translation network for enhancing realism of input images, followed by a depth prediction network. A key idea is having the first network act as a widespectrum input translator, taking in either synthetic or real images, and ideally producing minimally modified realistic images. This is done via a reconstruction loss when the training input is real, and GAN loss when synthetic, removing the need for heuristic self-regularization. The second network is trained on a task loss for synthetic image-depth pairs, with extra GAN loss to unify real and synthetic feature distributions. Importantly, the framework can be trained end-to-end, leading to good results, even surpassing early deep-learning methods that use real paired data.
-&lt;hr&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;framework&#34;&gt;Framework&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#39;Images/image2depth_framework.png&#39; align=&#34;center&#34;&gt;
-&lt;hr&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;video&#34;&gt;Video&lt;/h4&gt;
-
-&lt;iframe frameborder=&#34;0&#34; src=&#34;https://youtube.com/embed/B6lOToIk0xY?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34; allowfullscreen height=&#34;495&#34; width=&#34;100%&#34;&gt;
-&lt;/iframe&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Multi-class indoor semantic segmentation with deep structured model</title>
-      <link>https://www.chuanxiaz.com/publication/multi-class/</link>
-      <pubDate>Tue, 01 May 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://www.chuanxiaz.com/publication/multi-class/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Learning aggregated features and optimizing model for semantic labeling</title>
-      <link>https://www.chuanxiaz.com/publication/aggregated/</link>
-      <pubDate>Fri, 01 Dec 2017 00:00:00 +0800</pubDate>
-      
-      <guid>https://www.chuanxiaz.com/publication/aggregated/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Example Talk</title>
-      <link>https://www.chuanxiaz.com/talk/example/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
-      
-      <guid>https://www.chuanxiaz.com/talk/example/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&amp;rsquo;s &lt;em&gt;Slides&lt;/em&gt; feature and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Semantic segmentation based on aggregated features and contextual information</title>
-      <link>https://www.chuanxiaz.com/publication/aggregated-c/</link>
-      <pubDate>Sat, 03 Dec 2016 00:00:00 +0800</pubDate>
-      
-      <guid>https://www.chuanxiaz.com/publication/aggregated-c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Learning contextual information for indoor semantic segmentation</title>
-      <link>https://www.chuanxiaz.com/publication/multi-class-c/</link>
-      <pubDate>Sun, 05 Jun 2016 00:00:00 +0800</pubDate>
-      
-      <guid>https://www.chuanxiaz.com/publication/multi-class-c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Academic: the website designer for Hugo</title>
-      <link>https://www.chuanxiaz.com/post/getting-started/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
-      
-      <guid>https://www.chuanxiaz.com/post/getting-started/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Academic&lt;/strong&gt; makes it easy to create a beautiful website for free using Markdown. Customize anything on your site with widgets, themes, and language packs.&lt;/p&gt;
-
-&lt;p&gt;Follow our easy &lt;a href=&#34;https://sourcethemes.com/academic/docs/install/&#34; target=&#34;_blank&#34;&gt;step by step guide&lt;/a&gt; to learn how to build your own free website with Academic. &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Check out the personal demo&lt;/a&gt; or the &lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34;&gt;business demo&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;View the documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://discuss.gohugo.io/&#34; target=&#34;_blank&#34;&gt;Ask a question&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues&#34; target=&#34;_blank&#34;&gt;Request a feature or report a bug&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Updating? View the &lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34; target=&#34;_blank&#34;&gt;Update Guide&lt;/a&gt; and &lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34; target=&#34;_blank&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Support development of Academic:
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://paypal.me/cushen&#34; target=&#34;_blank&#34;&gt;Donate a coffee&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.patreon.com/cushen&#34; target=&#34;_blank&#34;&gt;Become a backer on Patreon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.redbubble.com/people/neutreno/works/34387919-academic&#34; target=&#34;_blank&#34;&gt;Decorate your laptop or journal with an Academic sticker&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://academic.threadless.com/&#34; target=&#34;_blank&#34;&gt;Wear the T-shirt&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; alt=&#34;Screenshot&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Key features:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Easily manage various content including homepage, blog posts, publications, talks, and projects&lt;/li&gt;
-&lt;li&gt;Extensible via &lt;strong&gt;color themes&lt;/strong&gt; and &lt;strong&gt;widgets/plugins&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Write in &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;Markdown&lt;/a&gt; for easy formatting and code highlighting, with &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34;&gt;LaTeX&lt;/a&gt; for mathematical expressions&lt;/li&gt;
-&lt;li&gt;Social/academic network linking, &lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34;&gt;Google Analytics&lt;/a&gt;, and &lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34;&gt;Disqus&lt;/a&gt; comments&lt;/li&gt;
-&lt;li&gt;Responsive and mobile friendly&lt;/li&gt;
-&lt;li&gt;Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;Multilingual and easy to customize&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;color-themes&#34;&gt;Color Themes&lt;/h2&gt;
-
-&lt;p&gt;Academic is available in different color themes and font themes.&lt;/p&gt;
-
-
-
-&lt;div class=&#34;gallery&#34;&gt;
-
-  
-  
-  
-  
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-1950s.png&#34; data-caption=&#34;1950s&#34;&gt;
-  &lt;img src=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-1950s.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-apogee.png&#34; data-caption=&#34;Apogee&#34;&gt;
-  &lt;img src=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-apogee.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-coffee-playfair.png&#34; data-caption=&#34;Coffee theme with Playfair font&#34;&gt;
-  &lt;img src=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-coffee-playfair.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-cupcake.png&#34; data-caption=&#34;Cupcake&#34;&gt;
-  &lt;img src=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-cupcake.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-dark.png&#34; data-caption=&#34;Dark&#34;&gt;
-  &lt;img src=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-dark.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-default.png&#34; data-caption=&#34;Default&#34;&gt;
-  &lt;img src=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-default.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-forest.png&#34; data-caption=&#34;Forest&#34;&gt;
-  &lt;img src=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-forest.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-ocean.png&#34; data-caption=&#34;Ocean&#34;&gt;
-  &lt;img src=&#34;https://www.chuanxiaz.com/post/getting-started/gallery/theme-ocean.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-
-  
-&lt;/div&gt;
-
-&lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-admin&#34; target=&#34;_blank&#34;&gt;Academic Admin&lt;/a&gt;:&lt;/strong&gt; An admin tool to import publications from BibTeX or import assets for an offline site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-scripts&#34; target=&#34;_blank&#34;&gt;Academic Scripts&lt;/a&gt;:&lt;/strong&gt; Scripts to help migrate content to new versions of Academic&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-
-&lt;p&gt;You can choose from one of the following four methods to install:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;one-click install using your web browser (recommended)&lt;/li&gt;
-&lt;li&gt;install on your computer using Git with the Command Prompt/Terminal app&lt;/li&gt;
-&lt;li&gt;install on your computer by downloading the ZIP files&lt;/li&gt;
-&lt;li&gt;install on your computer with RStudio&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;quick-install-using-your-web-browser&#34;&gt;Quick install using your web browser&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart&#34; target=&#34;_blank&#34;&gt;Install Academic with Netlify&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Netlify will provide you with a customizable URL to access your new site&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;On GitHub, go to your newly created &lt;code&gt;academic-kickstart&lt;/code&gt; repository and edit &lt;code&gt;config.toml&lt;/code&gt; to personalize your site. Shortly after saving the file, your site will automatically update&lt;/li&gt;
-&lt;li&gt;Read the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start Guide&lt;/a&gt; to learn how to add Markdown content. For inspiration, refer to the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite&#34; target=&#34;_blank&#34;&gt;Markdown content&lt;/a&gt; which powers the &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Demo&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-git&#34;&gt;Install with Git&lt;/h3&gt;
-
-&lt;p&gt;Prerequisites:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://git-scm.com/downloads&#34; target=&#34;_blank&#34;&gt;Download and install Git&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing/#quick-install&#34; target=&#34;_blank&#34;&gt;Download and install Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart#fork-destination-box&#34; target=&#34;_blank&#34;&gt;Fork&lt;/a&gt; the &lt;em&gt;Academic Kickstart&lt;/em&gt; repository and clone your fork with Git:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/sourcethemes/academic-kickstart.git My_Website
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;Note that if you forked Academic Kickstart, the above command should be edited to clone your fork, i.e. replace &lt;code&gt;sourcethemes&lt;/code&gt; with your GitHub username.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Initialize the theme:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd My_Website
-git submodule update --init --recursive
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-zip&#34;&gt;Install with ZIP&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart/archive/master.zip&#34; target=&#34;_blank&#34;&gt;Download&lt;/a&gt; and extract &lt;em&gt;Academic Kickstart&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/archive/master.zip&#34; target=&#34;_blank&#34;&gt;Download&lt;/a&gt; and extract the &lt;em&gt;Academic theme&lt;/em&gt; to the &lt;code&gt;themes/academic/&lt;/code&gt; folder from the above step&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-rstudio&#34;&gt;Install with RStudio&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34; target=&#34;_blank&#34;&gt;View the guide to installing Academic with RStudio&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;quick-start&#34;&gt;Quick start&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;If you installed on your computer, view your new website by running the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now visit &lt;a href=&#34;http://localhost:1313&#34; target=&#34;_blank&#34;&gt;localhost:1313&lt;/a&gt; and your new Academic powered website will appear. Otherwise, if using Netlify, they will provide you with your URL.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Read the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start Guide&lt;/a&gt; to learn how to add Markdown content, customize your site, and deploy it. For inspiration, refer to the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite&#34; target=&#34;_blank&#34;&gt;Markdown content&lt;/a&gt; which powers the &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Demo&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Build your site by running the &lt;code&gt;hugo&lt;/code&gt; command. Then &lt;a href=&#34;https://georgecushen.com/create-your-website-with-hugo/&#34; target=&#34;_blank&#34;&gt;host it for free using Github Pages&lt;/a&gt; or Netlify (refer to the first installation method). Alternatively, copy the generated &lt;code&gt;public/&lt;/code&gt; directory (by FTP, Rsync, etc.) to your production web server (such as a university&amp;rsquo;s hosting service).&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;updating&#34;&gt;Updating&lt;/h2&gt;
-
-&lt;p&gt;Feel free to &lt;em&gt;star&lt;/em&gt; the project on &lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt; to help keep track of updates and check out the &lt;a href=&#34;https://sourcethemes.com/academic/updates&#34; target=&#34;_blank&#34;&gt;release notes&lt;/a&gt; prior to updating your site.&lt;/p&gt;
-
-&lt;p&gt;Before updating the framework, it is recommended to make a backup of your entire website directory (or at least your &lt;code&gt;themes/academic&lt;/code&gt; directory) and record your current version number.&lt;/p&gt;
-
-&lt;p&gt;By default, Academic is installed as a Git submodule which can be updated by running the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git submodule update --remote --merge
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34; target=&#34;_blank&#34;&gt;Check out the update guide&lt;/a&gt; for full instructions and alternative methods.&lt;/p&gt;
-
-&lt;h2 id=&#34;feedback-contributing&#34;&gt;Feedback &amp;amp; Contributing&lt;/h2&gt;
-
-&lt;p&gt;Please use the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues&#34; target=&#34;_blank&#34;&gt;issue tracker&lt;/a&gt; to let me know about any bugs or feature requests, or alternatively make a pull request.&lt;/p&gt;
-
-&lt;p&gt;For support, head over to the &lt;a href=&#34;http://discuss.gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo discussion forum&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34; target=&#34;_blank&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Slides</title>
-      <link>https://www.chuanxiaz.com/slides/example-slides/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.chuanxiaz.com/slides/example-slides/</guid>
-      <description>
-
-&lt;h1 id=&#34;welcome-to-slides&#34;&gt;Welcome to Slides&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34;&gt;Academic&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
+      <link>https://www.chuanxiaz.com/slides/example/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/slides/example/</guid>
+      <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
 &lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
 &lt;li&gt;Supports speaker notes&lt;/li&gt;
 &lt;li&gt;Mobile friendly slides&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
@@ -835,80 +477,55 @@ git submodule update --init --recursive
 &lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
-
 &lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;Code block:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
 if porridge == &amp;quot;blueberry&amp;quot;:
     print(&amp;quot;Eating...&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
-
 &lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
-
 &lt;p&gt;Block math:&lt;/p&gt;
-
 &lt;p&gt;$$
-f\left( x \right) = \;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
 $$&lt;/p&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
-
 &lt;p&gt;Make content appear incrementally&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
 {{% fragment %}} **Two** {{% /fragment %}}
 {{% fragment %}} Three {{% /fragment %}}
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
-
 &lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
-  One
+One
 &lt;/span&gt;
 &lt;span class=&#34;fragment &#34; &gt;
-  &lt;strong&gt;Two&lt;/strong&gt;
+&lt;strong&gt;Two&lt;/strong&gt;
 &lt;/span&gt;
 &lt;span class=&#34;fragment &#34; &gt;
-  Three
+Three
 &lt;/span&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
-
 &lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
 - Only the speaker can read these notes
 - Press `S` key to view
 {{% /speaker_note %}}
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
-
 &lt;aside class=&#34;notes&#34;&gt;
   &lt;ul&gt;
 &lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
@@ -916,11 +533,8 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;/aside&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
 &lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
@@ -928,58 +542,101 @@ $$&lt;/p&gt;
 &lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
 &lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;ul&gt;
 &lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
 &lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
 &lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
 &lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 
 &lt;section data-noprocess data-shortcode-slide
   
       
-      data-background-image=&#34;/img/boards.jpg&#34;
+      data-background-image=&#34;/media/boards.jpg&#34;
   &gt;
 
-
 &lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
-
 &lt;p&gt;Customize the slide style and background&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/img/boards.jpg&amp;quot; &amp;gt;}}
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/media/boards.jpg&amp;quot; &amp;gt;}}
 {{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
 {{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
-
 &lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
-
 &lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
 .reveal section h2,
 .reveal section h3 {
   color: navy;
 }
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>T2Net: Synthetic-to-Realistic Translation for Depth Estimation Tasks</title>
+      <link>https://www.chuanxiaz.com/publication/synthetic2real/</link>
+      <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/synthetic2real/</guid>
+      <description>&lt;img style=&#34;float: left;&#34; src=&#34;Images/image2depth_syn2real_indoor.jpg&#34;&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Abstract&lt;/b&gt;&lt;/font&gt;
+&lt;p&gt;Current methods for single-image depth estimation use training datasets with real image-depth pairs or stereo pairs, which are not easy to acquire. We propose a framework, trained on synthetic imagedepth pairs and unpaired real images, that comprises an image translation network for enhancing realism of input images, followed by a depth prediction network. A key idea is having the first network act as a widespectrum input translator, taking in either synthetic or real images, and ideally producing minimally modified realistic images. This is done via a reconstruction loss when the training input is real, and GAN loss when synthetic, removing the need for heuristic self-regularization. The second network is trained on a task loss for synthetic image-depth pairs, with extra GAN loss to unify real and synthetic feature distributions. Importantly, the framework can be trained end-to-end, leading to good results, even surpassing early deep-learning methods that use real paired data.&lt;/p&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Framework&lt;/b&gt;&lt;/font&gt;
+&lt;img src=&#39;Images/image2depth_framework.png&#39; align=&#34;center&#34;&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Video&lt;/b&gt;&lt;/font&gt;
+&lt;iframe frameborder=&#34;0&#34; src=&#34;https://youtube.com/embed/B6lOToIk0xY?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34; allowfullscreen height=&#34;495&#34; width=&#34;100%&#34;&gt;
+&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multi-class indoor semantic segmentation with deep structured model</title>
+      <link>https://www.chuanxiaz.com/publication/multi-class/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/multi-class/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning aggregated features and optimizing model for semantic labeling</title>
+      <link>https://www.chuanxiaz.com/publication/aggregated/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/aggregated/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Semantic segmentation based on aggregated features and contextual information</title>
+      <link>https://www.chuanxiaz.com/publication/aggregated-c/</link>
+      <pubDate>Sat, 03 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/aggregated-c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning contextual information for indoor semantic segmentation&#34;</title>
+      <link>https://www.chuanxiaz.com/publication/multi-class-c/</link>
+      <pubDate>Sun, 05 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/multi-class-c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.chuanxiaz.com/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/admin/</guid>
+      <description></description>
     </item>
     
   </channel>

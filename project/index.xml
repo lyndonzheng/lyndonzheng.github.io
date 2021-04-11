@@ -1,23 +1,80 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on ChuanXia Zheng</title>
+    <title>Projects | ChuanXia Zheng</title>
     <link>https://www.chuanxiaz.com/project/</link>
-    <description>Recent content in Projects on ChuanXia Zheng</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 12 Mar 2019 00:00:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.chuanxiaz.com/project/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://www.chuanxiaz.com/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 12 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.chuanxiaz.com/media/icon_hu31e06666eb535ef94200208b3edb96bb_10558_512x512_fill_lanczos_center_2.png</url>
+      <title>Projects</title>
+      <link>https://www.chuanxiaz.com/project/</link>
+    </image>
     
     <item>
       <title>Pluralistic Image Completion</title>
       <link>https://www.chuanxiaz.com/project/pluralistic/</link>
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0800</pubDate>
-      
+      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
       <guid>https://www.chuanxiaz.com/project/pluralistic/</guid>
-      <description>Pluralistic Online Demo Currently, demo is not available on mobile devices. Apologize.      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) { console.log(&#34;detect mobile device.&#34;); document.getElementById(&#39;mobile&#39;).style.display = &#34;block&#34;; document.getElementById(&#39;pluralistic&#39;).style.display = &#34;none&#34;; document.getElementById(&#39;range-wrap&#39;).style.display = &#34;none&#34;; }   Notes:  The Pluralistic model provides multiple and diverse plausible results by clicking the Fill button. For large holes, we can click the Mask Type to select the Rectangle holes. For free-form holes, the left slider can be used to set the line width [1,50].</description>
+      <description>&lt;hr&gt;
+&lt;h2 style=&#34;text-align:center&#34;&gt;Pluralistic Online Demo&lt;/h2&gt;
+&lt;div id=&#34;mobile&#34; style=&#34;display: none;&#34; align=&#34;center&#34;&gt;
+&lt;font color=&#39;red&#39;&gt;Currently, demo is not available on mobile devices. Apologize.&lt;/font&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pluralistic&#34; style=&#34;display: block;&#34;&gt;
+  &lt;div id=&#34;celebahq&#34; style=&#34;display: block;&#34; align=&#34;center&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;range-wrap&#34; title=&#34;Line Width&#34;&gt; &lt;input type=&#34;range&#34; id=&#34;lwidth&#34; min=&#34;1&#34; max=&#34;50&#34; value=&#34;20&#34; title=&#34;Line Width&#34;&gt;&lt;/div&gt;
+&lt;script&gt;
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+  console.log(&#34;detect mobile device.&#34;);
+  document.getElementById(&#39;mobile&#39;).style.display = &#34;block&#34;;
+  document.getElementById(&#39;pluralistic&#39;).style.display = &#34;none&#34;;
+  document.getElementById(&#39;range-wrap&#39;).style.display = &#34;none&#34;;
+}
+&lt;/script&gt;
+&lt;script src=&#34;inpaint_lite.js&#34;&gt;&lt;/script&gt;
+&lt;h4&gt;Notes:&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;The &lt;em&gt;&lt;strong&gt;Pluralistic&lt;/strong&gt;&lt;/em&gt; model provides &lt;em&gt;multiple&lt;/em&gt; and &lt;em&gt;diverse&lt;/em&gt; plausible results by clicking the &lt;strong&gt;Fill&lt;/strong&gt; button.&lt;/li&gt;
+&lt;li&gt;For large holes, we can click the &lt;strong&gt;Mask Type&lt;/strong&gt; to select the &lt;em&gt;Rectangle&lt;/em&gt; holes.&lt;/li&gt;
+&lt;li&gt;For free-form holes, the left slider can be used to set the line width [1,50].&lt;/li&gt;
+&lt;li&gt;If we just mask half (left/right) of the face, the diversity will be small for our &lt;strong&gt;short+long term attention layer&lt;/strong&gt; will copy the information from the other slides.&lt;/li&gt;
+&lt;li&gt;Since the data is relayed through the Amazon server to our inner net, the result needs to be waited for a few seconds.&lt;/li&gt;
+&lt;li&gt;Acknowledgments: Online JS code borrows from &lt;a href=&#34;http://jiahuiyu.com/deepfill/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DeepFill(v1)&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;example-editing&#34;&gt;Example Editing&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Face Change&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_change1.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_change2.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Eyeglass removal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_glass.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_glass1.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Old to Young&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_young1.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_young2.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Object removal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_move1.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img src=&#39;Images/face_move2.png&#39;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</description>
     </item>
     
   </channel>

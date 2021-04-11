@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2 | ChuanXia Zheng</title>
+    <link>https://www.chuanxiaz.com/publication-type/2/</link>
+      <atom:link href="https://www.chuanxiaz.com/publication-type/2/index.xml" rel="self" type="application/rss+xml" />
+    <description>2</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.chuanxiaz.com/media/icon_hu31e06666eb535ef94200208b3edb96bb_10558_512x512_fill_lanczos_center_2.png</url>
+      <title>2</title>
+      <link>https://www.chuanxiaz.com/publication-type/2/</link>
+    </image>
+    
+    <item>
+      <title>Multi-class indoor semantic segmentation with deep structured model</title>
+      <link>https://www.chuanxiaz.com/publication/multi-class/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/multi-class/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning aggregated features and optimizing model for semantic labeling</title>
+      <link>https://www.chuanxiaz.com/publication/aggregated/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/aggregated/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning contextual information for indoor semantic segmentation&#34;</title>
+      <link>https://www.chuanxiaz.com/publication/multi-class-c/</link>
+      <pubDate>Sun, 05 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/multi-class-c/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
