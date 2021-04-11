@@ -612,12 +612,11 @@ document.getElementById("pluralistic").addEventListener("mouseup",function(b){
   update()
 });
 
-document.getElementById("body").addEventListener("mouseup",function(b){
-  no_touching=!0;
-  mouse_down=!1;
-  mouse_released=!0;
-  update()
-});
+// document.getElementById("body").addEventListener("mouseup",function(b){
+//   no_touching=!0;
+//   mouse_down=!1;
+//   mouse_released=!0;
+// });
 
 document.getElementById("lwidth").onchange= function(){
   LINE_WIDTH = this.value;
