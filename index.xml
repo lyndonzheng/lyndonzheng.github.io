@@ -33,6 +33,14 @@
     </item>
     
     <item>
+      <title>AgileGAN: Stylizing Portraits by Inversion-Consistent Transfer Learning</title>
+      <link>https://www.chuanxiaz.com/publication/agilegan/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/agilegan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>TFill: Image Completion via a Transformer-Based Architecture</title>
       <link>https://www.chuanxiaz.com/publication/tfill/</link>
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
@@ -97,7 +105,8 @@
 &lt;p&gt;We propose a novel spatially-correlative loss that is simple, efficient and yet effective for preserving scene structure consistency while supporting large appearance changes during unpaired image-to-image (I2I) translation. Previous methods attempt this by using pixel-level cycle-consistency or feature-level matching losses, but the domain-specific nature of these losses hinder translation across large domain gaps. To address this, we exploit the spatial patterns of self-similarity as a means of defining scene structure. Our spatially-correlative loss is geared towards only capturing spatial relationships within an image rather than domain appearance. We also introduce a new self-supervised learning method to explicitly learn spatially-correlative maps for each specific translation task. We show distinct improvement over baseline models in all three modes of unpaired I2I translation: single-modal, multi-modal, and even single-image translation. This new loss can easily be integrated into existing network architectures and thus allows wide applicability.&lt;/p&gt;
 &lt;hr&gt;
 &lt;font size=&#34;5&#34;&gt;&lt;b&gt;Method&lt;/b&gt;&lt;/font&gt;
-&lt;img src=&#39;images/FSeSim-frame.gif&#39; align=&#34;center&#34;&gt;
+&lt;iframe frameborder=&#34;0&#34; src=&#34;https://youtube.com/embed/pu6PT1om2r0?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34; allowfullscreen height=&#34;495&#34; width=&#34;100%&#34;&gt;
+&lt;/iframe&gt;
 &lt;p&gt;&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Error map visualization&lt;/li&gt;
