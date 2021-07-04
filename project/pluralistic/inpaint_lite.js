@@ -5,7 +5,7 @@ editors=[],request_in_progress=!1,last_request_failed=!1,connected=!0,base_url="
 function main(){
   // define the basic information of this application
   var b={name:"celebahq",application:"/pluralistic_demo",colors:{Pluralistic:"#FEFEFE"},clear:"#FEFEFE",
-  draw:"#FEFEFE",random_list_file:"/projects_picnet/pluralistic/celebA_HQ_test.txt",scale:1}, c=new Editor(b);
+  draw:"#FEFEFE",random_list_file:"/projects/pluralistic/celebA_HQ_test.txt",scale:1}, c=new Editor(b);
   document.getElementById(b.name).appendChild(c.view.ctx.canvas);
   editors.push(c);
   init()
