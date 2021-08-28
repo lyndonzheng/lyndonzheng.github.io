@@ -5,12 +5,254 @@
     <link>https://www.chuanxiaz.com/publication-type/2/</link>
       <atom:link href="https://www.chuanxiaz.com/publication-type/2/index.xml" rel="self" type="application/rss+xml" />
     <description>2</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 28 Aug 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://www.chuanxiaz.com/media/icon_hu31e06666eb535ef94200208b3edb96bb_10558_512x512_fill_lanczos_center_2.png</url>
       <title>2</title>
       <link>https://www.chuanxiaz.com/publication-type/2/</link>
     </image>
+    
+    <item>
+      <title>Visiting the Invisible: Layer-by-Layer Completed Scene Decomposition</title>
+      <link>https://www.chuanxiaz.com/publication/vinv/</link>
+      <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/vinv/</guid>
+      <description>&lt;hr&gt;
+&lt;img src=&#39;imgs/example.png&#39; align=&#34;center&#34;&gt;
+&lt;p&gt;Existing scene understanding systems mainly focus on recognizing the visible parts of a scene, ignoring the intact appearance of physical objects in the real-world. Concurrently, image completion has aimed to create plausible appearance for the invisible regions, but requires a manual mask as input. In this work, we propose a higher-level scene understanding system to tackle both visible and invisible parts of objects and backgrounds in a given scene. Particularly, we built a system to decompose a scene into individual objects, infer their underlying occlusion relationships, and even automatically learn which parts of the objects are occluded that need to be completed. In order to disentangle the occluded relationships of all objects in a complex scene, we use the fact that the front object without being occluded is easy to be identified, detected, and segmented. Our system interleaves the two tasks of instance segmentation and scene completion through multiple iterations, solving for objects layer-by-layer. We first provide a thorough experiment using a new realistically rendered dataset with ground-truths for all invisible regions. To bridge the domain gap to real imagery where ground-truths are unavailable, we then train another model with the pseudo-ground-truths generated from our trained synthesis model. We demonstrate results on a wide variety of datasets and show significant improvement over the state-of-the-art.&lt;/p&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Video&lt;/b&gt;&lt;/font&gt;
+&lt;iframe frameborder=&#34;0&#34; src=&#34;https://youtube.com/embed/QSAYxrKgn7A?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34; allowfullscreen height=&#34;495&#34; width=&#34;100%&#34;&gt;
+&lt;/iframe&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Framework&lt;/b&gt;&lt;/font&gt;
+&lt;ul&gt;
+&lt;li&gt;Layer-by-Layer Completed Scene Decomposition (CSDNet)
+&lt;img src=&#39;imgs/framework.png&#39;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Given a natural image, the layered scene decomposition network comprehensively detect all objects in it. For each candidate instance, it outputs a class label, a bounding-box offset, an instance mask and an occlusion label. The system will select out the fully visible objects in each step. The completion network will complete the resultant holes with appropriate imagery. The next step starts again with the completed image.&lt;/p&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Synthetic Data Creation&lt;/b&gt;&lt;/font&gt;
+&lt;img src=&#34;imgs/datasets.png&#34; align=&#34;center&#34;&gt;
+&lt;p&gt;Building a large dataset with complete ground-truth appearances for all objects is a &lt;b&gt;high-effort&lt;/b&gt; and &lt;b&gt;high-cost&lt;/b&gt; due to it needs to collect the visual ground truth for all complete objects, including both visible and invisible region. Hence, such datasets are very limited. To mitigate this issue, we rendered a realistic dataset with Maya using the SUNCG CAD dataset. Each rendered scene is accompanied by a global semantic map and dense annotations for all objects.&lt;/p&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Results&lt;/b&gt;&lt;/font&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Layer-by-Layer Completed Scene Decomposition(Synthetic)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Given a single RGB image, the system has learned to decompose it into semantically complete instances (&lt;i&gt;e.g.&lt;/i&gt; counter, table and window) and the backgrounds(wall, floor and ceiling), while completing RGB appearance for &lt;i&gt;invisible&lt;/i&gt; regions. Columns labeled S1-5 show the completed results layer-by-layer. In each layer, fully visible instances are segmented out, and after scene completion some previously occluded regions become fully visible in the next layer. The process will stop when it is unable to detect any more objects. The system also builds the pairwise order using the occlusion relationship and the detected out layer.&lt;/p&gt;
+&lt;img src=&#34;imgs/results_de_co.png&#34; align=&#34;center&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Visiting the Invisible Region(Synthetic)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The proposed CSDNet can automatically detect and complete the originally occluded object, without any visible ground truth or manually input mask.&lt;/p&gt;
+&lt;img src=&#34;imgs/results_invisible.png&#34; align=&#34;center&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Layer-by-Layer Completed Scene Decomposition(real)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We also extend the layer-by-layer completed scene decomposition method to real images. It is able to decompose a scene into completed instances with correct ordering. The originally occluded invisible parts of &#34;suitcase&#34;, for instance, is completed with full shape and realistic appearance. Note that, the system is a fully scene understanding method that only takes an image as input, without requiring the other manual annotations as SeGAN (Ehsani et al., 2018) or PCNet (Zhan et al., 2020).&lt;/p&gt;
+&lt;img src=&#34;imgs/results_de_co_real.png&#34; align=&#34;center&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Amodal Instance segmentation(real, without visible gt)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The system can generate amodal instance segmentation mask as it detects the fully visible objects in each step. Unlike the existing works that requires the ground truth annotations as input, the proposed only requires a RGB image as input, and it can detect some unlabeled instances in the ground truth.&lt;/p&gt;
+&lt;img src=&#34;imgs/real_amodal.png&#34; align=&#34;center&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Free-Form Image Editing(without manual mask)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The proposed new &lt;b&gt;completed scene completion&lt;/b&gt; task has wide applications as it fully decompose a scene into complete instance. We illustrate some image editing and scene re-composition applications of this novel task. In these cases, we directly modified the positions and occlusion ordering of individual objects. Then, we can create a realistic new scene.&lt;/p&gt;
+&lt;img src=&#34;imgs/results_application.png&#34; align=&#34;center&#34;&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pluralistic Free-Form Image Completion</title>
+      <link>https://www.chuanxiaz.com/publication/pluralistic_ex/</link>
+      <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/pluralistic_ex/</guid>
+      <description>&lt;hr&gt;
+&lt;img src=&#39;Images/example.png&#39; align=&#34;center&#34;&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Video&lt;/b&gt;&lt;/font&gt;
+&lt;iframe frameborder=&#34;0&#34; src=&#34;https://youtube.com/embed/9V7rNoLVmSs?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34; allowfullscreen height=&#34;495&#34; width=&#34;100%&#34;&gt;
+&lt;/iframe&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Abstract&lt;/b&gt;&lt;/font&gt;
+&lt;p&gt;Most image completion methods produce only one result for each masked input, although there may be many reasonable possibilities. In this paper, we present an approach for pluralistic image completion  the task of generating multiple diverse and plausible solutions for image completion. A major challenge faced by learning-based approaches is that here the conditional label itself is a partial image, and there is usually only one ground truth training instance per label. As such, sampling from conditional VAEs still leads to minimal diversity. To overcome this, we propose a novel and probabilistically principled framework with two parallel paths. One is a reconstructive path that extends the VAE through a latent space that covers all partial images with different mask sizes, and imposes priors that adapt to the number of pixels. The other is a generative path for which the conditional prior is coupled to distributions obtained in the reconstructive path. Both are supported by GANs. We also introduce a new short+long term attention layer that exploits distant relations among decoder and encoder features, improving appearance consistency. When tested on datasets with buildings (Paris), faces (CelebAHQ), and natural images (ImageNet), our method not only generated higher-quality completion results, but also with multiple and diverse plausible outputs.&lt;/p&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Framework&lt;/b&gt;&lt;/font&gt;
+&lt;ul&gt;
+&lt;li&gt;Pluralistic Image Completion Network (PICNet)
+&lt;img src=&#34;Images/inpainting_framework.png&#34; &gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Given a masked image, the &lt;b&gt;generative&lt;/b&gt; pipeline (blue line) infers the conditional distribution of missing regions, that can be sampled during the testing to generate &lt;i&gt;multiple&lt;/i&gt; and &lt;i&gt;diverse&lt;/i&gt; results. During the training, the missing regions are encodered to a distribution, that can be sampled to rebuild the original input by combing with the features of visible part (yellow line). This structure is designed on a probabilistically principled freamework. The details can be found in the paper.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Short+Long Term Attention Layer (SLTAtten)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&#34;text-align:justify;&#34;&gt; &lt;img align=&#34;left&#34; src=&#34;Images/inpainting_attention.png&#34; width=&#34;50%&#34;&gt; The proposed &lt;b&gt;Short+Long Term Attention Layer&lt;/b&gt; is extended beyond the Self-Attention GAN. This &lt;b&gt;SLTAtten&lt;/b&gt; layer not only use the self-attention map within a decoder layer to harness distant spatial context, but further capture feature-feature context between encoder and decoder layers. In this way, the similarity is calculated in the decoder features rather than between the encoder features and decoder features. Our &lt;i&gt;ke novel is&lt;/i&gt;: doing so would allow the network a choice of copying information from encoder or the more semantically generative features from the decoder. &lt;/p&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;More Results&lt;/b&gt;&lt;/font&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results for center mask&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place03295.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place03295.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place33889.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place33889.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place26087.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place26087.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place09264.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place09264.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place34979.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place34979.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place12704.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/place12704.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba185143.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba185143.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba183602.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba183602.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba185430.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba185430.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba199010.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba199010.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba197612.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba197612.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba202572.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/celeba202572.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris049.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris049.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris098.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris098.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris001.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris001.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris019.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris019.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris032.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris032.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris046.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/gif/paris046.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results (original, input, output) for object removing&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba189756.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba189756.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba189756.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba199782.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba199782.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba199782.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba183567.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba183567.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba183567.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba186054.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba186054.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba186054.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba200954.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba200954.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba200954.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_celeba194090.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_celeba194090.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_celeba194090.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_paris032.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_paris032.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_paris032.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_paris085.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_paris085.png&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_paris085.png&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00000321.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00000321.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00000321.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00009818.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00009818.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00009818.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00011330.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00011330.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00011330.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00013547.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00013547.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00013547.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00015967.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00015967.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00015967.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/original_place00034986.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/mask_place00034986.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/removing/result_place00034986.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results (original, input, output) for face playing.&lt;/strong&gt; When mask left or right face, the diversity will be small for the short+long term attention layer will copy information from other side. When mask top or down face, the diversity will be large.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba184054.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba184054.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba182927.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba182927.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba185235.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba185235.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba197462.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba197462.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba192793.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba192793.gif&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba196162.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba196162.gif&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba190638.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba190638.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba190952.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba190952.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba198496.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba198496.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/mask_celeba184852.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;Images/face_playing/result_celeba184852.jpg&#39;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</description>
+    </item>
     
     <item>
       <title>Multi-class indoor semantic segmentation with deep structured model</title>
