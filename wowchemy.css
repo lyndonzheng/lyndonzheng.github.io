@@ -9042,8 +9042,8 @@ html[dir='rtl'] body {
 
 @media (max-width: 767.98px) {
   .wg-about .avatar {
-    width: 200px;
-    height: 200px; } }
+    width: 150px;
+    height: 150px; } }
 
 .avatar-circle {
   border-radius: 50%; }

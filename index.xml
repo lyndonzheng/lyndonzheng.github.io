@@ -33,6 +33,59 @@
     </item>
     
     <item>
+      <title>Bridging global context interactions for high-fidelity image completion</title>
+      <link>https://www.chuanxiaz.com/publication/tfill/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.chuanxiaz.com/publication/tfill/</guid>
+      <description>&lt;hr&gt;
+&lt;img src=&#39;featured.png&#39; align=&#34;center&#34;&gt;
+&lt;!--
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Video&lt;/b&gt;&lt;/font&gt;
+
+&lt;iframe frameborder=&#34;0&#34; src=&#34;https://youtube.com/embed/9V7rNoLVmSs?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34; allowfullscreen height=&#34;495&#34; width=&#34;100%&#34;&gt;
+&lt;/iframe&gt;
+--&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Abstract&lt;/b&gt;&lt;/font&gt;
+&lt;p&gt;Bridging distant context interactions is important for high quality image completion with large masks. Previous methods attempting this via deep or large receptive field (RF) convolutions cannot escape from the dominance of nearby interactions, which may be inferior. In this paper, we propose treating image completion as a directionless sequence-to-sequence prediction task, and deploy a transformer to directly capture long-range dependence in the encoder in a first phase. Crucially, we employ a restrictive CNN with small and non-overlapping RF for token representation, which allows the transformer to explicitly model the long-range context relations with equal importance in all layers, without implicitly confounding neighboring tokens when larger RFs are used. In a second phase, to improve appearance consistency between visible and generated regions, a novel attention-aware layer (AAL) is introduced to better exploit distantly related features and also avoid the insular effect of standard attention. Overall, extensive experiments demonstrate superior performance compared to state-of-the-art methods on several datasets.&lt;/p&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Framework&lt;/b&gt;&lt;/font&gt;
+&lt;ul&gt;
+&lt;li&gt;Transformer-based Image Completion Network&lt;/li&gt;
+&lt;/ul&gt;
+&lt;td&gt;&lt;img src=&#39;imgs/framework.png&#39;&gt;&lt;/td&gt;
+&lt;p&gt; The masked image is first resized to a fixed low resolution (256*256) and fed into the transformer to generate semantically correct content. We then merge this inferred content with the original high resolution image and pass it to a refinement network with an &lt;b&gt;A&lt;/b&gt;ttention-&lt;b&gt;A&lt;/b&gt;ware &lt;b&gt;L&lt;/b&gt;ayer (&lt;b&gt;AAL&lt;/b&gt;) to transfer high-quality information from both visible and masked regions. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Token Representation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td style=&#34;width:40%&#34;&gt;&lt;img src=&#39;imgs/token.png&#39;&gt;&lt;/td&gt;
+&lt;td style=&#34;width:60%&#34; vertical-align:middle&gt;
+&lt;p&gt;(a) &lt;b&gt;iGPT&lt;/b&gt; downsamples the image to a fixed scale, and embeds &lt;i&gt;each pixel to a token&lt;/i&gt;. (b) &lt;b&gt;VIT&lt;/b&gt; divides an image to a set of fixed patches and embeds &lt;i&gt;each patch to a token&lt;/i&gt;. (c) &lt;b&gt;VQGAN&lt;/b&gt; employs a traditional CNN to encode an image to the feature domains and then &lt;i&gt;quantizes each feature as a token&lt;/i&gt; through a learned codebook. (d) Ours &lt;b&gt;TFill&lt;/b&gt; also encodes an image to the feature domains, yet with a &lt;i&gt;restrictive CNN&lt;/i&gt;. To do this, we ensure each token represents only the visible information in a small RF, &lt;i&gt;leaving the long-range dependencies to be explicitly modeled by the transformer encoder in every layer&lt;/i&gt;, without cross-contamination from implicit correlation due to larger CNN RF&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;font size=&#34;5&#34;&gt;&lt;b&gt;More Results&lt;/b&gt;&lt;/font&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results for Center Mask&lt;/strong&gt;. All images are degraded by center mask. Our model is able to complete both object shape and background scene.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;td&gt;&lt;img src=&#39;imgs/center_imagenet.jpg&#39;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#39;imgs/center_places2.jpg&#39;&gt;&lt;/td&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results for Face Editing&lt;/strong&gt;. All results are reported at 512*512 resolution. For each pair, the left one is the input image and the right one is the edited output.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;td&gt;&lt;img src=&#39;imgs/free_face.jpg&#39;&gt;&lt;/td&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Results for Nature Image Editing&lt;/strong&gt;. Here, we mainly show object removal in traditional image inpainting tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;td&gt;&lt;img src=&#39;imgs/free_nature.jpg&#39;&gt;&lt;/td&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Visiting the Invisible: Layer-by-Layer Completed Scene Decomposition</title>
       <link>https://www.chuanxiaz.com/publication/vinv/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
@@ -280,59 +333,6 @@
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
       <guid>https://www.chuanxiaz.com/publication/agilegan/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>TFill: Image Completion via a Transformer-Based Architecture</title>
-      <link>https://www.chuanxiaz.com/publication/tfill/</link>
-      <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.chuanxiaz.com/publication/tfill/</guid>
-      <description>&lt;hr&gt;
-&lt;img src=&#39;featured.png&#39; align=&#34;center&#34;&gt;
-&lt;!--
-&lt;hr&gt;
-&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Video&lt;/b&gt;&lt;/font&gt;
-
-&lt;iframe frameborder=&#34;0&#34; src=&#34;https://youtube.com/embed/9V7rNoLVmSs?autoplay=1&amp;controls=1&amp;showinfo=1&amp;autohide=0&#34; allow=&#34;autoplay&#34; allowfullscreen height=&#34;495&#34; width=&#34;100%&#34;&gt;
-&lt;/iframe&gt;
---&gt;
-&lt;hr&gt;
-&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Abstract&lt;/b&gt;&lt;/font&gt;
-&lt;p&gt;Bridging distant context interactions is important for high quality image completion with large masks. Previous methods attempting this via deep or large receptive field (RF) convolutions cannot escape from the dominance of nearby interactions, which may be inferior. In this paper, we propose treating image completion as a directionless sequence-to-sequence prediction task, and deploy a transformer to directly capture long-range dependence in the encoder in a first phase. Crucially, we employ a restrictive CNN with small and non-overlapping RF for token representation, which allows the transformer to explicitly model the long-range context relations with equal importance in all layers, without implicitly confounding neighboring tokens when larger RFs are used. In a second phase, to improve appearance consistency between visible and generated regions, a novel attention-aware layer (AAL) is introduced to better exploit distantly related features and also avoid the insular effect of standard attention. Overall, extensive experiments demonstrate superior performance compared to state-of-the-art methods on several datasets.&lt;/p&gt;
-&lt;hr&gt;
-&lt;font size=&#34;5&#34;&gt;&lt;b&gt;Framework&lt;/b&gt;&lt;/font&gt;
-&lt;ul&gt;
-&lt;li&gt;Transformer-based Image Completion Network&lt;/li&gt;
-&lt;/ul&gt;
-&lt;td&gt;&lt;img src=&#39;imgs/framework.png&#39;&gt;&lt;/td&gt;
-&lt;p&gt; The masked image is first resized to a fixed low resolution (256*256) and fed into the transformer to generate semantically correct content. We then merge this inferred content with the original high resolution image and pass it to a refinement network with an &lt;b&gt;A&lt;/b&gt;ttention-&lt;b&gt;A&lt;/b&gt;ware &lt;b&gt;L&lt;/b&gt;ayer (&lt;b&gt;AAL&lt;/b&gt;) to transfer high-quality information from both visible and masked regions. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Token Representation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td style=&#34;width:40%&#34;&gt;&lt;img src=&#39;imgs/token.png&#39;&gt;&lt;/td&gt;
-&lt;td style=&#34;width:60%&#34; vertical-align:middle&gt;
-&lt;p&gt;(a) &lt;b&gt;iGPT&lt;/b&gt; downsamples the image to a fixed scale, and embeds &lt;i&gt;each pixel to a token&lt;/i&gt;. (b) &lt;b&gt;VIT&lt;/b&gt; divides an image to a set of fixed patches and embeds &lt;i&gt;each patch to a token&lt;/i&gt;. (c) &lt;b&gt;VQGAN&lt;/b&gt; employs a traditional CNN to encode an image to the feature domains and then &lt;i&gt;quantizes each feature as a token&lt;/i&gt; through a learned codebook. (d) Ours &lt;b&gt;TFill&lt;/b&gt; also encodes an image to the feature domains, yet with a &lt;i&gt;restrictive CNN&lt;/i&gt;. To do this, we ensure each token represents only the visible information in a small RF, &lt;i&gt;leaving the long-range dependencies to be explicitly modeled by the transformer encoder in every layer&lt;/i&gt;, without cross-contamination from implicit correlation due to larger CNN RF&lt;/p&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;font size=&#34;5&#34;&gt;&lt;b&gt;More Results&lt;/b&gt;&lt;/font&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Results for Center Mask&lt;/strong&gt;. All images are degraded by center mask. Our model is able to complete both object shape and background scene.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;td&gt;&lt;img src=&#39;imgs/center_imagenet.jpg&#39;&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&#39;imgs/center_places2.jpg&#39;&gt;&lt;/td&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Results for Face Editing&lt;/strong&gt;. All results are reported at 512*512 resolution. For each pair, the left one is the input image and the right one is the edited output.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;td&gt;&lt;img src=&#39;imgs/free_face.jpg&#39;&gt;&lt;/td&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Results for Nature Image Editing&lt;/strong&gt;. Here, we mainly show object removal in traditional image inpainting tasks.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;td&gt;&lt;img src=&#39;imgs/free_nature.jpg&#39;&gt;&lt;/td&gt;
-</description>
     </item>
     
     <item>
