@@ -292,6 +292,49 @@
             </td>
           </tr>
 
+
+          <tr onmouseout="flsesim_stop()" onmouseover="flsesim_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='agilegan_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/flsesim_teaser.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='images/flsesim_teaser.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function flsesim_start() {
+                  document.getElementById('flsesim_image').style.opacity = "1";
+                }
+
+                function flsesim_stop() {
+                  document.getElementById('flsesim_image').style.opacity = "0";
+                }
+                flsesim_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://chuanxiaz.com/flsesim">
+                <papertitle>The Spatially-Correlative Loss for Various Image Translation Tasks</papertitle>
+              </a>
+              <br>
+              <strong>Chuanxia Zheng</strong>,
+              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>,
+              <a href="https://jianfei-cai.github.io/">Jianfei Cai</a>
+              <br>
+              <em>CVPR</em>, 2021
+              <br>
+              <a href="https://chuanxiaz.com/flsesim">project page</a> /
+              <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Zheng_The_Spatially-Correlative_Loss_for_Various_Image_Translation_Tasks_CVPR_2021_paper.pdf">PDF</a> /
+              <a href="https://arxiv.org/abs/2104.00854">arXiv</a> /
+              <a href="https://www.youtube.com/watch?v=pu6PT1om2r0">video</a> /
+              <a href="https://github.com/lyndonzheng/F-LSeSim">code</a> /
+              <a href="data/2022CVPR_poster_TFill.pdf">poster</a>
+              <p></p>
+              <p>We propose a novel spatially-correlative loss that is simple, efficient and yet effective for preserving scene structure consistency while supporting large appearance changes during unpaired I2I translation.</p>
+            </td>
+          </tr>
+
     </tbody></table>
 
 
