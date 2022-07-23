@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>tfill</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://chuanxiaz.com/vinv/img/featured.gif">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chuanxiaz.com/vinv"/>
+    <meta property="og:title" content="Visiting the Invisible: Layer-by-Layer Completed Scene Decomposition" />
+    <meta property="og:description" content="Existing scene understanding systems mainly focus on recognizing the visible parts of a scene, ignoring the intact appearance of physical objects in the real-world. Concurrently, image completion has aimed to create plausible appearance for the invisible regions, but requires a manual mask as input. In this work, we propose a higher-level scene understanding system to tackle both visible and invisible parts of objects and backgrounds in a given scene. Particularly, we built a system to decompose a scene into individual objects, infer their underlying occlusion relationships, and even automatically learn which parts of the objects are occluded that need to be completed. In order to disentangle the occluded relationships of all objects in a complex scene, we use the fact that the front object without being occluded is easy to be identified, detected, and segmented. Our system interleaves the two tasks of instance segmentation and scene completion through multiple iterations, solving for objects layer-by-layer. We first provide a thorough experiment using a new realistically rendered dataset with ground-truths for all invisible regions. To bridge the domain gap to real imagery where ground-truths are unavailable, we then train another model with the pseudo-ground-truths generated from our trained synthesis model. We demonstrate results on a wide variety of datasets and show significant improvement over the state-of-the-art." />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center"><b>Visiting the Invisible</b>: Layer-by-Layer <br> Completed Scene Decomposition</br>
+                <small>
+								IJCV 2021
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://chuanxiaz.com/">
+                          Chuanxia Zheng
+                        </a>
+                      </br>NTU
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=AZWFq1sAAAAJ&hl=en">
+                          Duy-Son Dao
+                        </a>
+                      </br>Monash University
+                    </li>
+                    <li>
+                        <a href="https://guoxiansong.github.io/homepage/index.html">
+                          Guoxian Song
+                        </a>
+                      </br>NTU
+                    </li>
+                    <br>
+                    <li>
+                        <a href="https://personal.ntu.edu.sg/astjcham/">
+                            Tat-Jen Cham
+                        </a>
+                      </br>NTU
+                    </li>
+                    <li>
+                        <a href="https://jianfei-cai.github.io/">
+                          Jianfei Cai
+                        </a>
+                        </br>Monash University
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/2104.05367">
+                            <image src="img/vinv_paper_image.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtu.be/efB1fw0jiLs">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/lyndonzheng/TFill" target="_blank">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="TODO">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                  Existing scene understanding systems mainly focus on recognizing the visible parts of a scene, ignoring the intact appearance of physical objects in the real-world. Concurrently, image completion has aimed to create plausible appearance for the invisible regions, but requires a manual mask as input. In this work, we propose a higher-level scene understanding system to tackle both visible and invisible parts of objects and backgrounds in a given scene. Particularly, we built a system to decompose a scene into individual objects, infer their underlying occlusion relationships, and even automatically learn which parts of the objects are occluded that need to be completed. In order to disentangle the occluded relationships of all objects in a complex scene, we use the fact that the front object without being occluded is easy to be identified, detected, and segmented. Our system interleaves the two tasks of instance segmentation and scene completion through multiple iterations, solving for objects layer-by-layer. We first provide a thorough experiment using a new realistically rendered dataset with ground-truths for all invisible regions. To bridge the domain gap to real imagery where ground-truths are unavailable, we then train another model with the pseudo-ground-truths generated from our trained synthesis model. We demonstrate results on a wide variety of datasets and show significant improvement over the state-of-the-art.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://www.youtube.com/watch?v=QSAYxrKgn7A" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                    <h3>
+                        Model Architecture
+                    </h3>
+                    <p style="text-align:center;">
+                        <image src="img/framework.jpg" height="50px" class="img-responsive">
+                    </p>
+                    <p class="text-justify">
+                        Given a natural image, the layered scene decomposition network comprehensively detect all objects in it. For each candidate instance, it outputs a class label, a bounding-box offset, an instance mask and an occlusion label. The system will select out the fully visible objects in each step. The completion network will complete the resultant holes with appropriate imagery. The next step starts again with the completed image.
+                    </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                    <h3>
+                        Data Collection
+                    </h3>
+                    <p style="text-align:center;">
+                        <image src="img/datasets.jpg" height="50px" class="img-responsive">
+                    </p>
+                    <p class="text-justify">
+                        Building a large dataset with complete ground-truth appearances for all objects is a <b>high-effort</b> and <b>high-cost</b> due to it needs to collect the visual ground truth for all complete objects, including both visible and invisible region. Hence, such datasets are very limited. To mitigate this issue, we rendered a realistic dataset with Maya using the SUNCG CAD dataset. Each rendered scene is accompanied by a global semantic map and dense annotations for all objects.
+                    </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    More Results
+                </h3>
+                <h4> <b> Layer-by-Layer Completed Scene Decomposition(Synthetic).</b></h4>
+                <p class="text-justify">
+                    Given a single RGB image, the system has learned to decompose it into semantically complete instances (e.g. counter, table and window) and the backgrounds(wall, floor and ceiling), while completing RGB appearance for invisible regions. Columns labeled S1-5 show the completed results layer-by-layer. In each layer, fully visible instances are segmented out, and after scene completion some previously occluded regions become fully visible in the next layer. The process will stop when it is unable to detect any more objects. The system also builds the pairwise order using the occlusion relationship and the detected out layer.
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/results_de_co.jpg" height="60px" class="img-responsive">
+                </p>
+                <h4> <b> Visiting the Invisible Region(Synthetic).</b></h4>
+                <p class="text-justify">
+                    The proposed CSDNet can automatically detect and complete the originally occluded object, without any visible ground truth or manually input mask.
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/results_invisible.jpg" height="60px" class="img-responsive">
+                </p>
+                <h4> <b> Layer-by-Layer Completed Scene Decomposition(real).</b></h4>
+                <p class="text-justify">
+                     We decompose a real scene into completed instances with correct ordering. The originally occluded invisible parts of "suitcase", for instance, is completed with full shape and realistic appearance. Note that, the system is a fully scene understanding method that only takes an image as input, without requiring the other manual annotations as SeGAN (Ehsani et al., 2018) or PCNet (Zhan et al., 2020).
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/results_de_co_real.jpg" height="60px" class="img-responsive">
+                </p>
+                <h4> <b> Amodal Instance segmentation(real, without visible gt).</b></h4>
+                <p class="text-justify">
+                     The system can generate amodal instance segmentation mask as it detects the fully visible objects in each step. Unlike the existing works that requires the ground truth annotations as input, the proposed only requires a RGB image as input, and it can detect some unlabeled instances in the ground truth.
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/real_amodal.jpg" height="60px" class="img-responsive">
+                </p>
+                <h4> <b> Free-Form Image Editing(without manual mask).</b></h4>
+                <p class="text-justify">
+                  We illustrate some image editing and scene re-composition applications of this novel task. In these cases, we directly modified the positions and occlusion ordering of individual objects. Then, we can create a realistic new scene.
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/results_application.jpg" height="60px" class="img-responsive">
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@article{zheng2021visiting,
+title={Visiting the Invisible: Layer-by-Layer Completed Scene Decomposition},
+author={\textbf{Zheng}, \textbf{Chuanxia} and Dao, Duy-Son and Song, Guoxian and Cham, Tat-Jen and Cai, Jianfei},
+journal={International Journal of Computer Vision (\textbf{IJCV})},
+volume={129},
+number={12},
+pages={3195--3215},
+year={2021},
+publisher={Springer}
+}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                The website template was borrowed from <a href="https://jonbarron.info/mipnerf/">Mip-NeRF</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
