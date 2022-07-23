@@ -296,7 +296,7 @@
           <tr onmouseout="flsesim_stop()" onmouseover="flsesim_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='agilegan_image'><video  width=100% height=100% muted autoplay loop>
+                <div class="two" id='flsesim_image'><video  width=100% height=100% muted autoplay loop>
                 <source src="images/flsesim_teaser.mp4" type="video/mp4">
                 Your browser does not support the video tag.
                 </video></div>
@@ -306,7 +306,6 @@
                 function flsesim_start() {
                   document.getElementById('flsesim_image').style.opacity = "1";
                 }
-
                 function flsesim_stop() {
                   document.getElementById('flsesim_image').style.opacity = "0";
                 }
@@ -332,6 +331,50 @@
               <a href="data/2022CVPR_poster_TFill.pdf">poster</a>
               <p></p>
               <p>We propose a novel spatially-correlative loss that is simple, efficient and yet effective for preserving scene structure consistency while supporting large appearance changes during unpaired I2I translation.</p>
+            </td>
+          </tr>
+
+
+          <tr onmouseout="pic_stop()" onmouseover="pic_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='pic_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/pic_teaser.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='images/pic_teaser.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function pic_start() {
+                  document.getElementById('pic_image').style.opacity = "1";
+                }
+                function pic_stop() {
+                  document.getElementById('pic_image').style.opacity = "0";
+                }
+                pic_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://chuanxiaz.com/pic">
+                <papertitle>Pluralistic (Free-Form) Image Completion</papertitle>
+              </a>
+              <br>
+              <strong>Chuanxia Zheng</strong>,
+              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>,
+              <a href="https://jianfei-cai.github.io/">Jianfei Cai</a>
+              <br>
+              <em>IJCV</em>, 2021
+              <br>
+              <em>CVPR</em>, 2019
+              <br>
+              <a href="https://chuanxiaz.com/pic">project page</a> /
+              <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Zheng_Pluralistic_Image_Completion_CVPR_2019_paper.pdf">PDF</a> /
+              <a href="https://arxiv.org/abs/1903.04227">arXiv</a> /
+              <a href="https://www.youtube.com/watch?v=9V7rNoLVmSs">video</a> /
+              <a href="https://github.com/lyndonzheng/Pluralistic-Inpainting">code</a> /
+              <a href="data/poster_picnet_cvpr19.pdf">poster</a>
+              <p></p>
+              <p>Given a single masked image, the proposed model is able to generate multiple and diverse plausible results.</p>
             </td>
           </tr>
 
