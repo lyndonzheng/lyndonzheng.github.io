@@ -378,6 +378,48 @@
             </td>
           </tr>
 
+
+          <tr onmouseout="synthetic2real_stop()" onmouseover="synthetic2real_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='synthetic2real_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/synthetic2real_teaser.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='images/synthetic2real_teaser.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function synthetic2real_start() {
+                  document.getElementById('synthetic2real_image').style.opacity = "1";
+                }
+                function synthetic2real_stop() {
+                  document.getElementById('synthetic2real_image').style.opacity = "0";
+                }
+                synthetic2real_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://chuanxiaz.com/synthetic2real">
+                <papertitle>T2Net: Synthetic-to-Realistic Translation for Depth Estimation Tasks</papertitle>
+              </a>
+              <br>
+              <strong>Chuanxia Zheng</strong>,
+              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>,
+              <a href="https://jianfei-cai.github.io/">Jianfei Cai</a>
+              <br>
+              <em>ECCV</em>, 2018
+              <br>
+              <a href="https://chuanxiaz.com/synthetic2real">project page</a> /
+              <a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Chuanxia_Zheng_T2Net_Synthetic-to-Realistic_Translation_ECCV_2018_paper.pdf">PDF</a> /
+              <a href="https://arxiv.org/abs/1808.01454">arXiv</a> /
+              <a href="https://www.youtube.com/watch?v=B6lOToIk0xY">video</a> /
+              <a href="https://github.com/lyndonzheng/Synthetic2Realistic">code</a> /
+              <a href="data/poster_syn2real_eccv18.pdf">poster</a>
+              <p></p>
+              <p>Without any real depth map, the proposed model evaluates depth maps on real scenes using only synthetic datasets.</p>
+            </td>
+          </tr>
+
     </tbody></table>
 
 
@@ -432,7 +474,13 @@
           </tr>
         </table>
 
-        <script type="text/javascript" src="//ra.revolvermaps.com/0/0/1.js?i=0s5f0y0jjk8&amp;s=180&amp;m=6&amp;v=true&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <script type="text/javascript" src="//ra.revolvermaps.com/0/0/1.js?i=0s5f0y0jjk8&amp;s=180&amp;m=6&amp;v=true&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script>
+            </td>
+            </tr>
+            </tbody></table>
 
       </td>
     </tr>
