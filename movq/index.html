@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>MoVQ</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://chuanxiaz.com/movq/img/featured.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chuanxiaz.com/movq"/>
+    <meta property="og:title" content="MoVQ: Modulating Quantized Vectors for High-Fidelity Image Generation" />
+    <meta property="og:description" content="Although two-stage Vector Quantized (VQ) generative models allow for synthesizing high-fidelity and high-resolution images, their quantization operator encodes similar patches within an image into the same index, resulting in a repeated artifact for similar adjacent regions using existing decoder architectures. To address this issue, we propose to incorporate the spatially conditional normalization to modulate the quantized vectors so as to insert spatially variant information to the embedded index maps, encouraging the decoder to generate more photorealistic images. Moreover, we use multichannel quantization to increase the recombination capability of the discrete codes without increasing the cost of model and codebook. Additionally, to generate discrete tokens at the second stage, we adopt a Masked Generative Image Transformer (MaskGIT) to learn an underlying prior distribution in the compressed latent space, which is much faster than the conventional autoregressive model. Experiments on two benchmark datasets demonstrate that our proposed modulated VQGAN is able to greatly improve the reconstructed image quality as well as provide high-fidelity image generation." />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">MoVQ: Modulating Quantized Vectors for <br> High-Fidelity Image Generation </br>
+                <small>
+								NeurIPS (Spotlight) 2022
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://chuanxiaz.com/">
+                          Chuanxia Zheng
+                        </a>
+                      </br>Monash University
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=DCC657sAAAAJ&hl=en">
+                            Long Tung Vuong
+                        </a>
+                      </br>VinAI
+                    </li>
+                    <li>
+                        <a href="https://jianfei-cai.github.io/">
+                          Jianfei Cai
+                        </a>
+                        </br>Monash University
+                    </li>
+                    <li>
+                        <a href="https://research.monash.edu/en/persons/dinh-phung">
+                          Dinh Phung
+                        </a>
+                        </br>Monash University
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://openreview.net/pdf?id=Qb-AoSw4Jnm">
+                            <image src="img/movq_paper_image.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://recorder-v3.slideslive.com/?share=75742&s=46fd4642-e778-4156-bc73-151f85156f30">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <!--<li>
+                            <a href="https://github.com/lyndonzheng/TFill" target="_blank">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                         <li>
+                            <a href="TODO">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+Although two-stage Vector Quantized (VQ) generative models allow for synthesizing high-fidelity and high-resolution images, their quantization operator encodes similar patches within an image into the same index, resulting in a repeated artifact for similar adjacent regions using existing decoder architectures. To address this issue, we propose to incorporate the spatially conditional normalization to modulate the quantized vectors so as to insert spatially variant information to the embedded index maps, encouraging the decoder to generate more photorealistic images. Moreover, we use multichannel quantization to increase the recombination capability of the discrete codes without increasing the cost of model and codebook. Additionally, to generate discrete tokens at the second stage, we adopt a Masked Generative Image Transformer (MaskGIT) to learn an underlying prior distribution in the compressed latent space, which is much faster than the conventional autoregressive model. Experiments on two benchmark datasets demonstrate that our proposed modulated VQGAN is able to greatly improve the reconstructed image quality as well as provide high-fidelity image generation.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://recorder-v3.slideslive.com/?share=75742&s=46fd4642-e778-4156-bc73-151f85156f30" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                    <h3>
+                        Model Architecture
+                    </h3>
+                    <p style="text-align:center;">
+                        <image src="img/framework.png" height="50px" class="img-responsive">
+                    </p>
+                    <p class="text-justify">
+                      <strong>Left</strong>: The quantizer architecture of our proposed MoVQ. We incorporate the spatially conditional normalization layer into the decoder, where the two convolution layers predict modulation parameters γ and β in a point-wise way to modulate the learned discrete structure information. <strong>Right</strong>: Masked image generation. Here, a bidirectional transformer is applied to estimate the underlying prior distribution on the discrete representation with multiple channels.
+                    </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    More Results
+                </h3>
+                <h4> <b> Results for Data Compression (Stage-1).</b></h4>
+                <p class="text-justify">
+                  Reconstructions from different models. The numbers denote the represented latent size and learned codebook sizes, respectively. Our model dramatically improves the image quality in the first stage
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/data_compression.png" height="60px" class="img-responsive">
+                </p>
+                <h4> <b> Results for Unconditional Image Generation (Stage-2).</b> </h4>
+                <p class="text-justify">
+                     256×256 image samples generated by the proposed MoVQ, with model trained on FFHQ
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/unconditional_generation.png" height="60px" class="img-responsive">
+                </p>
+                <h4> <b> Results for Class-conditional Image Generation (Stage-2).</b> </h4>
+                <p class="text-justify">
+                     Generated 256 × 256 images by our MoVQ for class-conditional generation on ImageNet.
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/conditional_generation_1.png" height="60px" class="img-responsive">
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/conditional_generation_2.png" height="60px" class="img-responsive">
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@InProceedings{zheng2022movq,
+	author={Zheng, Chuanxia and Vuong, Long Tung and Cai, Jianfei and Phung, Dinh},
+  title={MoVQ: Modulating Quantized Vectors for High-Fidelity Image Generation},
+	booktitle={Thirty-sixth Conference on Neural Information Processing Systems},
+	year = {2022},
+}
+</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                The website template was borrowed from <a href="https://jonbarron.info/mipnerf/">Mip-NeRF</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
