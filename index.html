@@ -84,6 +84,138 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+          <tr onmouseout="cocktail_stop()" onmouseover="cocktail_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='cocktail_image'>
+                <img src="images/cocktail_teaser_1.png" width="160"></div>
+                <img src='images/cocktail_teaser_0.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function cocktail_start() {
+                  document.getElementById('cocktail_image').style.opacity = "1";
+                }
+
+                function cocktail_stop() {
+                  document.getElementById('cocktail_image').style.opacity = "0";
+                }
+                cocktail_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://mhh0318.github.io/unid3/">
+                <papertitle>Cocktail🍸: Mixing Multi-Modality Controls for Text-Conditional Image Generation</papertitle>
+              </a>
+              <br>
+              <a href="https://mhh0318.github.io/">Minghui Hu</a>,
+              <a href="https://github.com/jabir-zheng">Jianbin Zheng</a>,
+              <a href="https://daqingliu.github.io/">Daqing Liu</a>,
+              <strong>Chuanxia Zheng</strong>,
+              <a href="https://wang-chaoyue.github.io/">Chaoyue Wang</a>,
+              <a href="https://www.sydney.edu.au/engineering/about/our-people/academic-staff/dacheng-tao.html">Dacheng Tao</a>,
+              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>
+              <br>
+              <em>arXiv</em>, 2023
+              <br>
+              <a href="https://mhh0318.github.io/cocktail/">project page</a> /
+              <a href="">PDF</a> /
+              <a href="https://mhh0318.github.io/cocktail/">arXiv</a> /
+              <a href="https://www.youtube.com/watch?v=cy0fDO3-QSA">video</a> /
+              <a href="https://github.com/mhh0318/Cocktail">code</a>
+              <p></p>
+              <p>We develop a generalized framework for multi-modality control based on text-to-image generation.</p>
+            </td>
+          </tr>
+
+
+          <tr onmouseout="matchnerf_stop()" onmouseover="matchnerf_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='matchnerf_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/matchnerf_teaser.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='images/matchnerf_teaser.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function matchnerf_start() {
+                  document.getElementById('matchnerf_image').style.opacity = "1";
+                }
+
+                function matchnerf_stop() {
+                  document.getElementById('matchnerf_image').style.opacity = "0";
+                }
+                matchnerf_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="http://arxiv.org/abs/2304.12294">
+                <papertitle>Explicit Correspondence Matching for Generalizable Neural Radiance Fields</papertitle>
+              </a>
+              <br>
+              <a href="https://donydchen.github.io/">Yuedong Chen</a>,
+              <a href="https://haofeixu.github.io/">Haofei Xu</a>,
+              <a href="https://wuqianyi.top/">Qianyi Wu</a>,
+              <strong>Chuanxia Zheng</strong>,
+              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>,
+              <a href="https://jianfei-cai.github.io/">Jianfei Cai</a>
+              <br>
+              <em>arXiv</em>, 2023
+              <br>
+              <a href="https://donydchen.github.io/matchnerf/">project page</a> /
+              <a href="https://arxiv.org/abs/2304.12294">arXiv</a> /
+              <a href="https://github.com/donydchen/matchnerf">code</a>
+              <p></p>
+              <p>
+                Employing explicit correspondence matching as a geometry prior enables NeRF to generalize across scenes.
+              </p>
+            </td>
+          </tr>
+
+
+          <tr onmouseout="VQWAE_stop()" onmouseover="VQWAE_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <!-- <div class="two" id='VQWAE_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/UniD3_teaser.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div> -->
+                <img src='images/VQWAE_teaser.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function VQWAE_start() {
+                  document.getElementById('VQWAE_image').style.opacity = "1";
+                }
+
+                function VQWAE_stop() {
+                  document.getElementById('VQWAE_image').style.opacity = "0";
+                }
+                VQWAE_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://mhh0318.github.io/unid3/">
+                <papertitle>Vector Quantized Wasserstein Auto-Encoder</papertitle>
+              </a>
+              <br>
+              <a href="https://scholar.google.com/citations?user=DCC657sAAAAJ&hl=en">Long Tung Vuong</a>,
+              <a href="https://scholar.google.com/citations?user=gysdMxwAAAAJ&hl=en/">Trung Le</a>,
+              <a href="https://hezgit.github.io/">He zhao</a>,
+              <strong>Chuanxia Zheng</strong>,
+              <a href="https://sites.google.com/site/mehrtashharandi/">Mehrtash Harandi</a>,
+              <a href="https://jianfei-cai.github.io/">Jianfei Cai</a>,
+              <a href="https://research.monash.edu/en/persons/dinh-phung">Dinh Phung</a>
+              <br>
+              <em>ICML</em>, 2023
+              <br>
+              <!-- <a href="https://mhh0318.github.io/unid3/">project page</a> / -->
+              <a href="https://arxiv.org/abs/2302.05917">arXiv</a> /
+              <a href="">code (coming soon)</a>
+              <p></p>
+              <p>Minimize the codebook-data distortion as the Wasserstein distance.</p>
+            </td>
+          </tr>
+
           <tr onmouseout="UniD3_stop()" onmouseover="UniD3_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
