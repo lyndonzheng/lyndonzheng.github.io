@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>MoVQ</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://chuanxiaz.com/cvq/img/featured.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chuanxiaz.com/cvq"/>
+    <meta property="og:title" content="Online Clustered Codebook" />
+    <meta property="og:description" content="Vector Quantisation (VQ) is experiencing a comeback in machine learning, where it is increasingly used in representation learning. However, optimizing the codevectors in existing VQ-VAE is not entirely trivial. A problem is codebook collapse, where only a small subset of codevectors receive gradients useful for their optimisation, whereas a majority of them simply “dies off” and is never updated or used. This limits the effectiveness of VQ for learning larger codebooks in complex computer vision tasks that require high-capacity representations. In this paper, we present a simple alternative method for online codebook learning, Clustering VQ-VAE (CVQ-VAE). Our approach selects encoded features as anchors to update the “dead” codevectors, while optimising the codebooks which are alive via the original loss. This strategy brings unused codevectors closer in distribution to the encoded features, increasing the likelihood of being chosen and optimized. We extensively validate the generalization capability of our quantiser on various datasets, tasks (e.g. reconstruction and generation), and architectures (e.g. VQ-VAE, VQGAN, LDM). CVQ-VAE can be easily integrated into the existing models with just a few lines of code." />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">Online Clustered Codebook</br>
+                <small>
+								ICCV 2023
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://chuanxiaz.com/">
+                          Chuanxia Zheng
+                        </a>
+                      <!-- </br>Visual Geometry Group - University of Oxford -->
+                    </li>
+                    <li>
+                        <a href="https://www.robots.ox.ac.uk/~vedaldi/">
+                          Andrea Vedaldi
+                        </a>
+                        <!-- </br>Monash University -->
+                    </li>
+                </ul>
+                Visual Geometry Group - University of Oxford
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://openreview.net/pdf?id=Qb-AoSw4Jnm">
+                            <image src="img/cvq_paper_image.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/lyndonzheng/CVQ-VAE" target="_blank">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                         <!--<li>
+                            <a href="TODO">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://recorder-v3.slideslive.com/?share=75742&s=46fd4642-e778-4156-bc73-151f85156f30">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                      -->
+                    </ul>
+                </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+Vector Quantisation (VQ) is experiencing a comeback in machine learning, where it is increasingly used in representation learning. However, optimizing the codevectors in existing VQ-VAE is not entirely trivial. A problem is codebook collapse, where only a small subset of codevectors receive gradients useful for their optimisation, whereas a majority of them simply “dies off” and is never updated or used. This limits the effectiveness of VQ for learning larger codebooks in complex computer vision tasks that require high-capacity representations. In this paper, we present a simple alternative method for online codebook learning, Clustering VQ-VAE (CVQ-VAE). Our approach selects encoded features as anchors to update the “dead” codevectors, while optimising the codebooks which are alive via the original loss. This strategy brings unused codevectors closer in distribution to the encoded features, increasing the likelihood of being chosen and optimized. We extensively validate the generalization capability of our quantiser on various datasets, tasks (e.g. reconstruction and generation), and architectures (e.g. VQ-VAE, VQGAN, LDM). CVQ-VAE can be easily integrated into the existing models with just a few lines of code.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://recorder-v3.slideslive.com/?share=75742&s=46fd4642-e778-4156-bc73-151f85156f30" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                    <h3>
+                        Runing Avearage updates
+                    </h3>
+                    <p style="text-align:center;">
+                        <image src="img/framework.png" height="50px" class="img-responsive">
+                    </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    More Results
+                </h3>
+                <h4> <b> Results for Data Compression (Stage-1).</b></h4>
+                <p class="text-justify">
+                  Reconstructions from different models. The two models are trianed under the same settings, except for the different quantisers. Compared with the state-of-the-art baseline VQGAN, the proposed model significantly improves the reconstruction quality (highlight in red box) under the same compression ratio.
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/stage1_rec.png" height="60px" class="img-responsive">
+                </p>
+                <h4> <b> Ablation results for Data Compression (Stage-1).</b></h4>
+                <p style="text-align:center;">
+                    <image src="img/stage1_ablation1.png" height="60px" class="img-responsive">
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/stage1_ablation2.png" height="60px" class="img-responsive">
+                </p>
+                <h4> <b> Results for Unconditional Image Generation (Stage-2).</b> </h4>
+                <p class="text-justify">
+                     256×256 image samples generated using the proposed quantiser, with model trained on LSUN bedroom (Top) and Church (Bottom).
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/stage2_bedroom.png" height="60px" class="img-responsive">
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/stage2_church.png" height="60px" class="img-responsive">
+                </p>
+                <h4> <b> Results for Class-conditional Image Generation (Stage-2).</b> </h4>
+                <p class="text-justify">
+                     Generated 256 × 256 images using our quantiser for class-conditional generation on ImageNet.
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/stage2_imagnet.png" height="60px" class="img-responsive">
+                </p>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@Inproceedings{zheng23online,
+author = {Chuanxia Zheng and Andrea Vedaldi},
+booktitle = {Proceedings of the International Conference on Computer Vision ({ICCV})},
+title = {Online Clustered Codebook},
+year = {2023}
+}
+</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                The website template was borrowed from <a href="https://jonbarron.info/mipnerf/">Mip-NeRF</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
