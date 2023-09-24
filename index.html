@@ -46,8 +46,9 @@
               <heading>News</heading>
               <div class="news">
               <ul style="text-align:justify;height: 150px;">
+              <li class="font"><font color="red">2023.09: <a target="_blank" href="https://mhh0318.github.io/cocktail/">Cocktail🍸</a> was accepted by NeurIPS2023.</font></li>
               <li class="font"><font color="red">2023.07: <a target="_blank" href="https://chuanxiaz.com/cvq">CVQ-VAE</a> was accepted by ICCV2023.</font></li>
-              <li class="font"><font color="red">2023.05: I was named one of the CVPR2023 Outstanding Reviewers.</a> </font></li>
+              <li class="font">2023.05: I was named one of the CVPR2023 Outstanding Reviewers.</a> </font></li>
               <li class="font">2023.04: <a target="_blank" href="https://chuanxiaz.com/movq">MoVQ</a> was reported means a lot to <a target="_blank" href="https://habr.com/ru/companies/sberbank/articles/725282/">Kandinsky2.1.</a>, <a target="_blank" href="https://github.com/ai-forever/Kandinsky-2">Github.</a></font></li>
               <li class="font">2023.04: <a target="_blank" href="https://chuanxiaz.com">VQ-WAE</a> was accepted by ICML2023.</font></li>
               <li class="font">2023.01: <a target="_blank" href="https://mhh0318.github.io/unid3/">UniD3</a> was accepted by ICLR2023.</font></li>
@@ -131,54 +132,6 @@
             </td>
           </tr>
 
-
-          <tr onmouseout="cocktail_stop()" onmouseover="cocktail_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='cocktail_image'>
-                <video  width=100% height=100% muted autoplay loop>
-                <source src="images/cocktail_teaser.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <!-- <source src="images/cocktail_teaser.png" type="video/png"> -->
-                <img src='images/cocktail_teaser.png' padding="20" width="160">
-              </div>
-              <script type="text/javascript">
-                function cocktail_start() {
-                  document.getElementById('cocktail_image').style.opacity = "1";
-                }
-
-                function cocktail_stop() {
-                  document.getElementById('cocktail_image').style.opacity = "0";
-                }
-                cocktail_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://mhh0318.github.io/cocktail/">
-                <papertitle>Cocktail🍸: Mixing Multi-Modality Controls for Text-Conditional Image Generation</papertitle>
-              </a>
-              <br>
-              <a href="https://mhh0318.github.io/">Minghui Hu</a>,
-              <a href="https://github.com/jabir-zheng">Jianbin Zheng</a>,
-              <a href="https://daqingliu.github.io/">Daqing Liu</a>,
-              <strong>Chuanxia Zheng</strong>,
-              <a href="https://wang-chaoyue.github.io/">Chaoyue Wang</a>,
-              <a href="https://www.sydney.edu.au/engineering/about/our-people/academic-staff/dacheng-tao.html">Dacheng Tao</a>,
-              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>
-              <br>
-              <em>arXiv</em>, 2023
-              <br>
-              <a href="https://mhh0318.github.io/cocktail/">project page</a> /
-              <a href="">PDF</a> /
-              <a href="https://arxiv.org/abs/2306.00964">arXiv</a> /
-              <a href="https://www.youtube.com/watch?v=cy0fDO3-QSA">video</a> /
-              <a href="https://github.com/mhh0318/Cocktail">code</a>
-              <p></p>
-              <p>We develop a generalized framework for multi-modality control based on text-to-image generation.</p>
-            </td>
-          </tr>
-
           <tr onmouseout="matchnerf_stop()" onmouseover="matchnerf_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -223,6 +176,52 @@
             </td>
           </tr>
 
+          <tr onmouseout="cocktail_stop()" onmouseover="cocktail_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='cocktail_image'>
+                <video  width=100% height=100% muted autoplay loop>
+                <source src="images/cocktail_teaser.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <!-- <source src="images/cocktail_teaser.png" type="video/png"> -->
+                <img src='images/cocktail_teaser.png' padding="20" width="160">
+              </div>
+              <script type="text/javascript">
+                function cocktail_start() {
+                  document.getElementById('cocktail_image').style.opacity = "1";
+                }
+
+                function cocktail_stop() {
+                  document.getElementById('cocktail_image').style.opacity = "0";
+                }
+                cocktail_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://mhh0318.github.io/cocktail/">
+                <papertitle>Cocktail🍸: Mixing Multi-Modality Controls for Text-Conditional Image Generation</papertitle>
+              </a>
+              <br>
+              <a href="https://mhh0318.github.io/">Minghui Hu</a>,
+              <a href="https://github.com/jabir-zheng">Jianbin Zheng</a>,
+              <a href="https://daqingliu.github.io/">Daqing Liu</a>,
+              <strong>Chuanxia Zheng</strong>,
+              <a href="https://wang-chaoyue.github.io/">Chaoyue Wang</a>,
+              <a href="https://www.sydney.edu.au/engineering/about/our-people/academic-staff/dacheng-tao.html">Dacheng Tao</a>,
+              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>
+              <br>
+              <em>NeurIPS</em>, 2023
+              <br>
+              <a href="https://mhh0318.github.io/cocktail/">project page</a> /
+              <a href="">PDF</a> /
+              <a href="https://arxiv.org/abs/2306.00964">arXiv</a> /
+              <a href="https://www.youtube.com/watch?v=cy0fDO3-QSA">video</a> /
+              <a href="https://github.com/mhh0318/Cocktail">code</a>
+              <p></p>
+              <p>We develop a generalized framework for multi-modality control based on text-to-image generation.</p>
+            </td>
+          </tr>
 
           <tr onmouseout="cvq_stop()" onmouseover="cvq_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
