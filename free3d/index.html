@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Consistenct Novel View Syntheisis without the need of explicit 3D representation.">
+  <meta name="keywords" content="Novel View Syntheisis (NVS), Stable Diffusion (SD), Ray Conditioning normalization (RCN)">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free3D: Consistent Novel View Synthesis without 3D Representation </title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://chuanxiaz.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://donydchen.github.io/matchnerf/">
+            MatchNeRF
+          </a>
+          <a class="navbar-item" href="https://sm0kywu.github.io/ipoldm/">
+            PanoDiffusion
+          </a>
+          <a class="navbar-item" href="https://donydchen.github.io/sem2nerf/">
+            Semantic2NeRF
+          </a>
+          <a class="navbar-item" href="https://wuqianyi.top/objectsdf/">
+            ObjectSDF
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title">Free3D: Consistent Novel View Synthesis without 3D Representation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://chuanxiaz.com/">Chuanxia Zheng</a>,</span>
+            <span class="author-block">
+              <a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi</a>,</span>
+            <span class="author-block">
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Oxford</span>
+            <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/videos/CVPR_2024_Free3D.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/lyndonzheng/Free3D"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Free3D</span> synthesizes consistent novel views 
+        without the need of explicit 3D representation.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce <span class="dnerf">Free3D</span>, a simple approach designed for <em>open-set</em>
+            novel view synthesis (NVS) from a single image.
+          </p>
+          <p>
+            Similar to Zero-1-to-3, we start from a pre-trained 2D image generator for generalization,
+            and fine-tune it for NVS.
+            Compared to recent and concurrent works, we obtain significant improvements without resorting to 
+            an explicit 3D representation, which is slow and memory-consuming.
+          </p>
+          <p>
+            We do so by encoding better the target camera pose via a new <em>per-pixel</em> ray conditioning 
+            normalization (RCN) layer.
+            The latter injects camera pose information in the underlying 2D image generator by telling each
+            pixel its specific viewing direction.
+            We also improve multi-view consistency via a light-weight multi-view attention layer 
+            and multi-view noise sharing.
+            We train <span class="dnerf">Free3D</span> on the Objaverse dataset and demonstrate
+            excellent generalization to various new categories in several large new datasets,
+            including OminiObject3D and Google Scanned Object (GSO).
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- framework. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+          <h2 class="title is-3">Framework</h2>
+            <div class="content has-text-justified">
+              <img src="./static/images/framework.jpg"
+                   class="framework"/>
+              <p>The overall pipeline of our Free3D. (a) Given a single source input image, 
+                the proposed architecture jointly predicts multiple target views, 
+                instead of processing them independently. 
+                To achieve a consistent novel view synthesis without the need for 3D representation, 
+                (b) we first propose a novel ray conditional normalization (RCN) layer, 
+                which uses a per-pixel oriented camera ray to module the latent features, 
+                enabling the model’s ability to capture more precise viewpoints. 
+                (c) A memory-friendly pseudo-3D cross-attention module is introduced to 
+                efficiently bridge information across multiple generated views. 
+                Note that, here the similarity score is only calculated across multiple views 
+                in temporal instead of spatial, resulting in a minimal computational and memory cost.</p>
+            </div>
+    </div>
+    <!--/ Paper framework. -->
+  </div>
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Comparison. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+
+        <!-- Image comparison-->
+        <h3 class="title is-4">NVS for given camera viewpoint</h3>
+        <div class="content has-text-justified">
+          <p>
+            <span class="dnerf">Free3D</span> significantly improves the accuracy of 
+            the generated pose compared to existing state-of-the-art methods on various datasets,
+            including Objaverse (Top two), OminiObject3D (Middle two) and GSO (Bottom two).
+          </p>
+        </div>
+        <div class="content has-text-justified">
+          <img src="./static/images/image_comparison.jpg"
+               class="framework"/>
+        </div>
+        <!-- Image comparison-->
+
+        <!-- Video comparison. -->
+        <h3 class="title is-4">360-degree rendering for circle path</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">Free3D</span>, you can directly render a consistent 360-degree video wihout
+            the need of an additional explicit 3D representation or network.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="comparison" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/video_comparison.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Video comparison. -->
+
+        <!-- More rendered video. -->
+        <h3 class="title is-4">More rendered videos</h3>
+        <div class="content has-text-centered">
+          <h3 class="title is-6">Videos on Objaverse Dataset</h3>
+          <video id="objaverse_video" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/objaverse_70.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="title is-6">Videos on OminiObject3D Dataset</h3>
+          <video id="oo3d_video" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/oo3d_32.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="title is-6">Videos on GSO Dataset</h3>
+          <video id="gso_video" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/gso_32.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!-- More rendered video. -->
+
+      </div>
+    </div>
+    <!--/ Animation. --> 
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://stability.ai/news/stable-video-diffusion-open-ai-video-model">Stable Video Diffusion</a> 
+            fine-tunes image-to-video diffusion model for multi-view generation.
+          </p>
+          <p>
+            <a href="https://arxiv.org/pdf/2310.03015.pdf">Efficient-3DiM</a> 
+            fine-tunes the stable diffusion with a stronger vision transformer 
+            <a href="https://dinov2.metademolab.com/">DINO v2</a>.
+          </p>
+          <p>
+            <a href="https://jianglongye.com/consistent123/">Consistent-1-to-3</a> 
+            uses the epipolar-attention to extract coarse results for the diffusion model.
+          </p>
+          <p>
+            <a href="https://one-2-3-45.github.io/">One-2-3-45</a> and 
+            <a href="https://sudo-ai-3d.github.io/One2345plus_page/">One-2-3-45++</a>
+            directly train additional 3D network using the outputs of multi-view generator.
+          </p>
+          <p>
+            <a href="https://mv-dream.github.io/">MVDream</a>, <a href="https://consistent-123.github.io/index.html">Consistent123</a>
+            and <a href="https://www.xxlong.site/Wonder3D/">Wonder3D</a> also train multi-view diffusion models, yet still requires post-processing for video rendering.
+          </p>
+          <p>
+            Some works employ 3D representation into the latent diffusion mdoel, such as
+            <a href="https://liuyuan-pal.github.io/SyncDre32qwDeamer/">SyncDreamer</a> and <a href="https://jiayuyang.github.io/Consist_Net/">ConsistNet</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+    <!-- Acknowledgements -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Acknowledgements</h2>
+        <div class="content has-text-justified">
+          <p>
+            Many thanks to <a href="https://dblp.org/pid/295/8991.html">Stanislaw Szymanowicz</a>,
+            <a href="https://edgarsucar.github.io/">Edgar Sucar</a>, and <a href="https://lukemelas.github.io/">Luke Melas-Kyriazi</a>
+            of VGG for insightful discussions and <a href="https://ruiningli.com/">Ruining Li</a>,
+            <a href="https://eldar.insafutdinov.com/">Eldar Insafutdinov</a>, and <a href="https://yashbhalgat.github.io/">Yash Bhalgat</a>
+            of VGG for their helpful feedback. We would also like to thank the authors of 
+            <a href="https://github.com/cvlab-columbia/zero123">Zero-1-to-3</a> and <a href="https://github.com/allenai/objaverse-xl">Objaverse-XL</a>
+            for their helpful discussions.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Acknowledgements -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title has-text-centered">Citation</h2>
+        <pre><code>@article{zheng2023free3D,
+      author    = {Zheng, Chuanxia and Vedaldi, Andrea},
+      title     = {Free3D: Consistent Novel View Synthesis without 3D Representation},
+      journal   = {arXiv},
+      year      = {2023},
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/CVPR_2024_Free3D.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/lyndonzheng/Free3D" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website template is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
