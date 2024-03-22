@@ -15,6 +15,8 @@
     <tr style="padding:0px">
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          
+          <!-- Bio -->
           <tr style="padding:0px">
             <td style="padding:2.5%;width:63%;vertical-align:middle">
               <p style="text-align:center">
@@ -44,7 +46,7 @@
           </tr>
         </tbody></table>
 
-
+        <!-- News -->
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
               <td style="padding:20px;width:100%;vertical-align:middle">
@@ -89,6 +91,7 @@
           </tr>
         </tbody></table>
 
+        <!-- Research -->
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
@@ -108,7 +111,82 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+          <!-- MVSplat -->
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src='images/mvsplat_teaser.png' width="160">
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://donydchen.github.io/mvsplat/">
+                <papertitle>MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images
+                </papertitle>
+              </a>
+              <br>
+              <a href="https://donydchen.github.io/">Yuedong Chen</a>,
+              <a href="https://haofeixu.github.io/">Haofei Xu</a>,
+              <strong>Chuanxia Zheng</strong>,
+              <a href="https://bohanzhuang.github.io/">Bohan Zhuang</a>,
+              <a href="https://people.inf.ethz.ch/marc.pollefeys/">Marc Pollefeys</a>,
+              <a href="http://www.cvlibs.net/">Andreas Geiger</a>,
+              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>,
+              <a href="https://jianfei-cai.github.io/">Jianfei Cai</a>
+              <br>
+              <em>arXiv</em>, 2024 
+              <br>
+              <a href="https://donydchen.github.io/mvsplat/">project page</a> /
+              <a href="https://arxiv.org/abs/2403.14627">arXiv</a> /
+              <a href="https://github.com/donydchen/mvsplat">code</a>
+              <p></p>
+              <p>
+                A cost volume representation for efficiently predicting 3D Gaussians from sparse multi-view images in a single forward pass.
+              </p>
+            </td>
+          </tr>
 
+          <!-- clusteringsdf -->
+          <tr onmouseout="clusteringsdf_stop()" onmouseover="clusteringsdf_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='clusteringsdf_image'>
+                <video  width=100% height=100% muted autoplay loop>
+                <source src="images/clusteringsdf_teaser.mp4" type="video/mp4">
+                </video></div>
+                <img src='images/clusteringsdf_teaser.png' padding="20" width="200">
+              </div>
+              <script type="text/javascript">
+                function clusteringsdf_start() {
+                  document.getElementById('clusteringsdf_image').style.opacity = "1";
+                }
+    
+                function clusteringsdf_stop() {
+                  document.getElementById('clusteringsdf_image').style.opacity = "0";
+                }
+                clusteringsdf_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://sm0kywu.github.io/ClusteringSDF">
+                ClusteringSDF: Self-Organized Neural Implicit Surfaces for 3D Decomposition
+              </a>
+              <br>
+              <a href="https://sm0kywu.github.io/CV/CV.html">Tianhao Wu</a>,
+              <strong>Chuanxia Zheng</strong>,
+              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>,
+              <a href="https://qianyiwu.github.io/">Qianyi Wu</a>
+              <br>
+              <em>arXiv</em>, 2024
+              <br>
+              <a href="https://sm0kywu.github.io/ClusteringSDF">project page</a> /
+              <a href="https://arxiv.org/abs/2403.14619">arXiv</a> /
+              <a href="">video</a> /
+              <a href="">code</a>
+              <p></p>
+              <p>A self-organized 3D segmentation model via neural implicit surface representation.</p>
+            </td>
+          </tr>
+
+
+          <!-- matchnerf -->
           <tr onmouseout="matchnerf_stop()" onmouseover="matchnerf_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -153,6 +231,7 @@
             </td>
           </tr>
 
+          <!-- free3d -->
           <tr onmouseout="free3d_stop()" onmouseover="free3d_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -197,6 +276,7 @@
             </td>
           </tr>
 
+          <!--amodal -->
           <tr onmouseout="amodal_stop()" onmouseover="amodal_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -223,7 +303,7 @@
               <br>
               <a href="https://www.robots.ox.ac.uk/~guanqi/">Guanqi Zhan</a>,
               <strong>Chuanxia Zheng</strong>,
-              <a href="https://weidixie.github.io/">Weidi Xie</a>
+              <a href="https://weidixie.github.io/">Weidi Xie</a>,
               <a href="https://www.robots.ox.ac.uk/~az/">Andrew Zisserman</a>
               <br>
               <em>CVPR</em>, 2024
@@ -240,6 +320,7 @@
             </td>
           </tr>
 
+          <!-- OMS -->
           <tr onmouseout="oms_stop()" onmouseover="oms_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -283,6 +364,7 @@
             </td>
           </tr>
 
+          <!-- PanoDiffusion -->
           <tr onmouseout="ipo_stop()" onmouseover="ipo_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -325,7 +407,7 @@
             </td>
           </tr>
 
-
+          <!-- cocktail -->
           <tr onmouseout="cocktail_stop()" onmouseover="cocktail_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
