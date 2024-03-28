@@ -111,11 +111,71 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+          <!-- DragAPart -->
+          <tr onmouseout="DragAPart_stop()" onmouseover="DragAPart_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='DragAPart_image'>
+                <img src='images/DragAPart_teaser_o.png' width="160">
+                <img src='images/DragAPart_teaser.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function DragAPart_start() {
+                  document.getElementById('DragAPart_image').style.opacity = "1";
+                }
+    
+                function DragAPart_stop() {
+                  document.getElementById('DragAPart_image').style.opacity = "0";
+                }
+                DragAPart_stop()
+              </script>
+            </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://dragapart.github.io/">
+              <papertitle>DragAPart: Learning a Part-Level Motion Prior for Articulated Objects
+              </papertitle>
+            </a>
+            <br>
+            <a href="https://ruiningli.com/">Ruining Li</a>,
+            <strong>Chuanxia Zheng</strong>,
+            <a href="https://chrirupp.github.io/">Christian Rupprecht</a>,
+            <a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi</a>,
+            <br>
+            <em>arXiv</em>, 2024 
+            <br>
+            <a href="https://dragapart.github.io/">project page</a> /
+            <a href="https://arxiv.org/abs/2403.15382">arXiv</a> /
+            <a href="https://github.com/RuiningLi/DragAPart">code</a>/
+            <a href="https://huggingface.co/spaces/rayli/DragAPart">demo</a>
+            <p></p>
+            <p>
+              A physical interaction with objects in vision for part-level dragging.
+            </p>
+          </td>
+        </tr>
+
           <!-- MVSplat -->
           <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/mvsplat_teaser.png' width="160">
-            </td>
+            <tr onmouseout="mvsplat_stop()" onmouseover="mvsplat_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='mvsplat_image'>
+                  <video  width=100% height=100% muted autoplay loop>
+                  <source src="images/mvsplat_teaser.mp4" type="video/mp4">
+                  </video></div>
+                  <img src='images/mvsplat_teaser.png' width="160">
+                </div>
+                <script type="text/javascript">
+                  function mvsplat_start() {
+                    document.getElementById('mvsplat_image').style.opacity = "1";
+                  }
+      
+                  function mvsplat_stop() {
+                    document.getElementById('mvsplat_image').style.opacity = "0";
+                  }
+                  mvsplat_stop()
+                </script>
+              </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
               <a href="https://donydchen.github.io/mvsplat/">
                 <papertitle>MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images
