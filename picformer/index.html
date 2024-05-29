@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Consistenct Novel View Syntheisis without the need of explicit 3D representation.">
+  <meta name="keywords" content="Novel View Syntheisis (NVS), Stable Diffusion (SD), Ray Conditioning normalization (RCN)">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bridging Global Context Interactions for High-Fidelity Pluralistic Image Completion</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://chuanxiaz.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://sm0kywu.github.io/panodiffusion/">
+            PanoDiffusion
+          </a>
+          <a class="navbar-item" href="https://mhh0318.github.io/unid3/">
+            UniD3
+          </a>
+          <a class="navbar-item" href="https://chuanxiaz.com/tfill/">
+            TFill
+          </a>
+          <a class="navbar-item" href="https://chuanxiaz.com/pic/">
+            PICNet
+          </a>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Bridging Global Context Interactions for High-Fidelity Pluralistic Image Completion</br>
+            <small>
+              T-PAMI 2024
+            </small>
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://chuanxiaz.com/">Chuanxia Zheng</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://guoxiansong.github.io/homepage/index.html">Guoxian Song</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a><sup>3</sup>,</span> 
+            <span class="author-block">
+              <a href="https://jianfei-cai.github.io/">Jianfei Cai</a><sup>4</sup>,</span>
+            <span class="author-block">
+              <a href="http://linjieluo.com/">Linjie Luo</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://research.monash.edu/en/persons/dinh-phung">Dinh Phung</a><sup>4</sup>,</span> 
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>VGG, University of Oxford</span>
+            <span class="author-block"><sup>2</sup>ByteDance Inc</span>
+            <span class="author-block"><sup>3</sup>Nanyang Technological University</span>
+            <span class="author-block"><sup>4</sup>Monash University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/images/TPAMI2024_PICFormer.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://ieeexplore.ieee.org/document/10535740"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>ieeexplore</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/yRBzGMmS0Ew"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/lyndonzheng/TFill"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <img src="./static/images/teaser.png"
+             class="teaser"/>
+    </div>
+      <h2 class="subtitle has-text-centered">
+        <span class="picformer">PICFormer</span> produces High-Fidelity diverse results
+        given maksed images on various datasets.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce <span class="picformer">PICFormer</span>, a novel framework for Pluralistic Image Completion using a transFormer based architecture,
+            that achieves both high quality and diversity at a much faster inference speed.
+          </p>
+          <p>
+            Our key contribution is to introduce a code-shared codebook learning
+            using a restrictive CNN on small and non-overlapping receptive fields (RFs)
+            for the local visible token representation.
+          </p>
+          <p>
+            This results in a compact yet expressive discrete representation,
+            facilitating efficient modeling of global visible context relations by the transformer.
+            Unlike the prevailing autoregressive approaches,
+            we proposed to sample all tokens simultaneously,
+            leading to more than 100× faster inference speed.
+            To enhance appearance consistency between visible and generated regions,
+            we further propose a novel attention-aware layer (AAL), designed to better exploit distantly related high-frequency features.
+            Through extensive experiments, we demonstrate that the efficiently learns semantically-rich discrete codes,
+            resulting in significantly improved image quality.
+            Moreover, our diverse image completion framework surpasses state-of-the-art methods on multiple image completion datasets.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- framework. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column ">
+          <h2 class="title is-3">Framework</h2>
+            <div class="content has-text-justified">
+              <img src="./static/images/framework.png"
+                   class="framework"/>
+              <p>The overall pipeline of PICFormer.
+                (a) It first learns a quantizer using a code-shared strategy, along with a restrictive CNN.
+                (b) A transformer is then applied to infer the composition of the original embedded indices.
+                (c) Finally, we sample the top K results, merge them with the original high-resolution image,
+                 and pass them to a refinement network with an Attention-Aware Layer (AAL)
+                 to transfer high-quality information from both visible and generated regions.
+                 Note that only the bottom pipeline is used during inference,
+                 while the top pipeline is for learning the quantizer offline.</p>
+            </div>
+    </div>
+    <!--/ Paper framework. -->
+  </div>
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column ">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/yRBzGMmS0Ew?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation</h2>
+        <pre><code>@ARTICLE{zheng2024picformer,
+          author={Zheng, Chuanxia and Song, Guoxian and Cham, Tat-Jen and Cai, Jianfei and Luo, Linjie and Phung, Dinh},
+          journal={IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)}, 
+          title={Bridging Global Context Interactions for High-Fidelity Pluralistic Image Completion}, 
+          year={2024},
+          pages={1-14},
+          doi={10.1109/TPAMI.2024.3403695}}
+        </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/images/TPAMI2024_PICFormer.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/lyndonzheng/picformer" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website template is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
