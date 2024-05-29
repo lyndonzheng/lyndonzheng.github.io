@@ -115,8 +115,8 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
           <!-- DragAPart -->
-          <tr onmouseout="DragAPart_stop()" onmouseover="DragAPart_start()"> <!--bgcolor="#ffffd0"-->
-            <td style="padding:20px;width:25%;vertical-align:middle;">
+          <tr onmouseout="DragAPart_stop()" onmouseover="DragAPart_start()" style="height: 160px;"> <!--bgcolor="#ffffd0"-->
+            <td style="padding:0px;width:25%;vertical-align:middle;height: 160px;">
               <div class="one">
                 <div class="two" id='DragAPart_image'>
                 <img src='images/DragAPart_teaser_o.png' width="160">
@@ -134,36 +134,34 @@
                 DragAPart_stop()
               </script>
             </td>
-          <td style="padding:0px;width:75%;vertical-align:middle;">
-            <div style="height: 100px;">
-              <a href="https://dragapart.github.io/">
-                <papertitle>DragAPart: Learning a Part-Level Motion Prior for Articulated Objects
-                </papertitle>
-              </a>
-              <br>
-              <a href="https://ruiningli.com/">Ruining Li</a>,
-              <strong>Chuanxia Zheng</strong>,
-              <a href="https://chrirupp.github.io/">Christian Rupprecht</a>,
-              <a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi</a>
-              <br>
-              <em>arXiv</em>, 2024 
-              <br>
-              <a href="https://dragapart.github.io/">project page</a> /
-              <a href="https://arxiv.org/abs/2403.15382">arXiv</a> /
-              <a href="https://github.com/RuiningLi/DragAPart">code</a>/
-              <a href="https://huggingface.co/spaces/rayli/DragAPart">demo</a>
-              <p></p>
-              <p>
-                A physical interaction with objects in vision for part-level dragging.
-              </p>
-            </div>
+          <td style="padding:0px;width:75%;vertical-align:middle;height: 160px;">
+            <a href="https://dragapart.github.io/">
+              <papertitle>DragAPart: Learning a Part-Level Motion Prior for Articulated Objects
+              </papertitle>
+            </a>
+            <br>
+            <a href="https://ruiningli.com/">Ruining Li</a>,
+            <strong>Chuanxia Zheng</strong>,
+            <a href="https://chrirupp.github.io/">Christian Rupprecht</a>,
+            <a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi</a>
+            <br>
+            <em>arXiv</em>, 2024 
+            <br>
+            <a href="https://dragapart.github.io/">project page</a> /
+            <a href="https://arxiv.org/abs/2403.15382">arXiv</a> /
+            <a href="https://github.com/RuiningLi/DragAPart">code</a>/
+            <a href="https://huggingface.co/spaces/rayli/DragAPart">demo</a>
+            <p></p>
+            <p>
+              A physical interaction with objects in vision for part-level dragging.
+            </p>
           </td>
         </tr>
 
           <!-- MVSplat -->
           <tr>
             <tr onmouseout="mvsplat_stop()" onmouseover="mvsplat_start()">
-              <td style="padding:20px;width:25%;vertical-align:middle;height:fit-content">
+              <td style="padding:20px;width:25%;vertical-align:middle;">
                 <div class="one">
                   <div class="two" id='mvsplat_image'>
                   <video  width=100% height=100% muted autoplay loop>
@@ -182,7 +180,7 @@
                   mvsplat_stop()
                 </script>
               </td>
-            <td style="padding:0px;width:75%;vertical-align:middle;height:fit-content">
+            <td style="padding:0px;width:75%;vertical-align:middle;">
               <a href="https://donydchen.github.io/mvsplat/">
                 <papertitle>MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images
                 </papertitle>
