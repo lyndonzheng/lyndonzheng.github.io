@@ -55,7 +55,7 @@
               <ul style="text-align:justify;height: 150px;">
               <li class="font"><font color="red">[2024.05:] <a target="_blank" href="https://chuanxiaz.com/picformer/">PICFormer</a> is finally accepted by T-PAMI</font></li>
               <li class="font"><font color="red">[2024.05:] Invited as Area Chair for BMVC2024</font></li>
-              <li class="font">[2024.02:] Happy to be awarded <a target="_blank" href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships">Marie Skłodowska-Curie Actions (MSCA) Fellow</a>.</li> 
+              <li class="font">[2024.02:] Awarded <a target="_blank" href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships">Marie Skłodowska-Curie Actions (MSCA) Fellow</a>.</li> 
               <li class="font">[2024.02:] <a target="_blank" href="https://chuanxiaz.com/free3d/">Free3D</a>,
                 <a target="_blank" href="https://www.robots.ox.ac.uk/~vgg/research/amodal/">Amodal in the wild</a>,
                 and <a target="_blank" href="https://jabir-zheng.github.io/OneMoreStep/">OneMoreStep</a> are accepted by CVPR2024.
@@ -113,6 +113,54 @@
         </tbody></table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+          <!-- Flash3D -->
+          <tr>
+            <tr onmouseout="flash3d_stop()" onmouseover="flash3d_start()" style="height: fit-content;">
+              <td style="padding:0px;width:25%;vertical-align:middle;height: fit-content;">
+                <div class="one">
+                  <div class="two" id='flash3d_image'>
+                  <video  width=100% height=100% muted autoplay loop>
+                  <source src="images/flash3d_teaser.mp4" type="video/mp4">
+                  </video></div>
+                  <img src='images/flash3d_teaser.png' width="160">
+                </div>
+                <script type="text/javascript">
+                  function flash3d_start() {
+                    document.getElementById('flash3d_image').style.opacity = "1";
+                  }
+      
+                  function flash3d_stop() {
+                    document.getElementById('flash3d_image').style.opacity = "0";
+                  }
+                  flash3d_stop()
+                </script>
+              </td>
+            <td style="padding:0px;width:75%;vertical-align:middle;height: fit-content;">
+              <a href="https://www.robots.ox.ac.uk/~vgg/research/flash3d/">
+                <papertitle>Flash3D: Feed-Forward Generalisable 3D Scene Reconstruction from a Single Image
+                </papertitle>
+              </a>
+              <br>
+              <a href="https://szymanowiczs.github.io/">Stanislaw Szymanowicz</a>,
+              <a href="https://eldar.insafutdinov.com/">Eldar Insafutdinov</a>,
+              <strong>Chuanxia Zheng</strong>,
+              <a href="https://sites.google.com/view/djcampbell">Dylan Campbell</a>,
+              <a href="https://www.robots.ox.ac.uk/~joao/#about">João Henriques</a>,
+              <a href="https://chrirupp.github.io/">Christian Rupprecht</a>,
+              <a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi</a>,
+              <br>
+              <em>arXiv</em>, 2024 
+              <br>
+              <a href="https://www.robots.ox.ac.uk/~vgg/research/flash3d/">project page</a> /
+              <a href="https://arxiv.org/abs/2406.04343">arXiv</a> /
+              <a href="https://huggingface.co/spaces/szymanowiczs/flash3d">demo</a>
+              <p></p>
+              <p>
+                Flash3D is a fast, super efficient, trinable on a single GPU in one day for scene 3D reconstruction from a single image.
+              </p>
+            </td>
+          </tr>
 
           <!-- DragAPart -->
           <tr onmouseout="DragAPart_stop()" onmouseover="DragAPart_start()" style="height: fit-content;"> <!--bgcolor="#ffffd0"-->
@@ -382,7 +430,7 @@
               <a href="https://arxiv.org/pdf/2312.04551.pdf">arXiv</a> /
               <a href="https://youtu.be/7CdYuZ7D1DY">video</a> /
               <a href="https://github.com/lyndonzheng/Free3D/">code</a> /
-              <!-- <a href="data/2023ICCV_poster_CVQ.pdf">poster</a> -->
+              <a href="data/cvpr24_poster_free3d.pdf">poster</a>
               <p></p>
               <p><strong>Free3D</strong> synthesizes consistent novel views on open-set categories 
                 without the need of explicit 3D representations.</p>
