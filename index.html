@@ -23,7 +23,7 @@
                 <name>Chuanxia Zheng</name>
               </p>
               <p> <a href="https://eng.ox.ac.uk/people/chuanxia-zheng/"> Chuanxia Zheng</a> 
-                is a <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships">Marie Skłodowska-Curie Actions (MSCA) Fellow</a> and a postdoctoral researcher in <a href="https://www.robots.ox.ac.uk/~vgg/"> VGG</a> 
+                is a <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships">Marie Skłodowska-Curie Actions (MSCA) Fellow</a> in <a href="https://www.robots.ox.ac.uk/~vgg/"> VGG</a> 
                 at the <a href="https://www.ox.ac.uk/">University of Oxford</a>, 
                 working with Prof. <a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi</a> 
                 on 3D reconstruction and generation and 
@@ -54,9 +54,16 @@
               <heading>News</heading>
               <div class="news">
               <ul style="text-align:justify;height: 150px;">
-              <li class="font"><font color="red">[2024.05:] <a target="_blank" href="https://chuanxiaz.com/picformer/">PICFormer</a> is finally accepted by T-PAMI</font></li>
-              <li class="font"><font color="red">[2024.05:] Invited as Area Chair for BMVC2024</font></li>
-              <li class="font">[2024.02:] Awarded <a target="_blank" href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships">Marie Skłodowska-Curie Actions (MSCA) Fellow</a>.</li> 
+                <li class="font"><font color="red">[2024.07:] <a target="_blank" href="https://dragapart.github.io/">DragAPart</a>,
+                  <a target="_blank" href="https://donydchen.github.io/mvsplat/">MVSplat</a>,
+                  and <a target="_blank" href="https://sm0kywu.github.io/ClusteringSD">ClusteringSDF</a> are accepted by ECCV2024.
+                  Congrats to <a target="_blank" href="https://ruiningli.com/">Ruining</a>, 
+                  <a target="_blank" href="https://donydchen.github.io/">Yuedong</a>, 
+                  <a target="_blank" href="https://haofeixu.github.io/">Haofei</a>, and
+                  <a target="_blank" href="https://sm0kywu.github.io/CV/CV.html">Tianhao</a></font>.</li>   
+              <li class="font"><font color="red">[2024.05:] Invited as Area Chair for BMVC2024.</font></li>
+              <li class="font">[2024.05:] <a target="_blank" href="https://chuanxiaz.com/picformer/">PICFormer</a> is finally accepted by T-PAMI.</li>
+              <li class="font">[2024.02:] Awarded <a target="_blank" href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships">Marie Skłodowska-Curie Actions (MSCA) Fellow 2024</a>.</li> 
               <li class="font">[2024.02:] <a target="_blank" href="https://chuanxiaz.com/free3d/">Free3D</a>,
                 <a target="_blank" href="https://www.robots.ox.ac.uk/~vgg/research/amodal/">Amodal in the wild</a>,
                 and <a target="_blank" href="https://jabir-zheng.github.io/OneMoreStep/">OneMoreStep</a> are accepted by CVPR2024.
@@ -163,6 +170,51 @@
             </td>
           </tr>
 
+          <!-- matchnerf -->
+          <tr onmouseout="matchnerf_stop()" onmouseover="matchnerf_start()" style="height: fit-content;">
+            <td style="padding:0px;width:25%;vertical-align:middle;height: fit-content;">
+              <div class="one">
+                <div class="two" id='matchnerf_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/matchnerf_teaser.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='images/matchnerf_teaser.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function matchnerf_start() {
+                  document.getElementById('matchnerf_image').style.opacity = "1";
+                }
+
+                function matchnerf_stop() {
+                  document.getElementById('matchnerf_image').style.opacity = "0";
+                }
+                matchnerf_stop()
+              </script>
+            </td>
+            <td style="padding:0px;width:75%;vertical-align:middle;height: fit-content;">
+              <a href="https://donydchen.github.io/matchnerf/">
+                <papertitle>Explicit Correspondence Matching for Generalizable Neural Radiance Fields</papertitle>
+              </a>
+              <br>
+              <a href="https://donydchen.github.io/">Yuedong Chen</a>,
+              <a href="https://haofeixu.github.io/">Haofei Xu</a>,
+              <a href="https://wuqianyi.top/">Qianyi Wu</a>,
+              <strong>Chuanxia Zheng</strong>,
+              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>,
+              <a href="https://jianfei-cai.github.io/">Jianfei Cai</a>
+              <br>
+              <em>arXiv</em>, 2023
+              <br>
+              <a href="https://donydchen.github.io/matchnerf/">project page</a> /
+              <a href="https://arxiv.org/abs/2304.12294">arXiv</a> /
+              <a href="https://github.com/donydchen/matchnerf">code</a>
+              <p></p>
+              <p>
+                Employing explicit correspondence matching as a geometry prior enables NeRF to generalize across scenes.
+              </p>
+            </td>
+          </tr>
+
           <!-- DragAPart -->
           <tr onmouseout="DragAPart_stop()" onmouseover="DragAPart_start()" style="height: fit-content;"> <!--bgcolor="#ffffd0"-->
             <td style="padding:0px;width:25%;vertical-align:middle;height: fit-content;">
@@ -194,7 +246,7 @@
             <a href="https://chrirupp.github.io/">Christian Rupprecht</a>,
             <a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi</a>
             <br>
-            <em>arXiv</em>, 2024 
+            <em>ECCV</em>, 2024 
             <br>
             <a href="https://dragapart.github.io/">project page</a> /
             <a href="https://arxiv.org/abs/2403.15382">arXiv</a> /
@@ -244,7 +296,7 @@
               <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>,
               <a href="https://jianfei-cai.github.io/">Jianfei Cai</a>
               <br>
-              <em>arXiv</em>, 2024 
+              <em>ECCV</em>, 2024 
               <br>
               <a href="https://donydchen.github.io/mvsplat/">project page</a> /
               <a href="https://arxiv.org/abs/2403.14627">arXiv</a> /
@@ -287,7 +339,7 @@
               <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>,
               <a href="https://qianyiwu.github.io/">Qianyi Wu</a>
               <br>
-              <em>arXiv</em>, 2024
+              <em>ECCV</em>, 2024
               <br>
               <a href="https://sm0kywu.github.io/ClusteringSDF">project page</a> /
               <a href="https://arxiv.org/abs/2403.14619">arXiv</a> /
@@ -295,52 +347,6 @@
               <a href="">code</a>
               <p></p>
               <p>A self-organized 3D segmentation model via neural implicit surface representation.</p>
-            </td>
-          </tr>
-
-
-          <!-- matchnerf -->
-          <tr onmouseout="matchnerf_stop()" onmouseover="matchnerf_start()" style="height: fit-content;">
-            <td style="padding:0px;width:25%;vertical-align:middle;height: fit-content;">
-              <div class="one">
-                <div class="two" id='matchnerf_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="images/matchnerf_teaser.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='images/matchnerf_teaser.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function matchnerf_start() {
-                  document.getElementById('matchnerf_image').style.opacity = "1";
-                }
-
-                function matchnerf_stop() {
-                  document.getElementById('matchnerf_image').style.opacity = "0";
-                }
-                matchnerf_stop()
-              </script>
-            </td>
-            <td style="padding:0px;width:75%;vertical-align:middle;height: fit-content;">
-              <a href="https://donydchen.github.io/matchnerf/">
-                <papertitle>Explicit Correspondence Matching for Generalizable Neural Radiance Fields</papertitle>
-              </a>
-              <br>
-              <a href="https://donydchen.github.io/">Yuedong Chen</a>,
-              <a href="https://haofeixu.github.io/">Haofei Xu</a>,
-              <a href="https://wuqianyi.top/">Qianyi Wu</a>,
-              <strong>Chuanxia Zheng</strong>,
-              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>,
-              <a href="https://jianfei-cai.github.io/">Jianfei Cai</a>
-              <br>
-              <em>arXiv</em>, 2023
-              <br>
-              <a href="https://donydchen.github.io/matchnerf/">project page</a> /
-              <a href="https://arxiv.org/abs/2304.12294">arXiv</a> /
-              <a href="https://github.com/donydchen/matchnerf">code</a>
-              <p></p>
-              <p>
-                Employing explicit correspondence matching as a geometry prior enables NeRF to generalize across scenes.
-              </p>
             </td>
           </tr>
 
@@ -1197,7 +1203,7 @@
             <p align="right">
               <font size="2">
               <a href="https://jonbarron.info">awesome website template </a><br>
-              Last updated May 2024.
+              Last updated July 2024.
           </font>
             </p>
             </td>
