@@ -23,14 +23,14 @@
                 <name>Chuanxia Zheng</name>
               </p>
               <p> <a href="https://eng.ox.ac.uk/people/chuanxia-zheng/"> Chuanxia Zheng</a> 
-                is a <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships">Marie Skłodowska-Curie Actions (MSCA) Fellow</a> in <a href="https://www.robots.ox.ac.uk/~vgg/"> VGG</a> 
+                is a <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/news/marie-sklodowska-curie-actions-award-eu260-million-to-postdoctoral-researchers-in-2023">Marie Skłodowska-Curie Actions (MSCA) Fellow</a> in <a href="https://www.robots.ox.ac.uk/~vgg/"> VGG</a> 
                 at the <a href="https://www.ox.ac.uk/">University of Oxford</a>, 
                 working with Prof. <a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi</a> 
                 on 3D reconstruction and generation and 
                 Prof. <a href="https://www.robots.ox.ac.uk/~az/">Andrew Zisserman</a> on generative model for understanding.
               </p>
               <p>
-                Before that, he spent one year at <a href="https://www.monash.edu/">Monash University</a>, where he worked as a Research Fellow with Prof. <a href="https://jianfei-cai.github.io/">Jianfei Cai</a> and Prof. <a href="https://research.monash.edu/en/persons/dinh-phung">Dinh Phung</a> on codebook learning for generation. He received his PhD degree from the <a href="https://www.ntu.edu.sg/scse"> SCSE </a> at <a href="https://www.ntu.edu.sg/">Nanyang Technological University</a>, supervised by Prof. <a href="https://personal.ntu.edu.sg/astjcham/"> Tat-Jen Cham</a> and Prof. <a href="https://jianfei-cai.github.io/">Jianfei Cai</a> on 2D generation, translation and completion. His thesis <a href="https://arxiv.org/abs/2202.12752">Synthesizing Photorealistic Images</a> was awarded the <a href="https://www.ntu.edu.sg/scse/news-events/news/detail/scse-outstanding-phd-thesis-award-2022"> NTU Outstanding PhD Thesis Award 2022</a>. <!--Before that, I received the Master’s degree in the <a href="http://irmct.buaa.edu.cn/"> IR&MCT Lab </a> at Beihang University, advised by Jianhua Wang and <a href="http://dept3.buaa.edu.cn/szjs/zzjs/dgdzjxsyzx1/js/cwh.htm"> Weihai Chen</a> -->
+                Before that, he spent one year at <a href="https://www.monash.edu/">Monash University</a>, where he worked as a Research Fellow with Prof. <a href="https://jianfei-cai.github.io/">Jianfei Cai</a> and Prof. <a href="https://research.monash.edu/en/persons/dinh-phung">Dinh Phung</a> on codebook learning for generation. He received his PhD degree from the <a href="https://www.ntu.edu.sg/scse"> SCSE </a> at <a href="https://www.ntu.edu.sg/">Nanyang Technological University</a>, supervised by Prof. <a href="https://personal.ntu.edu.sg/astjcham/"> Tat-Jen Cham</a> and Prof. <a href="https://jianfei-cai.github.io/">Jianfei Cai</a> on 2D generation, translation and completion. His thesis <a href="https://arxiv.org/abs/2202.12752">Synthesizing Photorealistic Images</a> was awarded the <a href=https://www.ntu.edu.sg/computing/news-events/news/detail/scse-outstanding-phd-thesis-award-2022"> NTU Outstanding PhD Thesis Award 2022</a>. <!--Before that, I received the Master’s degree in the <a href="http://irmct.buaa.edu.cn/"> IR&MCT Lab </a> at Beihang University, advised by Jianhua Wang and <a href="http://dept3.buaa.edu.cn/szjs/zzjs/dgdzjxsyzx1/js/cwh.htm"> Weihai Chen</a> -->
               </p>
               <p style="text-align:center">
                 <a href="cxzheng@robots.ox.ac.uk">Email</a> &nbsp/&nbsp
@@ -122,6 +122,54 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+          
+          <!-- Puppet-Master -->
+          <tr>
+            <tr onmouseout="puppet_master_stop()" onmouseover="puppet_master_start()" style="height: fit-content;">
+              <td style="padding:0px;width:25%;vertical-align:middle;height: fit-content;">
+                <div class="one">
+                  <div class="two" id='puppet_master_image'>
+                  <video  width=100% height=100% muted autoplay loop>
+                  <source src="images/puppet_master_teaser.mp4" type="video/mp4">
+                  </video></div>
+                  <img src='images/puppet_master_teaser.png' width="160">
+                </div>
+                <script type="text/javascript">
+                  function puppet_master_start() {
+                    document.getElementById('puppet_master_image').style.opacity = "1";
+                  }
+      
+                  function puppet_master_stop() {
+                    document.getElementById('puppet_master_image').style.opacity = "0";
+                  }
+                  puppet_master_stop()
+                </script>
+              </td>
+            <td style="padding:0px;width:75%;vertical-align:middle;height: fit-content;">
+              <a href="https://vgg-puppetmaster.github.io/">
+                <papertitle>Puppet-Master: Scaling Interactive Video Generation as a Motion Prior for Part-Level Dynamics
+                </papertitle>
+              </a>
+              <br>
+                <a href="https://ruiningli.com/">Ruining Li</a>,
+                <strong>Chuanxia Zheng</strong>,
+                <a href="https://chrirupp.github.io/">Christian Rupprecht</a>,
+                <a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi</a>
+              <br>
+                <em>arXiv</em>, 2024 
+              <br>
+                <a href="https://vgg-puppetmaster.github.io/">project page</a> /
+                <a href="https://arxiv.org/abs/2408.04631">arXiv</a> /
+                <a href="https://github.com/RuiningLi/puppet-master">code</a> /
+                <a href="https://github.com/RuiningLi/puppet-master/tree/main/data">data</a> /
+                <!--<a href="https://huggingface.co/spaces/rayli/DragAPart">demo</a> -->
+                <p></p>
+                <p>
+                  An interactive video generative model that can serve as a motion prior for part-level dynamics.
+                </p>
+            </td>
+          </tr>
+          
           <!-- Flash3D -->
           <tr>
             <tr onmouseout="flash3d_stop()" onmouseover="flash3d_start()" style="height: fit-content;">
@@ -250,7 +298,8 @@
             <br>
             <a href="https://dragapart.github.io/">project page</a> /
             <a href="https://arxiv.org/abs/2403.15382">arXiv</a> /
-            <a href="https://github.com/RuiningLi/DragAPart">code</a>/
+            <a href="https://github.com/RuiningLi/DragAPart">code</a> /
+            <a href="https://github.com/RuiningLi/DragAPart/tree/main/Drag-a-Move">data</a> /
             <a href="https://huggingface.co/spaces/rayli/DragAPart">demo</a>
             <p></p>
             <p>
