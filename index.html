@@ -51,7 +51,7 @@
               </p>
             </td>
             <td style="padding:2.5%;width:30%;max-width:30%">
-              <a href="images/avatar.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/avatar.jpg" class="hoverZoomLink"></a>
+              <a href="images/avatar.png"><img style="width:100%;max-width:100%" alt="profile photo" src="images/avatar.jpg" class="hoverZoomLink"></a>
             </td>
           </tr>
         </tbody></table>
@@ -63,11 +63,14 @@
               <heading>News</heading>
               <div class="news">
               <ul style="text-align:justify;height: 150px;">
-                <li class="font"><font color="red">[2024.10:] <a target="_blank" href="https://donydchen.github.io/mvsplat/">MVSplat360</a>
-                  and <a target="_blank" href="https://arxiv.org/pdf/2310.06836">3D Physical Understanding</a> are accepted by NeurIPS2024.
+              <li class="font"><font color="red">[2024.11:] <a target="_blank" href="https://donydchen.github.io/mvsplat360/">Flash3D</a>
+                  is accepted by 3DV2025.
+                  Congrats to <a target="_blank" href="https://szymanowiczs.github.io/">Stan</a></font>.</li> 
+              <li class="font"><font color="red">[2024.10:] <a target="_blank" href="https://donydchen.github.io/mvsplat360/">MVSplat360</a>
+                  and <a target="_blank" href="https://www.robots.ox.ac.uk/~vgg/research/phy-sd/">3D Physical Understanding</a> are accepted by NeurIPS2024.
                   Congrats to <a target="_blank" href="https://donydchen.github.io/">Yuedong</a>
                   and <a target="_blank" href="https://www.robots.ox.ac.uk/~guanqi/">Guanqi</a></font>.</li> 
-                <li class="font"><font color="red">[2024.07:] <a target="_blank" href="https://dragapart.github.io/">DragAPart</a>,
+              <li class="font">[2024.07:] <a target="_blank" href="https://dragapart.github.io/">DragAPart</a>,
                   <a target="_blank" href="https://donydchen.github.io/mvsplat/">MVSplat</a>,
                   and <a target="_blank" href="https://sm0kywu.github.io/ClusteringSDF">ClusteringSDF</a> are accepted by ECCV2024.
                   Congrats to <a target="_blank" href="https://ruiningli.com/">Ruining</a>, 
@@ -135,7 +138,7 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           
-          <!-- Puppet-Master -->
+          <!-- Splatt3r -->
           <tr>
             <tr onmouseout="splatt3r_stop()" onmouseover="splatt3r_start()" style="height: fit-content;">
               <td style="padding:10px;width:25%;vertical-align:middle;height: fit-content;">
@@ -228,55 +231,6 @@
                 </p>
             </td>
           </tr>
-          
-          <!-- Flash3D -->
-          <tr>
-            <tr onmouseout="flash3d_stop()" onmouseover="flash3d_start()" style="height: fit-content;">
-              <td style="padding:10px;width:25%;vertical-align:middle;height: fit-content;">
-                <div class="one">
-                  <div class="two" id='flash3d_image'>
-                  <video  width=100% height=100% muted autoplay loop>
-                  <source src="images/flash3d_teaser.mp4" type="video/mp4">
-                  </video></div>
-                  <img src='images/flash3d_teaser.png' width="160">
-                </div>
-                <script type="text/javascript">
-                  function flash3d_start() {
-                    document.getElementById('flash3d_image').style.opacity = "1";
-                  }
-      
-                  function flash3d_stop() {
-                    document.getElementById('flash3d_image').style.opacity = "0";
-                  }
-                  flash3d_stop()
-                </script>
-              </td>
-            <td style="padding:0px;width:75%;vertical-align:middle;height: fit-content;">
-              <a href="https://www.robots.ox.ac.uk/~vgg/research/flash3d/">
-                <papertitle>Flash3D: Feed-Forward Generalisable 3D Scene Reconstruction from a Single Image
-                </papertitle>
-              </a>
-              <br>
-              <a href="https://szymanowiczs.github.io/">Stanislaw Szymanowicz</a>,
-              <a href="https://eldar.insafutdinov.com/">Eldar Insafutdinov</a>,
-              <strong>Chuanxia Zheng</strong>,
-              <a href="https://sites.google.com/view/djcampbell">Dylan Campbell</a>,
-              <a href="https://www.robots.ox.ac.uk/~joao/#about">João Henriques</a>,
-              <a href="https://chrirupp.github.io/">Christian Rupprecht</a>,
-              <a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi</a>,
-              <br>
-              <em>arXiv</em>, 2024 
-              <br>
-              <a href="https://www.robots.ox.ac.uk/~vgg/research/flash3d/">project page</a> /
-              <a href="https://arxiv.org/abs/2406.04343">arXiv</a> /
-              <a href="https://github.com/eldar/flash3d">code</a> /
-              <a href="https://huggingface.co/spaces/szymanowiczs/flash3d">demo</a>
-              <p></p>
-              <p>
-                Flash3D is a fast, super efficient, trinable on a single GPU in one day for scene 3D reconstruction from a single image.
-              </p>
-            </td>
-          </tr>
 
           <!-- matchnerf -->
           <tr onmouseout="matchnerf_stop()" onmouseover="matchnerf_start()" style="height: fit-content;">
@@ -319,6 +273,104 @@
               <p></p>
               <p>
                 Employing explicit correspondence matching as a geometry prior enables NeRF to generalize across scenes.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Flash3D -->
+          <tr>
+            <tr onmouseout="flash3d_stop()" onmouseover="flash3d_start()" style="height: fit-content;">
+              <td style="padding:10px;width:25%;vertical-align:middle;height: fit-content;">
+                <div class="one">
+                  <div class="two" id='flash3d_image'>
+                  <video  width=100% height=100% muted autoplay loop>
+                  <source src="images/flash3d_teaser.mp4" type="video/mp4">
+                  </video></div>
+                  <img src='images/flash3d_teaser.png' width="160">
+                </div>
+                <script type="text/javascript">
+                  function flash3d_start() {
+                    document.getElementById('flash3d_image').style.opacity = "1";
+                  }
+      
+                  function flash3d_stop() {
+                    document.getElementById('flash3d_image').style.opacity = "0";
+                  }
+                  flash3d_stop()
+                </script>
+              </td>
+            <td style="padding:0px;width:75%;vertical-align:middle;height: fit-content;">
+              <a href="https://www.robots.ox.ac.uk/~vgg/research/flash3d/">
+                <papertitle>Flash3D: Feed-Forward Generalisable 3D Scene Reconstruction from a Single Image
+                </papertitle>
+              </a>
+              <br>
+              <a href="https://szymanowiczs.github.io/">Stanislaw Szymanowicz</a>,
+              <a href="https://eldar.insafutdinov.com/">Eldar Insafutdinov</a>,
+              <strong>Chuanxia Zheng</strong>,
+              <a href="https://sites.google.com/view/djcampbell">Dylan Campbell</a>,
+              <a href="https://www.robots.ox.ac.uk/~joao/#about">João Henriques</a>,
+              <a href="https://chrirupp.github.io/">Christian Rupprecht</a>,
+              <a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi</a>,
+              <br>
+              <em>3DV</em>, 2025 
+              <br>
+              <a href="https://www.robots.ox.ac.uk/~vgg/research/flash3d/">project page</a> /
+              <a href="https://arxiv.org/abs/2406.04343">arXiv</a> /
+              <a href="https://github.com/eldar/flash3d">code</a> /
+              <a href="https://huggingface.co/spaces/szymanowiczs/flash3d">demo</a>
+              <p></p>
+              <p>
+                Flash3D is a fast, super efficient, trinable on a single GPU in one day for scene 3D reconstruction from a single image.
+              </p>
+            </td>
+          </tr>
+
+          <!-- MVSplat360 -->
+          <tr>
+            <tr onmouseout="mvsplat360_stop()" onmouseover="mvsplat360_start()" style="height: fit-content;">
+              <td style="padding:10px;width:25%;vertical-align:middle;height: fit-content;">
+                <div class="one">
+                  <div class="two" id='mvsplat360_image'>
+                  <video  width=100% height=100% muted autoplay loop>
+                  <source src="images/mvsplat360_teaser.mp4" type="video/mp4">
+                  </video></div>
+                  <img src='images/mvsplat360_teaser.png' width="160">
+                </div>
+                <script type="text/javascript">
+                  function mvsplat360_start() {
+                    document.getElementById('mvsplat360_image').style.opacity = "1";
+                  }
+      
+                  function mvsplat360_stop() {
+                    document.getElementById('mvsplat360_image').style.opacity = "0";
+                  }
+                  mvsplat360_stop()
+                </script>
+              </td>
+            <td style="padding:0px;width:75%;vertical-align:middle;height: fit-content;">
+              <a href="https://donydchen.github.io/mvsplat360/">
+                <papertitle>MVSplat360: Feed-Forward 360 Scene Synthesis
+                  from Sparse Views
+                </papertitle>
+              </a>
+              <br>
+              <a href="https://donydchen.github.io/">Yuedong Chen</a>,
+              <strong>Chuanxia Zheng</strong>,
+              <a href="https://haofeixu.github.io/">Haofei Xu</a>,
+              <a href="https://bohanzhuang.github.io/">Bohan Zhuang</a>,
+              <a href="https://www.robots.ox.ac.uk/~vedaldi/index.html">Andrea Vedaldi</a>,
+              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a>,
+              <a href="https://jianfei-cai.github.io/">Jianfei Cai</a>
+              <br>
+              <em>NeurIPS</em>, 2024 &nbsp;
+              <br>
+              <a href="https://donydchen.github.io/mvsplat360/">project page</a> /
+              <a href="https://arxiv.org/abs/2411.04924">arXiv</a> /
+              <a href="https://github.com/donydchen/mvsplat360">code</a>
+              <p></p>
+              <p>
+                A feed-forward approach for 360-degree novel view synthesis using only sparse observations.
               </p>
             </td>
           </tr>
@@ -1277,7 +1329,7 @@
           <p><font size="4"><b>Conference Reviewer</b></font></p>
         <table>
           <tr>
-            <td>CVPR</td><td>&nbsp;&nbsp;&nbsp;&nbsp;2020,&nbsp;2021,&nbsp;2022,&nbsp;2023 (Outstanding Reviewer),&nbsp;2024</td>
+            <td>CVPR</td><td>&nbsp;&nbsp;&nbsp;&nbsp;2020,&nbsp;2021,&nbsp;2022,&nbsp;2023 (Outstanding Reviewer),&nbsp;2024,&nbsp;2025</td>
           </tr>
           <tr><td>ICCV</td><td>&nbsp;&nbsp;&nbsp;&nbsp;2019,&nbsp;2021,&nbsp;2023</td></tr>
           <tr><td>ECCV</td><td>&nbsp;&nbsp;&nbsp;&nbsp;2020,&nbsp;2022,&nbsp;2024</td></tr>
@@ -1320,7 +1372,7 @@
             <p align="right">
               <font size="2">
               <a href="https://jonbarron.info">awesome website template </a><br>
-              Last updated Oct. 2024.
+              Last updated Nov. 2024.
           </font>
             </p>
             </td>
